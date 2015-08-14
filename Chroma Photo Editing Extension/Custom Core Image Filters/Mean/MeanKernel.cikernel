@@ -1,0 +1,32 @@
+kernel vec4 meanKernel(sampler u, float inputUnits, float inputNorth, float inputSouth, float inputEast, float inputWest)
+{
+    vec4 pixel = unpremultiply(sample(u, samplerCoord(u)));
+    vec2 xy = destCoord();
+
+    vec4 sum  = vec4(0.0);
+    for (int i = 0 - int(inputNorth); i <= int(inputSouth); i++)
+    {
+        for (int j = 0 - int(inputEast); j <= int(inputWest); j++ )
+        {
+            if (inputUnits == 0.0) // sum of values
+                sum += vec4(unpremultiply(sample(u, samplerTransform(u, vec2(xy + vec2(i, j))))));
+            else if (inputUnits == 1.0) // sum of distances
+                sum += vec4(distance(pixel, vec4(unpremultiply(sample(u, samplerTransform(u, vec2(xy + vec2(i, j))))))));
+        }
+    }
+
+    float divisor = ((inputNorth + inputSouth) + 1.0) * ((inputEast + inputWest) + 1.0);
+    vec4 mean = vec4(sum / vec4(divisor));
+    
+    vec4 result = vec4(0.0);
+    if (inputUnits == 0.0) // mean value
+    {
+        result = vec4(vec3(pixel.rgb - mean.rgb), 1.0);
+    }
+    else if (inputUnits == 1.0) // mean distance
+    {
+        result = vec4(vec3(pixel.rgb - distance(pixel.rgb, mean.rgb)), 1.0);
+    }
+
+    return premultiply(result);
+}

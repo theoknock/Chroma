@@ -1,0 +1,10 @@
+kernel vec4 contrastStretchKernel(sampler u, float inputRed, float inputGreen, float inputBlue)
+{
+    vec4 pixel = unpremultiply(sample(u, samplerCoord(u)));
+    //vec4 max_pixel = vec4(inputMaxRed, inputMaxGreen, inputMaxBlue, 1.0);
+    //vec4 min_pixel = vec4(inputMinRed, inputMinGreen, inputMinBlue, 1.0);
+
+    //pixel = (pixel - min_pixel) * (vec4(1.0) / (max_pixel - min_pixel));
+    
+    return premultiply(vec4(vec3(pixel.rgb), 1.0));
+}

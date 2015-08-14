@@ -1,0 +1,21 @@
+vec4 compute(vec4 v, float minContrastValue, float maxContrastValue)
+{
+    vec4 lowerCurve  = pow(v, vec4(minContrastValue));
+    vec4 upperCurve  = pow(v, vec4(maxContrastValue));
+    v = (lowerCurve + upperCurve) * 0.5;
+    return v;
+}
+
+// Standardizing a set of observations means substracting the mean from each observation and dividing it by the standard deviation
+
+kernel vec4 bushCurveKernel(sampler u, float inputMinContrastValue, float inputMaxContrastValue, float inputHeight, float inputWidth)
+{
+    vec4 pixel = unpremultiply(sample(u, samplerCoord(u)));
+    
+    vec4 f = compute(pixel, inputMinContrastValue, inputMaxContrastValue);
+  
+    vec4 result = premultiply(vec4(vec3(f.rgb), 1.0));
+    
+
+    return result;
+}

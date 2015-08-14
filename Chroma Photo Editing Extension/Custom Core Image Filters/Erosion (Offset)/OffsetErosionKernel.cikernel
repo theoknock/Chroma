@@ -1,0 +1,49 @@
+kernel vec4 offsetErosionKernel(sampler image)
+{
+
+vec4 pixel = normalize(sample(image, samplerCoord(image)));
+float intensity = (1.0 - (clamp(max(pixel.r, max(pixel.g, pixel.b)), 0.0, 1.0)) / 4.0);
+vec2 offset = vec2(intensity, intensity);
+
+
+vec2 inputTextureCoordinate = destCoord();
+vec2 oneStepNegativeTextureCoordinate = vec2(inputTextureCoordinate - offset);
+vec2 oneStepPositiveTextureCoordinate = vec2(inputTextureCoordinate + offset);
+vec2 twoStepsNegativeTextureCoordinate = vec2(inputTextureCoordinate - vec2(offset * vec2(2.0)));
+vec2 twoStepsPositiveTextureCoordinate = vec2(inputTextureCoordinate + vec2(offset * vec2(2.0)));
+vec2 threeStepsNegativeTextureCoordinate = vec2(inputTextureCoordinate - vec2(offset * vec2(3.0)));
+vec2 threeStepsPositiveTextureCoordinate = vec2(inputTextureCoordinate + vec2(offset * vec2(3.0)));
+vec2 fourStepsNegativeTextureCoordinate = vec2(inputTextureCoordinate - vec2(offset * vec2(4.0)));
+vec2 fourStepsPositiveTextureCoordinate = vec2(inputTextureCoordinate + vec2(offset * vec2(4.0)));
+
+
+vec4 centerIntensity = sample(image, samplerCoord(image));
+vec4 oneStepPositiveIntensity = sample(image, samplerTransform(image, oneStepPositiveTextureCoordinate));
+vec4 oneStepNegativeIntensity = sample(image, samplerTransform(image, oneStepNegativeTextureCoordinate));
+
+vec4 twoStepsPositiveIntensity = sample(image, samplerTransform(image, twoStepsPositiveTextureCoordinate));
+vec4 twoStepsNegativeIntensity = sample(image, samplerTransform(image, twoStepsNegativeTextureCoordinate));
+
+vec4 threeStepsPositiveIntensity = sample(image, samplerTransform(image, threeStepsPositiveTextureCoordinate));
+vec4 threeStepsNegativeIntensity = sample(image, samplerTransform(image, threeStepsNegativeTextureCoordinate));
+
+vec4 fourStepsPositiveIntensity = sample(image, samplerTransform(image, fourStepsPositiveTextureCoordinate));
+vec4 fourStepsNegativeIntensity = sample(image, samplerTransform(image, fourStepsNegativeTextureCoordinate));
+
+
+vec4 minValue = vec4(min(centerIntensity, oneStepPositiveIntensity));
+minValue = vec4(min(minValue, oneStepNegativeIntensity));
+
+/*
+minValue = vec4(min(minValue, twoStepsPositiveIntensity));
+minValue = vec4(min(minValue, twoStepsNegativeIntensity));
+
+minValue = vec4(min(minValue, threeStepsPositiveIntensity));
+minValue = vec4(min(minValue, threeStepsNegativeIntensity));
+
+minValue = vec4(min(minValue, fourStepsPositiveIntensity));
+minValue = vec4(min(minValue, fourStepsNegativeIntensity));
+*/
+ 
+return vec4(vec3(minValue.rgb), 1.0);
+}

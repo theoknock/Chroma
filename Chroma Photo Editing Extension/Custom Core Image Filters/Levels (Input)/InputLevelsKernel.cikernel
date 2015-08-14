@@ -1,0 +1,9 @@
+kernel vec4 inputLevelsKernel(sampler image, float inputMinInput, float inputGamma, float inputMaxInput, float inputMinOutput, float inputMaxOutput)
+{
+vec4 pixel	= unpremultiply(sample(image, samplerCoord(image)));
+/* vec3 levels	= vec3(mix(vec3(inputMinOutput), vec3(inputMaxOutput), pow(min(max(pixel.rgb - vec3(inputMinInput), vec3(0.0)) / (vec3(inputMaxInput) - vec3(inputMinInput)), vec3(1.0)), vec3(1.0 / inputGamma)))); */
+
+vec3 levels	= vec3(pow(min(max(pixel.rgb - vec3(inputMinInput), vec3(0.0)) / (vec3(inputMaxInput) - vec3(inputMinInput)), vec3(1.0)), vec3(1.0 / inputGamma)));
+
+return premultiply(vec4(vec3(levels), 1.0));
+}

@@ -1,0 +1,33 @@
+vec4 compute(vec4 v, float curve, float minContrastValue, float maxContrastValue)
+{
+if (curve == 0.0)
+{
+    v = pow(v, vec4(maxContrastValue));
+} else if (curve == 1.0)
+{
+    vec4 lowerCurve  = pow(v, vec4(minContrastValue));
+    vec4 upperCurve  = pow(v, vec4(maxContrastValue));
+    v = (lowerCurve + upperCurve) * 0.5;
+} else if (curve == 2.0)
+{
+    v = pow(v, vec4(minContrastValue));
+}
+return v;
+}
+
+// Standardizing a set of observations means substracting the mean from each observation and dividing it by the standard deviation
+
+kernel vec4 overlayCurvesKernel(sampler u, float inputCurve, float inputMinContrastValue, float inputMaxContrastValue, float inputHeight, float inputWidth)
+{
+vec4 pixel = unpremultiply(sample(u, samplerCoord(u)));
+
+vec4 f = compute(pixel, inputCurve, inputMinContrastValue, inputMaxContrastValue);
+vec4 g = compute(vec4(destCoord().x / inputWidth), inputCurve, inputMinContrastValue, inputMaxContrastValue);
+float height_scale_g   	= float(g) * inputHeight;
+float distance_g = abs(destCoord().y - height_scale_g);
+
+vec4 result = (distance_g < 1.0/100.0 * inputHeight) ? premultiply(vec4(vec3(g.rgb), 1.0)) : premultiply(vec4(vec3(f.rgb), 1.0));
+
+
+return result;
+}

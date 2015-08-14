@@ -1,0 +1,4 @@
+kernel vec4 absoluteDifferenceKernel(sampler inputImageA, sampler inputImageB)
+{
+    return vec4(abs(sample(inputImageA, samplerCoord(inputImageA)).rgb - sample(inputImageB, samplerCoord(inputImageB)).rgb), 1.0);
+}

@@ -7,6 +7,59 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DC05BB891B47C39A00378912 /* CustomConvolutionKernel.cikernel in Resources */ = {isa = PBXBuildFile; fileRef = DC05BB881B47C39A00378912 /* CustomConvolutionKernel.cikernel */; };
+		DC1585281B46E22400C504A5 /* CustomConvolution.m in Sources */ = {isa = PBXBuildFile; fileRef = DC1585271B46E22400C504A5 /* CustomConvolution.m */; };
+		DC597C561B5325F9005A3B6E /* GaussianKernel.m in Sources */ = {isa = PBXBuildFile; fileRef = DC597C551B5325F9005A3B6E /* GaussianKernel.m */; };
+		DC66E9911B40FF67009225AE /* EqualizeHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = DC66E9901B40FF67009225AE /* EqualizeHelper.m */; };
+		DC7ADEFE1B4A07E900985955 /* LocalAdaptiveThresholdingKernel.cikernel in Resources */ = {isa = PBXBuildFile; fileRef = DC7ADEFD1B4A07E900985955 /* LocalAdaptiveThresholdingKernel.cikernel */; };
+		DC7ADF021B4A17E800985955 /* LocalAdaptiveThreshold.m in Sources */ = {isa = PBXBuildFile; fileRef = DC7ADF011B4A17E800985955 /* LocalAdaptiveThreshold.m */; };
+		DC7B410D1B40EEFE0061DD63 /* DirectionalMeanKernel.cikernel in Resources */ = {isa = PBXBuildFile; fileRef = DC7B410C1B40EEFE0061DD63 /* DirectionalMeanKernel.cikernel */; };
+		DC7B41101B40EF3C0061DD63 /* DirectionalMean.m in Sources */ = {isa = PBXBuildFile; fileRef = DC7B410F1B40EF3C0061DD63 /* DirectionalMean.m */; };
+		DC8BC3661B4DDD3B00440921 /* FractalKernel.cikernel in Resources */ = {isa = PBXBuildFile; fileRef = DC8BC3651B4DDD3B00440921 /* FractalKernel.cikernel */; };
+		DC8BC36A1B4DE9ED00440921 /* ChromaUnsharp.m in Sources */ = {isa = PBXBuildFile; fileRef = DC8BC3691B4DE9ED00440921 /* ChromaUnsharp.m */; };
+		DC8BC36C1B4DEA0700440921 /* ChromaUnsharpKernel.cikernel in Resources */ = {isa = PBXBuildFile; fileRef = DC8BC36B1B4DEA0700440921 /* ChromaUnsharpKernel.cikernel */; };
+		DC8DE6291B49390D003887FF /* FourDirectionalMinMax.m in Sources */ = {isa = PBXBuildFile; fileRef = DC8DE6281B49390D003887FF /* FourDirectionalMinMax.m */; };
+		DC8DE62B1B49392E003887FF /* FourDirectionalMinMaxKernel.cikernel in Resources */ = {isa = PBXBuildFile; fileRef = DC8DE62A1B49392E003887FF /* FourDirectionalMinMaxKernel.cikernel */; };
+		DC90E49D1B535B8D007BCD99 /* GlobalCIImage.m in Sources */ = {isa = PBXBuildFile; fileRef = DC90E49C1B535B8D007BCD99 /* GlobalCIImage.m */; };
+		DC9B8BF21B4AFEB800571863 /* Mean.m in Sources */ = {isa = PBXBuildFile; fileRef = DC9B8BF11B4AFEB800571863 /* Mean.m */; };
+		DC9B8BF41B4B0F6600571863 /* MeanKernel.cikernel in Resources */ = {isa = PBXBuildFile; fileRef = DC9B8BF31B4B0F6600571863 /* MeanKernel.cikernel */; };
+		DC9B8BF71B4B0FC900571863 /* MaxMin.m in Sources */ = {isa = PBXBuildFile; fileRef = DC9B8BF61B4B0FC900571863 /* MaxMin.m */; };
+		DC9B8BF91B4B0FF400571863 /* MaxMinKernel.cikernel in Resources */ = {isa = PBXBuildFile; fileRef = DC9B8BF81B4B0FF400571863 /* MaxMinKernel.cikernel */; };
+		DC9B8BFC1B4B105A00571863 /* Median.m in Sources */ = {isa = PBXBuildFile; fileRef = DC9B8BFB1B4B105A00571863 /* Median.m */; };
+		DC9B8BFE1B4B107600571863 /* MedianKernel.cikernel in Resources */ = {isa = PBXBuildFile; fileRef = DC9B8BFD1B4B107600571863 /* MedianKernel.cikernel */; };
+		DC9B8C011B4B10BD00571863 /* Mode.m in Sources */ = {isa = PBXBuildFile; fileRef = DC9B8C001B4B10BD00571863 /* Mode.m */; };
+		DC9B8C031B4B10D900571863 /* ModeKernel.cikernel in Resources */ = {isa = PBXBuildFile; fileRef = DC9B8C021B4B10D900571863 /* ModeKernel.cikernel */; };
+		DC9B8C061B4B113700571863 /* HybridMedian.m in Sources */ = {isa = PBXBuildFile; fileRef = DC9B8C051B4B113700571863 /* HybridMedian.m */; };
+		DC9B8C081B4B115700571863 /* HybridMedianKernel.cikernel in Resources */ = {isa = PBXBuildFile; fileRef = DC9B8C071B4B115700571863 /* HybridMedianKernel.cikernel */; };
+		DC9B8C0B1B4B149E00571863 /* MedianAbsoluteDeviation.m in Sources */ = {isa = PBXBuildFile; fileRef = DC9B8C0A1B4B149E00571863 /* MedianAbsoluteDeviation.m */; };
+		DC9B8C0D1B4B14BB00571863 /* MedianAbsoluteDeviationKernel.cikernel in Resources */ = {isa = PBXBuildFile; fileRef = DC9B8C0C1B4B14BB00571863 /* MedianAbsoluteDeviationKernel.cikernel */; };
+		DC9B8C111B4C864200571863 /* ShiftedDataVariance.m in Sources */ = {isa = PBXBuildFile; fileRef = DC9B8C101B4C864200571863 /* ShiftedDataVariance.m */; };
+		DC9B8C131B4C865F00571863 /* ShiftedDataVarianceKernel.cikernel in Resources */ = {isa = PBXBuildFile; fileRef = DC9B8C121B4C865F00571863 /* ShiftedDataVarianceKernel.cikernel */; };
+		DCA105B71B3A01CB007940C7 /* IMG_0751.PNG in Resources */ = {isa = PBXBuildFile; fileRef = DCA105B61B3A01CB007940C7 /* IMG_0751.PNG */; };
+		DCA93A0C1B55CD710094600E /* OverlayCurves.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA93A0B1B55CD710094600E /* OverlayCurves.m */; };
+		DCA93A101B55CD9C0094600E /* OverlayCurvesKernel.cikernel in Resources */ = {isa = PBXBuildFile; fileRef = DCA93A0F1B55CD9C0094600E /* OverlayCurvesKernel.cikernel */; };
+		DCAC1C0F1B75D76C000BABAE /* dx.m in Sources */ = {isa = PBXBuildFile; fileRef = DCAC1C0E1B75D76C000BABAE /* dx.m */; };
+		DCAC1C151B75DF9E000BABAE /* dy.m in Sources */ = {isa = PBXBuildFile; fileRef = DCAC1C141B75DF9E000BABAE /* dy.m */; };
+		DCAC1C171B75E0D8000BABAE /* dyKernel.cikernel in Resources */ = {isa = PBXBuildFile; fileRef = DCAC1C161B75E0D8000BABAE /* dyKernel.cikernel */; };
+		DCAC1C191B75E19E000BABAE /* dxKernel.cikernel in Resources */ = {isa = PBXBuildFile; fileRef = DCAC1C181B75E19E000BABAE /* dxKernel.cikernel */; };
+		DCAC1C1E1B75F0E6000BABAE /* Magnitude.m in Sources */ = {isa = PBXBuildFile; fileRef = DCAC1C1D1B75F0E6000BABAE /* Magnitude.m */; };
+		DCAC1C201B75F129000BABAE /* MagnitudeKernel.cikernel in Resources */ = {isa = PBXBuildFile; fileRef = DCAC1C1F1B75F129000BABAE /* MagnitudeKernel.cikernel */; };
+		DCAC1C231B75F1C3000BABAE /* EdgeGradient.m in Sources */ = {isa = PBXBuildFile; fileRef = DCAC1C221B75F1C3000BABAE /* EdgeGradient.m */; };
+		DCAE7EB81B48B34E003CB94A /* GlobalContext.m in Sources */ = {isa = PBXBuildFile; fileRef = DCAE7EB71B48B34E003CB94A /* GlobalContext.m */; };
+		DCB77E961B76056400F027C0 /* EdgeGradientKernel.cikernel in Resources */ = {isa = PBXBuildFile; fileRef = DCB77E951B76056400F027C0 /* EdgeGradientKernel.cikernel */; };
+		DCB9822D1B5AA3F400154014 /* View.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCB9822C1B5AA3F400154014 /* View.xib */; };
+		DCB982301B5AA66400154014 /* View.m in Sources */ = {isa = PBXBuildFile; fileRef = DCB9822F1B5AA66400154014 /* View.m */; };
+		DCC26A3F1B499D89002A192C /* AppSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = DC9C60091B48E2C40077B60D /* AppSingleton.m */; };
+		DCCC8CC71B59B8E700FAFFB6 /* StretchContrastAverage.m in Sources */ = {isa = PBXBuildFile; fileRef = DCCC8CC61B59B8E700FAFFB6 /* StretchContrastAverage.m */; };
+		DCCC8CC91B59B9AE00FAFFB6 /* StretchContrastAverageKernel.cikernel in Resources */ = {isa = PBXBuildFile; fileRef = DCCC8CC81B59B9AE00FAFFB6 /* StretchContrastAverageKernel.cikernel */; };
+		DCCF26F11B41C88500F58286 /* InputLevelsKernel.cikernel in Resources */ = {isa = PBXBuildFile; fileRef = DCCF26F01B41C88500F58286 /* InputLevelsKernel.cikernel */; };
+		DCCF26F41B41C8A000F58286 /* LevelsInput.m in Sources */ = {isa = PBXBuildFile; fileRef = DCCF26F31B41C8A000F58286 /* LevelsInput.m */; };
+		DCCF26F71B41DAA900F58286 /* LevelsOutput.m in Sources */ = {isa = PBXBuildFile; fileRef = DCCF26F61B41DAA900F58286 /* LevelsOutput.m */; };
+		DCCF26F91B41DAC600F58286 /* OutputLevelsKernel.cikernel in Resources */ = {isa = PBXBuildFile; fileRef = DCCF26F81B41DAC600F58286 /* OutputLevelsKernel.cikernel */; };
+		DCCF27081B42636F00F58286 /* MedianUnsharp.m in Sources */ = {isa = PBXBuildFile; fileRef = DCCF27071B42636F00F58286 /* MedianUnsharp.m */; };
+		DCCF270A1B42637700F58286 /* MedianUnsharpKernel.cikernel in Resources */ = {isa = PBXBuildFile; fileRef = DCCF27091B42637700F58286 /* MedianUnsharpKernel.cikernel */; };
+		DCCF286A1B4267D600F58286 /* UIImage-Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = DCCF28661B4267D600F58286 /* UIImage-Utils.m */; };
+		DCCF286B1B4267D600F58286 /* UIImage-vImage.m in Sources */ = {isa = PBXBuildFile; fileRef = DCCF28671B4267D600F58286 /* UIImage-vImage.m */; };
 		DCD0C8861B39599C0061E88B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD0C8851B39599C0061E88B /* main.m */; };
 		DCD0C8891B39599C0061E88B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD0C8881B39599C0061E88B /* AppDelegate.m */; };
 		DCD0C88C1B39599C0061E88B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD0C88B1B39599C0061E88B /* ViewController.m */; };
@@ -14,6 +67,99 @@
 		DCD0C8911B39599C0061E88B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCD0C8901B39599C0061E88B /* Images.xcassets */; };
 		DCD0C8941B39599C0061E88B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCD0C8921B39599C0061E88B /* LaunchScreen.xib */; };
 		DCD0C8A01B39599C0061E88B /* ChromaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD0C89F1B39599C0061E88B /* ChromaTests.m */; };
+		DCD0C8B01B3959BE0061E88B /* PhotosUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCD0C8AF1B3959BE0061E88B /* PhotosUI.framework */; };
+		DCD0C8B21B3959BE0061E88B /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCD0C8B11B3959BE0061E88B /* Photos.framework */; };
+		DCD0C8B81B3959BE0061E88B /* PhotoEditingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD0C8B71B3959BE0061E88B /* PhotoEditingViewController.m */; };
+		DCD0C8BD1B3959BE0061E88B /* Chroma Photo Editing Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = DCD0C8AD1B3959BE0061E88B /* Chroma Photo Editing Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		DCD0C9F21B395B9D0061E88B /* AAPLAVReaderWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD0C9F11B395B9D0061E88B /* AAPLAVReaderWriter.m */; };
+		DCD0C9F41B395C510061E88B /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCD0C9F31B395C510061E88B /* MainInterface.storyboard */; };
+		DCD0CAA21B3961AF0061E88B /* AbsoluteDeviation.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD0C9FA1B3961AF0061E88B /* AbsoluteDeviation.m */; };
+		DCD0CAA31B3961AF0061E88B /* AbsoluteDeviationKernel.cikernel in Resources */ = {isa = PBXBuildFile; fileRef = DCD0C9FB1B3961AF0061E88B /* AbsoluteDeviationKernel.cikernel */; };
+		DCD0CAA41B3961AF0061E88B /* AMBE.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD0C9FE1B3961AF0061E88B /* AMBE.m */; };
+		DCD0CAA51B3961AF0061E88B /* Equalize.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD0CA011B3961AF0061E88B /* Equalize.m */; };
+		DCD0CAA61B3961AF0061E88B /* EqualizeKernel.cikernel in Resources */ = {isa = PBXBuildFile; fileRef = DCD0CA021B3961AF0061E88B /* EqualizeKernel.cikernel */; };
+		DCD0CAA71B3961AF0061E88B /* BlackTophat.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD0CA051B3961AF0061E88B /* BlackTophat.m */; };
+		DCD0CAA91B3961AF0061E88B /* CentralDifference.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD0CA0B1B3961AF0061E88B /* CentralDifference.m */; };
+		DCD0CAAA1B3961AF0061E88B /* CentralDifferenceKernel.cikernel in Resources */ = {isa = PBXBuildFile; fileRef = DCD0CA0C1B3961AF0061E88B /* CentralDifferenceKernel.cikernel */; };
+		DCD0CAAB1B3961AF0061E88B /* Chroma.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD0CA0F1B3961AF0061E88B /* Chroma.m */; };
+		DCD0CAAC1B3961AF0061E88B /* ChromaKernel.cikernel in Resources */ = {isa = PBXBuildFile; fileRef = DCD0CA101B3961AF0061E88B /* ChromaKernel.cikernel */; };
+		DCD0CAAE1B3961AF0061E88B /* ContrastStretch.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD0CA161B3961AF0061E88B /* ContrastStretch.m */; };
+		DCD0CAAF1B3961AF0061E88B /* ContrastStretchKernel.cikernel in Resources */ = {isa = PBXBuildFile; fileRef = DCD0CA171B3961AF0061E88B /* ContrastStretchKernel.cikernel */; };
+		DCD0CAB01B3961AF0061E88B /* CV.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD0CA1A1B3961AF0061E88B /* CV.m */; };
+		DCD0CAB11B3961AF0061E88B /* CVKernel.cikernel in Resources */ = {isa = PBXBuildFile; fileRef = DCD0CA1B1B3961AF0061E88B /* CVKernel.cikernel */; };
+		DCD0CAB21B3961AF0061E88B /* Dilate.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD0CA1E1B3961AF0061E88B /* Dilate.m */; };
+		DCD0CAB31B3961AF0061E88B /* DilateKernel.cikernel in Resources */ = {isa = PBXBuildFile; fileRef = DCD0CA1F1B3961AF0061E88B /* DilateKernel.cikernel */; };
+		DCD0CAB41B3961AF0061E88B /* Dissimilarity.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD0CA221B3961AF0061E88B /* Dissimilarity.m */; };
+		DCD0CAB51B3961AF0061E88B /* DissimilarityKernel.cikernel in Resources */ = {isa = PBXBuildFile; fileRef = DCD0CA231B3961AF0061E88B /* DissimilarityKernel.cikernel */; };
+		DCD0CAB61B3961AF0061E88B /* Erode.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD0CA261B3961AF0061E88B /* Erode.m */; };
+		DCD0CAB71B3961AF0061E88B /* ErodeKernel.cikernel in Resources */ = {isa = PBXBuildFile; fileRef = DCD0CA271B3961AF0061E88B /* ErodeKernel.cikernel */; };
+		DCD0CAB81B3961AF0061E88B /* OffsetDilationKernel.cikernel in Resources */ = {isa = PBXBuildFile; fileRef = DCD0CA291B3961AF0061E88B /* OffsetDilationKernel.cikernel */; };
+		DCD0CAB91B3961AF0061E88B /* OffsetErosionKernel.cikernel in Resources */ = {isa = PBXBuildFile; fileRef = DCD0CA2A1B3961AF0061E88B /* OffsetErosionKernel.cikernel */; };
+		DCD0CABA1B3961AF0061E88B /* ExposureGamma.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD0CA2D1B3961AF0061E88B /* ExposureGamma.m */; };
+		DCD0CABB1B3961AF0061E88B /* ExposureGammaKernel.cikernel in Resources */ = {isa = PBXBuildFile; fileRef = DCD0CA2E1B3961AF0061E88B /* ExposureGammaKernel.cikernel */; };
+		DCD0CABC1B3961AF0061E88B /* FASTCornerDetection.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD0CA311B3961AF0061E88B /* FASTCornerDetection.m */; };
+		DCD0CABD1B3961AF0061E88B /* FASTCornerDetectionKernel.cikernel in Resources */ = {isa = PBXBuildFile; fileRef = DCD0CA321B3961AF0061E88B /* FASTCornerDetectionKernel.cikernel */; };
+		DCD0CABE1B3961AF0061E88B /* Filters.plist in Resources */ = {isa = PBXBuildFile; fileRef = DCD0CA331B3961AF0061E88B /* Filters.plist */; };
+		DCD0CABF1B3961AF0061E88B /* GlobalStandardDeviation.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD0CA361B3961AF0061E88B /* GlobalStandardDeviation.m */; };
+		DCD0CAC01B3961AF0061E88B /* GlobalStandardDeviationKernel.cikernel in Resources */ = {isa = PBXBuildFile; fileRef = DCD0CA371B3961AF0061E88B /* GlobalStandardDeviationKernel.cikernel */; };
+		DCD0CAC11B3961AF0061E88B /* Gradient.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD0CA3A1B3961AF0061E88B /* Gradient.m */; };
+		DCD0CAC21B3961AF0061E88B /* BushCurve.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD0CA3D1B3961AF0061E88B /* BushCurve.m */; };
+		DCD0CAC31B3961AF0061E88B /* BushCurveKernel.cikernel in Resources */ = {isa = PBXBuildFile; fileRef = DCD0CA3E1B3961AF0061E88B /* BushCurveKernel.cikernel */; };
+		DCD0CAC41B3961AF0061E88B /* LaplacianConvolution.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD0CA411B3961AF0061E88B /* LaplacianConvolution.m */; };
+		DCD0CAC51B3961AF0061E88B /* LocalContrastStretch.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD0CA441B3961AF0061E88B /* LocalContrastStretch.m */; };
+		DCD0CAC61B3961AF0061E88B /* LocalContrastStretchKernel.cikernel in Resources */ = {isa = PBXBuildFile; fileRef = DCD0CA451B3961AF0061E88B /* LocalContrastStretchKernel.cikernel */; };
+		DCD0CAC71B3961AF0061E88B /* Maximum.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD0CA481B3961AF0061E88B /* Maximum.m */; };
+		DCD0CAC81B3961AF0061E88B /* MeanMinMax.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD0CA4B1B3961AF0061E88B /* MeanMinMax.m */; };
+		DCD0CAC91B3961AF0061E88B /* MeanMinMaxKernel.cikernel in Resources */ = {isa = PBXBuildFile; fileRef = DCD0CA4C1B3961AF0061E88B /* MeanMinMaxKernel.cikernel */; };
+		DCD0CACA1B3961AF0061E88B /* MInimum.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD0CA4F1B3961AF0061E88B /* MInimum.m */; };
+		DCD0CACB1B3961AF0061E88B /* absoluteDifferenceKernel.cikernel in Resources */ = {isa = PBXBuildFile; fileRef = DCD0CA511B3961AF0061E88B /* absoluteDifferenceKernel.cikernel */; };
+		DCD0CACE1B3961AF0061E88B /* Edge.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD0CA551B3961AF0061E88B /* Edge.m */; };
+		DCD0CACF1B3961AF0061E88B /* EdgeIn.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD0CA581B3961AF0061E88B /* EdgeIn.m */; };
+		DCD0CAD01B3961AF0061E88B /* EdgeOut.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD0CA5B1B3961AF0061E88B /* EdgeOut.m */; };
+		DCD0CAD11B3961AF0061E88B /* MorphologicalEdgeCornerDetection.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD0CA5D1B3961AF0061E88B /* MorphologicalEdgeCornerDetection.m */; };
+		DCD0CAD41B3961AF0061E88B /* Open.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD0CA621B3961AF0061E88B /* Open.m */; };
+		DCD0CAD51B3961AF0061E88B /* OverlayHistogram.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD0CA651B3961AF0061E88B /* OverlayHistogram.m */; };
+		DCD0CAD61B3961AF0061E88B /* OverlayHistogramKernel.cikernel in Resources */ = {isa = PBXBuildFile; fileRef = DCD0CA661B3961AF0061E88B /* OverlayHistogramKernel.cikernel */; };
+		DCD0CAD71B3961AF0061E88B /* PixelDifference.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD0CA691B3961AF0061E88B /* PixelDifference.m */; };
+		DCD0CAD81B3961AF0061E88B /* PrewittConvolution.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD0CA6D1B3961AF0061E88B /* PrewittConvolution.m */; };
+		DCD0CAD91B3961AF0061E88B /* PrewittKernel.cikernel in Resources */ = {isa = PBXBuildFile; fileRef = DCD0CA6F1B3961AF0061E88B /* PrewittKernel.cikernel */; };
+		DCD0CADA1B3961AF0061E88B /* PrewittKernel.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD0CA711B3961AF0061E88B /* PrewittKernel.m */; };
+		DCD0CADB1B3961AF0061E88B /* RMS.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD0CA741B3961AF0061E88B /* RMS.m */; };
+		DCD0CADC1B3961AF0061E88B /* RMSKernel.cikernel in Resources */ = {isa = PBXBuildFile; fileRef = DCD0CA751B3961AF0061E88B /* RMSKernel.cikernel */; };
+		DCD0CADD1B3961AF0061E88B /* RobertsConvolution.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD0CA791B3961AF0061E88B /* RobertsConvolution.m */; };
+		DCD0CADE1B3961AF0061E88B /* RobertsKernel.cikernel in Resources */ = {isa = PBXBuildFile; fileRef = DCD0CA7B1B3961AF0061E88B /* RobertsKernel.cikernel */; };
+		DCD0CADF1B3961AF0061E88B /* RobertsKernel.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD0CA7D1B3961AF0061E88B /* RobertsKernel.m */; };
+		DCD0CAE01B3961AF0061E88B /* RootMeanSquareError.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD0CA801B3961AF0061E88B /* RootMeanSquareError.m */; };
+		DCD0CAE11B3961AF0061E88B /* Scharr.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD0CA831B3961AF0061E88B /* Scharr.m */; };
+		DCD0CAE31B3961AF0061E88B /* SobelConvolution.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD0CA8A1B3961AF0061E88B /* SobelConvolution.m */; };
+		DCD0CAE41B3961AF0061E88B /* SobelConvolutionHorizontal.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD0CA8C1B3961AF0061E88B /* SobelConvolutionHorizontal.m */; };
+		DCD0CAE51B3961AF0061E88B /* SobelConvolutionKernel.cikernel in Resources */ = {isa = PBXBuildFile; fileRef = DCD0CA8D1B3961AF0061E88B /* SobelConvolutionKernel.cikernel */; };
+		DCD0CAE61B3961AF0061E88B /* SobelConvolutionVertical.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD0CA8F1B3961AF0061E88B /* SobelConvolutionVertical.m */; };
+		DCD0CAE71B3961AF0061E88B /* SobelYKernel.cikernel in Resources */ = {isa = PBXBuildFile; fileRef = DCD0CA911B3961AF0061E88B /* SobelYKernel.cikernel */; };
+		DCD0CAE81B3961AF0061E88B /* SobelYKernel.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD0CA931B3961AF0061E88B /* SobelYKernel.m */; };
+		DCD0CAE91B3961AF0061E88B /* SobelXKernel.cikernel in Resources */ = {isa = PBXBuildFile; fileRef = DCD0CA941B3961AF0061E88B /* SobelXKernel.cikernel */; };
+		DCD0CAEA1B3961AF0061E88B /* SobelXKernel.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD0CA961B3961AF0061E88B /* SobelXKernel.m */; };
+		DCD0CAEB1B3961AF0061E88B /* LocalStandardDeviation.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD0CA991B3961AF0061E88B /* LocalStandardDeviation.m */; };
+		DCD0CAEC1B3961AF0061E88B /* LocalStandardDeviationKernel.cikernel in Resources */ = {isa = PBXBuildFile; fileRef = DCD0CA9A1B3961AF0061E88B /* LocalStandardDeviationKernel.cikernel */; };
+		DCD0CAED1B3961AF0061E88B /* WhiteTophat.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD0CA9D1B3961AF0061E88B /* WhiteTophat.m */; };
+		DCD0CAEE1B3961AF0061E88B /* Variance.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD0CAA01B3961AF0061E88B /* Variance.m */; };
+		DCD0CAEF1B3961AF0061E88B /* VarianceKernel.cikernel in Resources */ = {isa = PBXBuildFile; fileRef = DCD0CAA11B3961AF0061E88B /* VarianceKernel.cikernel */; };
+		DCD0CAF31B3962CF0061E88B /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCD0CAF01B3962CF0061E88B /* Accelerate.framework */; };
+		DCD0CAF41B3962CF0061E88B /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCD0CAF11B3962CF0061E88B /* CoreImage.framework */; };
+		DCD0CAF51B3962CF0061E88B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCD0CAF21B3962CF0061E88B /* Foundation.framework */; };
+		DCD206051B3B939A00F8EC9A /* dragonfly.png in Resources */ = {isa = PBXBuildFile; fileRef = DCD206041B3B939A00F8EC9A /* dragonfly.png */; };
+		DCEF65EF1B3D875C00CED593 /* DilateCrossKernel.cikernel in Resources */ = {isa = PBXBuildFile; fileRef = DCEF65EE1B3D875C00CED593 /* DilateCrossKernel.cikernel */; };
+		DCEF65F21B3D877A00CED593 /* DilateCross.m in Sources */ = {isa = PBXBuildFile; fileRef = DCEF65F11B3D877A00CED593 /* DilateCross.m */; };
+		DCEF65F61B3D8AC200CED593 /* DilateX.m in Sources */ = {isa = PBXBuildFile; fileRef = DCEF65F51B3D8AC200CED593 /* DilateX.m */; };
+		DCEF65F81B3D8AD800CED593 /* DilateXKernel.cikernel in Resources */ = {isa = PBXBuildFile; fileRef = DCEF65F71B3D8AD800CED593 /* DilateXKernel.cikernel */; };
+		DCEF65FB1B3D96B900CED593 /* DilateDiamondKernel.cikernel in Resources */ = {isa = PBXBuildFile; fileRef = DCEF65FA1B3D96B900CED593 /* DilateDiamondKernel.cikernel */; };
+		DCEF65FE1B3D96F600CED593 /* DilateDiamond.m in Sources */ = {isa = PBXBuildFile; fileRef = DCEF65FD1B3D96F600CED593 /* DilateDiamond.m */; };
+		DCEF66041B3D98C900CED593 /* ErodeDiamond.m in Sources */ = {isa = PBXBuildFile; fileRef = DCEF66031B3D98C900CED593 /* ErodeDiamond.m */; };
+		DCEF66061B3D98DA00CED593 /* ErodeDiamondKernel.cikernel in Resources */ = {isa = PBXBuildFile; fileRef = DCEF66051B3D98DA00CED593 /* ErodeDiamondKernel.cikernel */; };
+		DCEF660A1B3D9A6F00CED593 /* ErodeX.m in Sources */ = {isa = PBXBuildFile; fileRef = DCEF66091B3D9A6F00CED593 /* ErodeX.m */; };
+		DCEF660C1B3D9AF200CED593 /* ErodeXKernel.cikernel in Resources */ = {isa = PBXBuildFile; fileRef = DCEF660B1B3D9AF200CED593 /* ErodeXKernel.cikernel */; };
+		DCEF66101B3D9C9F00CED593 /* ErodeCross.m in Sources */ = {isa = PBXBuildFile; fileRef = DCEF660F1B3D9C9F00CED593 /* ErodeCross.m */; };
+		DCEF66121B3D9CB900CED593 /* ErodeCrossKernel.cikernel in Resources */ = {isa = PBXBuildFile; fileRef = DCEF66111B3D9CB900CED593 /* ErodeCrossKernel.cikernel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -24,9 +170,114 @@
 			remoteGlobalIDString = DCD0C87F1B39599C0061E88B;
 			remoteInfo = Chroma;
 		};
+		DCD0C8BB1B3959BE0061E88B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DCD0C8781B39599C0061E88B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DCD0C8AC1B3959BE0061E88B;
+			remoteInfo = "Chroma Photo Editing Extension";
+		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		DCD0C8C11B3959BE0061E88B /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				DCD0C8BD1B3959BE0061E88B /* Chroma Photo Editing Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		DC05BB881B47C39A00378912 /* CustomConvolutionKernel.cikernel */ = {isa = PBXFileReference; explicitFileType = sourcecode.glsl; fileEncoding = 4; name = CustomConvolutionKernel.cikernel; path = "Custom Convolution/CustomConvolutionKernel.cikernel"; sourceTree = "<group>"; wrapsLines = 0; };
+		DC1585261B46E22400C504A5 /* CustomConvolution.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomConvolution.h; path = "Custom Convolution/CustomConvolution.h"; sourceTree = "<group>"; };
+		DC1585271B46E22400C504A5 /* CustomConvolution.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomConvolution.m; path = "Custom Convolution/CustomConvolution.m"; sourceTree = "<group>"; };
+		DC597C541B5325F9005A3B6E /* GaussianKernel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GaussianKernel.h; path = "Gaussian Kernel/GaussianKernel.h"; sourceTree = "<group>"; };
+		DC597C551B5325F9005A3B6E /* GaussianKernel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GaussianKernel.m; path = "Gaussian Kernel/GaussianKernel.m"; sourceTree = "<group>"; };
+		DC66E98F1B40FF67009225AE /* EqualizeHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EqualizeHelper.h; sourceTree = "<group>"; };
+		DC66E9901B40FF67009225AE /* EqualizeHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EqualizeHelper.m; sourceTree = "<group>"; };
+		DC7ADEFD1B4A07E900985955 /* LocalAdaptiveThresholdingKernel.cikernel */ = {isa = PBXFileReference; explicitFileType = sourcecode.glsl; fileEncoding = 4; name = LocalAdaptiveThresholdingKernel.cikernel; path = "Custom Convolution/LocalAdaptiveThresholdingKernel.cikernel"; sourceTree = "<group>"; };
+		DC7ADF001B4A17E800985955 /* LocalAdaptiveThreshold.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LocalAdaptiveThreshold.h; path = "Local Adaptive Threshold/LocalAdaptiveThreshold.h"; sourceTree = "<group>"; };
+		DC7ADF011B4A17E800985955 /* LocalAdaptiveThreshold.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LocalAdaptiveThreshold.m; path = "Local Adaptive Threshold/LocalAdaptiveThreshold.m"; sourceTree = "<group>"; };
+		DC7B410C1B40EEFE0061DD63 /* DirectionalMeanKernel.cikernel */ = {isa = PBXFileReference; explicitFileType = sourcecode.glsl; fileEncoding = 4; name = DirectionalMeanKernel.cikernel; path = "Directional Mean/DirectionalMeanKernel.cikernel"; sourceTree = "<group>"; };
+		DC7B410E1B40EF3C0061DD63 /* DirectionalMean.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DirectionalMean.h; path = "Directional Mean/DirectionalMean.h"; sourceTree = "<group>"; };
+		DC7B410F1B40EF3C0061DD63 /* DirectionalMean.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DirectionalMean.m; path = "Directional Mean/DirectionalMean.m"; sourceTree = "<group>"; wrapsLines = 0; };
+		DC8BC3651B4DDD3B00440921 /* FractalKernel.cikernel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = FractalKernel.cikernel; path = Fractal/FractalKernel.cikernel; sourceTree = "<group>"; };
+		DC8BC3681B4DE9ED00440921 /* ChromaUnsharp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChromaUnsharp.h; path = ChromaUnsharp/ChromaUnsharp.h; sourceTree = "<group>"; };
+		DC8BC3691B4DE9ED00440921 /* ChromaUnsharp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChromaUnsharp.m; path = ChromaUnsharp/ChromaUnsharp.m; sourceTree = "<group>"; };
+		DC8BC36B1B4DEA0700440921 /* ChromaUnsharpKernel.cikernel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ChromaUnsharpKernel.cikernel; path = ChromaUnsharp/ChromaUnsharpKernel.cikernel; sourceTree = "<group>"; };
+		DC8DE6271B49390D003887FF /* FourDirectionalMinMax.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FourDirectionalMinMax.h; path = "Four-Directional MinMax/FourDirectionalMinMax.h"; sourceTree = "<group>"; };
+		DC8DE6281B49390D003887FF /* FourDirectionalMinMax.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FourDirectionalMinMax.m; path = "Four-Directional MinMax/FourDirectionalMinMax.m"; sourceTree = "<group>"; };
+		DC8DE62A1B49392E003887FF /* FourDirectionalMinMaxKernel.cikernel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = FourDirectionalMinMaxKernel.cikernel; path = "Four-Directional MinMax/FourDirectionalMinMaxKernel.cikernel"; sourceTree = "<group>"; };
+		DC90E49B1B535B8D007BCD99 /* GlobalCIImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalCIImage.h; sourceTree = "<group>"; };
+		DC90E49C1B535B8D007BCD99 /* GlobalCIImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlobalCIImage.m; sourceTree = "<group>"; };
+		DC939F281B3E3C0000240EF1 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		DC939F2A1B3E3CD800240EF1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		DC9B8BF01B4AFEB800571863 /* Mean.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Mean.h; path = Mean/Mean.h; sourceTree = "<group>"; };
+		DC9B8BF11B4AFEB800571863 /* Mean.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Mean.m; path = Mean/Mean.m; sourceTree = "<group>"; };
+		DC9B8BF31B4B0F6600571863 /* MeanKernel.cikernel */ = {isa = PBXFileReference; explicitFileType = sourcecode.glsl; fileEncoding = 4; name = MeanKernel.cikernel; path = Mean/MeanKernel.cikernel; sourceTree = "<group>"; };
+		DC9B8BF51B4B0FC900571863 /* MaxMin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MaxMin.h; path = MaxMin/MaxMin.h; sourceTree = "<group>"; };
+		DC9B8BF61B4B0FC900571863 /* MaxMin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MaxMin.m; path = MaxMin/MaxMin.m; sourceTree = "<group>"; wrapsLines = 1; };
+		DC9B8BF81B4B0FF400571863 /* MaxMinKernel.cikernel */ = {isa = PBXFileReference; explicitFileType = sourcecode.glsl; fileEncoding = 4; name = MaxMinKernel.cikernel; path = MaxMin/MaxMinKernel.cikernel; sourceTree = "<group>"; };
+		DC9B8BFA1B4B105A00571863 /* Median.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Median.h; path = Median/Median.h; sourceTree = "<group>"; };
+		DC9B8BFB1B4B105A00571863 /* Median.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Median.m; path = Median/Median.m; sourceTree = "<group>"; };
+		DC9B8BFD1B4B107600571863 /* MedianKernel.cikernel */ = {isa = PBXFileReference; explicitFileType = sourcecode.glsl; fileEncoding = 4; name = MedianKernel.cikernel; path = Median/MedianKernel.cikernel; sourceTree = "<group>"; };
+		DC9B8BFF1B4B10BD00571863 /* Mode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Mode.h; path = Mode/Mode.h; sourceTree = "<group>"; };
+		DC9B8C001B4B10BD00571863 /* Mode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Mode.m; path = Mode/Mode.m; sourceTree = "<group>"; };
+		DC9B8C021B4B10D900571863 /* ModeKernel.cikernel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ModeKernel.cikernel; path = Mode/ModeKernel.cikernel; sourceTree = "<group>"; };
+		DC9B8C041B4B113700571863 /* HybridMedian.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HybridMedian.h; path = "Hybrid Median/HybridMedian.h"; sourceTree = "<group>"; };
+		DC9B8C051B4B113700571863 /* HybridMedian.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HybridMedian.m; path = "Hybrid Median/HybridMedian.m"; sourceTree = "<group>"; };
+		DC9B8C071B4B115700571863 /* HybridMedianKernel.cikernel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = HybridMedianKernel.cikernel; path = "Hybrid Median/HybridMedianKernel.cikernel"; sourceTree = "<group>"; };
+		DC9B8C091B4B149E00571863 /* MedianAbsoluteDeviation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MedianAbsoluteDeviation.h; path = MedianAbsoluteDeviation/MedianAbsoluteDeviation.h; sourceTree = "<group>"; };
+		DC9B8C0A1B4B149E00571863 /* MedianAbsoluteDeviation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MedianAbsoluteDeviation.m; path = MedianAbsoluteDeviation/MedianAbsoluteDeviation.m; sourceTree = "<group>"; };
+		DC9B8C0C1B4B14BB00571863 /* MedianAbsoluteDeviationKernel.cikernel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = MedianAbsoluteDeviationKernel.cikernel; path = MedianAbsoluteDeviation/MedianAbsoluteDeviationKernel.cikernel; sourceTree = "<group>"; };
+		DC9B8C0F1B4C864200571863 /* ShiftedDataVariance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShiftedDataVariance.h; path = ShiftedDataVariance/ShiftedDataVariance.h; sourceTree = "<group>"; };
+		DC9B8C101B4C864200571863 /* ShiftedDataVariance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShiftedDataVariance.m; path = ShiftedDataVariance/ShiftedDataVariance.m; sourceTree = "<group>"; };
+		DC9B8C121B4C865F00571863 /* ShiftedDataVarianceKernel.cikernel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ShiftedDataVarianceKernel.cikernel; path = ShiftedDataVariance/ShiftedDataVarianceKernel.cikernel; sourceTree = "<group>"; };
+		DC9C60081B48E2C40077B60D /* AppSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = AppSingleton.h; path = ../Chroma/AppSingleton.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		DC9C60091B48E2C40077B60D /* AppSingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = AppSingleton.m; path = ../Chroma/AppSingleton.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		DCA105B61B3A01CB007940C7 /* IMG_0751.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_0751.PNG; sourceTree = "<group>"; };
+		DCA93A0A1B55CD710094600E /* OverlayCurves.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OverlayCurves.h; path = "Chroma Photo Editing Extension/Custom Core Image Filters/Overlay Curves/OverlayCurves.h"; sourceTree = SOURCE_ROOT; };
+		DCA93A0B1B55CD710094600E /* OverlayCurves.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OverlayCurves.m; path = "Chroma Photo Editing Extension/Custom Core Image Filters/Overlay Curves/OverlayCurves.m"; sourceTree = SOURCE_ROOT; };
+		DCA93A0F1B55CD9C0094600E /* OverlayCurvesKernel.cikernel */ = {isa = PBXFileReference; explicitFileType = sourcecode.glsl; fileEncoding = 4; name = OverlayCurvesKernel.cikernel; path = "Chroma Photo Editing Extension/Custom Core Image Filters/Overlay Curves/OverlayCurvesKernel.cikernel"; sourceTree = SOURCE_ROOT; };
+		DCAC1C0D1B75D76C000BABAE /* dx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = dx.h; path = dx/dx.h; sourceTree = "<group>"; };
+		DCAC1C0E1B75D76C000BABAE /* dx.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = dx.m; path = dx/dx.m; sourceTree = "<group>"; wrapsLines = 0; };
+		DCAC1C131B75DF7B000BABAE /* dy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = dy.h; path = dy/dy.h; sourceTree = "<group>"; };
+		DCAC1C141B75DF9E000BABAE /* dy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = dy.m; path = dy/dy.m; sourceTree = "<group>"; };
+		DCAC1C161B75E0D8000BABAE /* dyKernel.cikernel */ = {isa = PBXFileReference; explicitFileType = sourcecode.glsl; fileEncoding = 4; name = dyKernel.cikernel; path = dy/dyKernel.cikernel; sourceTree = "<group>"; };
+		DCAC1C181B75E19E000BABAE /* dxKernel.cikernel */ = {isa = PBXFileReference; explicitFileType = sourcecode.glsl; fileEncoding = 4; name = dxKernel.cikernel; path = dx/dxKernel.cikernel; sourceTree = "<group>"; };
+		DCAC1C1C1B75F0E6000BABAE /* Magnitude.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Magnitude.h; path = Magnitude/Magnitude.h; sourceTree = "<group>"; };
+		DCAC1C1D1B75F0E6000BABAE /* Magnitude.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Magnitude.m; path = Magnitude/Magnitude.m; sourceTree = "<group>"; };
+		DCAC1C1F1B75F129000BABAE /* MagnitudeKernel.cikernel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = MagnitudeKernel.cikernel; path = Magnitude/MagnitudeKernel.cikernel; sourceTree = "<group>"; };
+		DCAC1C211B75F1C3000BABAE /* EdgeGradient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EdgeGradient.h; path = "Custom Core Image Filters/Gradient ƒ/EdgeGradient.h"; sourceTree = "<group>"; };
+		DCAC1C221B75F1C3000BABAE /* EdgeGradient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EdgeGradient.m; path = "Custom Core Image Filters/Gradient ƒ/EdgeGradient.m"; sourceTree = "<group>"; };
+		DCAE7EB61B48B34E003CB94A /* GlobalContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalContext.h; sourceTree = "<group>"; };
+		DCAE7EB71B48B34E003CB94A /* GlobalContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlobalContext.m; sourceTree = "<group>"; };
+		DCB77E951B76056400F027C0 /* EdgeGradientKernel.cikernel */ = {isa = PBXFileReference; explicitFileType = sourcecode.glsl; fileEncoding = 4; name = EdgeGradientKernel.cikernel; path = "Custom Core Image Filters/Gradient ƒ/EdgeGradientKernel.cikernel"; sourceTree = "<group>"; };
+		DCB9822C1B5AA3F400154014 /* View.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = View.xib; sourceTree = "<group>"; };
+		DCB9822E1B5AA66400154014 /* View.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = View.h; sourceTree = "<group>"; };
+		DCB9822F1B5AA66400154014 /* View.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = View.m; sourceTree = "<group>"; };
+		DCCC8CC51B59B8E700FAFFB6 /* StretchContrastAverage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StretchContrastAverage.h; path = "Contrast Stretch (Average)/StretchContrastAverage.h"; sourceTree = "<group>"; };
+		DCCC8CC61B59B8E700FAFFB6 /* StretchContrastAverage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StretchContrastAverage.m; path = "Contrast Stretch (Average)/StretchContrastAverage.m"; sourceTree = "<group>"; };
+		DCCC8CC81B59B9AE00FAFFB6 /* StretchContrastAverageKernel.cikernel */ = {isa = PBXFileReference; explicitFileType = sourcecode.glsl; fileEncoding = 4; name = StretchContrastAverageKernel.cikernel; path = "Contrast Stretch (Average)/StretchContrastAverageKernel.cikernel"; sourceTree = "<group>"; };
+		DCCF26F01B41C88500F58286 /* InputLevelsKernel.cikernel */ = {isa = PBXFileReference; explicitFileType = sourcecode.glsl; fileEncoding = 4; name = InputLevelsKernel.cikernel; path = "Levels (Input)/InputLevelsKernel.cikernel"; sourceTree = "<group>"; };
+		DCCF26F21B41C8A000F58286 /* LevelsInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LevelsInput.h; path = "Levels (Input)/LevelsInput.h"; sourceTree = "<group>"; };
+		DCCF26F31B41C8A000F58286 /* LevelsInput.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LevelsInput.m; path = "Levels (Input)/LevelsInput.m"; sourceTree = "<group>"; };
+		DCCF26F51B41DAA900F58286 /* LevelsOutput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LevelsOutput.h; path = "Levels (Output)/LevelsOutput.h"; sourceTree = "<group>"; };
+		DCCF26F61B41DAA900F58286 /* LevelsOutput.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LevelsOutput.m; path = "Levels (Output)/LevelsOutput.m"; sourceTree = "<group>"; };
+		DCCF26F81B41DAC600F58286 /* OutputLevelsKernel.cikernel */ = {isa = PBXFileReference; explicitFileType = sourcecode.glsl; fileEncoding = 4; name = OutputLevelsKernel.cikernel; path = "Levels (Output)/OutputLevelsKernel.cikernel"; sourceTree = "<group>"; };
+		DCCF27061B42636F00F58286 /* MedianUnsharp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MedianUnsharp.h; path = "Median Unsharp/MedianUnsharp.h"; sourceTree = "<group>"; };
+		DCCF27071B42636F00F58286 /* MedianUnsharp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MedianUnsharp.m; path = "Median Unsharp/MedianUnsharp.m"; sourceTree = "<group>"; };
+		DCCF27091B42637700F58286 /* MedianUnsharpKernel.cikernel */ = {isa = PBXFileReference; explicitFileType = sourcecode.glsl; fileEncoding = 4; path = MedianUnsharpKernel.cikernel; sourceTree = "<group>"; };
+		DCCF28661B4267D600F58286 /* UIImage-Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage-Utils.m"; path = "vImage Operations/UIImage-Utils.m"; sourceTree = "<group>"; };
+		DCCF28671B4267D600F58286 /* UIImage-vImage.m */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.objc; fileEncoding = 4; name = "UIImage-vImage.m"; path = "vImage Operations/UIImage-vImage.m"; sourceTree = "<group>"; };
+		DCCF28681B4267D600F58286 /* UIImage-vImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage-vImage.h"; path = "vImage Operations/UIImage-vImage.h"; sourceTree = "<group>"; };
+		DCCF28691B4267D600F58286 /* UIImage-Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage-Utils.h"; path = "vImage Operations/UIImage-Utils.h"; sourceTree = "<group>"; };
 		DCD0C8801B39599C0061E88B /* Chroma.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chroma.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCD0C8841B39599C0061E88B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DCD0C8851B39599C0061E88B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -40,6 +291,151 @@
 		DCD0C8991B39599C0061E88B /* ChromaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChromaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCD0C89E1B39599C0061E88B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DCD0C89F1B39599C0061E88B /* ChromaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChromaTests.m; sourceTree = "<group>"; };
+		DCD0C8AD1B3959BE0061E88B /* Chroma Photo Editing Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Chroma Photo Editing Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DCD0C8AF1B3959BE0061E88B /* PhotosUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PhotosUI.framework; path = System/Library/Frameworks/PhotosUI.framework; sourceTree = SDKROOT; };
+		DCD0C8B11B3959BE0061E88B /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
+		DCD0C8B51B3959BE0061E88B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DCD0C8B61B3959BE0061E88B /* PhotoEditingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoEditingViewController.h; sourceTree = "<group>"; };
+		DCD0C8B71B3959BE0061E88B /* PhotoEditingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotoEditingViewController.m; sourceTree = "<group>"; wrapsLines = 0; };
+		DCD0C9F01B395B9D0061E88B /* AAPLAVReaderWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAPLAVReaderWriter.h; sourceTree = "<group>"; };
+		DCD0C9F11B395B9D0061E88B /* AAPLAVReaderWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = AAPLAVReaderWriter.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		DCD0C9F31B395C510061E88B /* MainInterface.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
+		DCD0C9F91B3961AF0061E88B /* AbsoluteDeviation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbsoluteDeviation.h; sourceTree = "<group>"; };
+		DCD0C9FA1B3961AF0061E88B /* AbsoluteDeviation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AbsoluteDeviation.m; sourceTree = "<group>"; };
+		DCD0C9FB1B3961AF0061E88B /* AbsoluteDeviationKernel.cikernel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AbsoluteDeviationKernel.cikernel; sourceTree = "<group>"; };
+		DCD0C9FD1B3961AF0061E88B /* AMBE.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMBE.h; sourceTree = "<group>"; };
+		DCD0C9FE1B3961AF0061E88B /* AMBE.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = AMBE.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		DCD0CA001B3961AF0061E88B /* Equalize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Equalize.h; sourceTree = "<group>"; };
+		DCD0CA011B3961AF0061E88B /* Equalize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Equalize.m; sourceTree = "<group>"; };
+		DCD0CA021B3961AF0061E88B /* EqualizeKernel.cikernel */ = {isa = PBXFileReference; explicitFileType = sourcecode.glsl; fileEncoding = 4; path = EqualizeKernel.cikernel; sourceTree = "<group>"; };
+		DCD0CA041B3961AF0061E88B /* BlackTophat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlackTophat.h; sourceTree = "<group>"; };
+		DCD0CA051B3961AF0061E88B /* BlackTophat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlackTophat.m; sourceTree = "<group>"; };
+		DCD0CA0A1B3961AF0061E88B /* CentralDifference.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CentralDifference.h; sourceTree = "<group>"; };
+		DCD0CA0B1B3961AF0061E88B /* CentralDifference.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CentralDifference.m; sourceTree = "<group>"; };
+		DCD0CA0C1B3961AF0061E88B /* CentralDifferenceKernel.cikernel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CentralDifferenceKernel.cikernel; sourceTree = "<group>"; };
+		DCD0CA0E1B3961AF0061E88B /* Chroma.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Chroma.h; sourceTree = "<group>"; };
+		DCD0CA0F1B3961AF0061E88B /* Chroma.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = Chroma.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		DCD0CA101B3961AF0061E88B /* ChromaKernel.cikernel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ChromaKernel.cikernel; sourceTree = "<group>"; };
+		DCD0CA151B3961AF0061E88B /* ContrastStretch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContrastStretch.h; sourceTree = "<group>"; };
+		DCD0CA161B3961AF0061E88B /* ContrastStretch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContrastStretch.m; sourceTree = "<group>"; };
+		DCD0CA171B3961AF0061E88B /* ContrastStretchKernel.cikernel */ = {isa = PBXFileReference; explicitFileType = sourcecode.glsl; fileEncoding = 4; path = ContrastStretchKernel.cikernel; sourceTree = "<group>"; };
+		DCD0CA191B3961AF0061E88B /* CV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CV.h; sourceTree = "<group>"; };
+		DCD0CA1A1B3961AF0061E88B /* CV.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CV.m; sourceTree = "<group>"; };
+		DCD0CA1B1B3961AF0061E88B /* CVKernel.cikernel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CVKernel.cikernel; sourceTree = "<group>"; };
+		DCD0CA1D1B3961AF0061E88B /* Dilate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Dilate.h; sourceTree = "<group>"; };
+		DCD0CA1E1B3961AF0061E88B /* Dilate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Dilate.m; sourceTree = "<group>"; };
+		DCD0CA1F1B3961AF0061E88B /* DilateKernel.cikernel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = DilateKernel.cikernel; sourceTree = "<group>"; };
+		DCD0CA211B3961AF0061E88B /* Dissimilarity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Dissimilarity.h; sourceTree = "<group>"; };
+		DCD0CA221B3961AF0061E88B /* Dissimilarity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Dissimilarity.m; sourceTree = "<group>"; wrapsLines = 0; };
+		DCD0CA231B3961AF0061E88B /* DissimilarityKernel.cikernel */ = {isa = PBXFileReference; explicitFileType = sourcecode.glsl; fileEncoding = 4; path = DissimilarityKernel.cikernel; sourceTree = "<group>"; };
+		DCD0CA251B3961AF0061E88B /* Erode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Erode.h; sourceTree = "<group>"; };
+		DCD0CA261B3961AF0061E88B /* Erode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Erode.m; sourceTree = "<group>"; };
+		DCD0CA271B3961AF0061E88B /* ErodeKernel.cikernel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ErodeKernel.cikernel; sourceTree = "<group>"; };
+		DCD0CA291B3961AF0061E88B /* OffsetDilationKernel.cikernel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OffsetDilationKernel.cikernel; sourceTree = "<group>"; };
+		DCD0CA2A1B3961AF0061E88B /* OffsetErosionKernel.cikernel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OffsetErosionKernel.cikernel; sourceTree = "<group>"; };
+		DCD0CA2C1B3961AF0061E88B /* ExposureGamma.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExposureGamma.h; sourceTree = "<group>"; };
+		DCD0CA2D1B3961AF0061E88B /* ExposureGamma.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExposureGamma.m; sourceTree = "<group>"; };
+		DCD0CA2E1B3961AF0061E88B /* ExposureGammaKernel.cikernel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ExposureGammaKernel.cikernel; sourceTree = "<group>"; };
+		DCD0CA301B3961AF0061E88B /* FASTCornerDetection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FASTCornerDetection.h; sourceTree = "<group>"; };
+		DCD0CA311B3961AF0061E88B /* FASTCornerDetection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FASTCornerDetection.m; sourceTree = "<group>"; };
+		DCD0CA321B3961AF0061E88B /* FASTCornerDetectionKernel.cikernel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FASTCornerDetectionKernel.cikernel; sourceTree = "<group>"; };
+		DCD0CA331B3961AF0061E88B /* Filters.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Filters.plist; path = "Custom Core Image Filters/Filters.plist"; sourceTree = "<group>"; };
+		DCD0CA351B3961AF0061E88B /* GlobalStandardDeviation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalStandardDeviation.h; sourceTree = "<group>"; };
+		DCD0CA361B3961AF0061E88B /* GlobalStandardDeviation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlobalStandardDeviation.m; sourceTree = "<group>"; };
+		DCD0CA371B3961AF0061E88B /* GlobalStandardDeviationKernel.cikernel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GlobalStandardDeviationKernel.cikernel; sourceTree = "<group>"; };
+		DCD0CA391B3961AF0061E88B /* Gradient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Gradient.h; sourceTree = "<group>"; };
+		DCD0CA3A1B3961AF0061E88B /* Gradient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Gradient.m; sourceTree = "<group>"; };
+		DCD0CA3C1B3961AF0061E88B /* BushCurve.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BushCurve.h; sourceTree = "<group>"; };
+		DCD0CA3D1B3961AF0061E88B /* BushCurve.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BushCurve.m; sourceTree = "<group>"; wrapsLines = 0; };
+		DCD0CA3E1B3961AF0061E88B /* BushCurveKernel.cikernel */ = {isa = PBXFileReference; explicitFileType = sourcecode.glsl; fileEncoding = 4; path = BushCurveKernel.cikernel; sourceTree = "<group>"; };
+		DCD0CA401B3961AF0061E88B /* LaplacianConvolution.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LaplacianConvolution.h; sourceTree = "<group>"; };
+		DCD0CA411B3961AF0061E88B /* LaplacianConvolution.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LaplacianConvolution.m; sourceTree = "<group>"; };
+		DCD0CA431B3961AF0061E88B /* LocalContrastStretch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalContrastStretch.h; sourceTree = "<group>"; };
+		DCD0CA441B3961AF0061E88B /* LocalContrastStretch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalContrastStretch.m; sourceTree = "<group>"; };
+		DCD0CA451B3961AF0061E88B /* LocalContrastStretchKernel.cikernel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LocalContrastStretchKernel.cikernel; sourceTree = "<group>"; };
+		DCD0CA471B3961AF0061E88B /* Maximum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Maximum.h; sourceTree = "<group>"; };
+		DCD0CA481B3961AF0061E88B /* Maximum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Maximum.m; sourceTree = "<group>"; };
+		DCD0CA4A1B3961AF0061E88B /* MeanMinMax.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeanMinMax.h; sourceTree = "<group>"; };
+		DCD0CA4B1B3961AF0061E88B /* MeanMinMax.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeanMinMax.m; sourceTree = "<group>"; };
+		DCD0CA4C1B3961AF0061E88B /* MeanMinMaxKernel.cikernel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MeanMinMaxKernel.cikernel; sourceTree = "<group>"; };
+		DCD0CA4E1B3961AF0061E88B /* MInimum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MInimum.h; sourceTree = "<group>"; };
+		DCD0CA4F1B3961AF0061E88B /* MInimum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MInimum.m; sourceTree = "<group>"; };
+		DCD0CA511B3961AF0061E88B /* absoluteDifferenceKernel.cikernel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = absoluteDifferenceKernel.cikernel; sourceTree = "<group>"; };
+		DCD0CA541B3961AF0061E88B /* Edge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Edge.h; path = "Morphological Edge-Corner Detection/Edge.h"; sourceTree = "<group>"; };
+		DCD0CA551B3961AF0061E88B /* Edge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Edge.m; path = "Morphological Edge-Corner Detection/Edge.m"; sourceTree = "<group>"; };
+		DCD0CA571B3961AF0061E88B /* EdgeIn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EdgeIn.h; sourceTree = "<group>"; };
+		DCD0CA581B3961AF0061E88B /* EdgeIn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EdgeIn.m; sourceTree = "<group>"; };
+		DCD0CA5A1B3961AF0061E88B /* EdgeOut.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EdgeOut.h; sourceTree = "<group>"; };
+		DCD0CA5B1B3961AF0061E88B /* EdgeOut.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EdgeOut.m; sourceTree = "<group>"; };
+		DCD0CA5C1B3961AF0061E88B /* MorphologicalEdgeCornerDetection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MorphologicalEdgeCornerDetection.h; sourceTree = "<group>"; };
+		DCD0CA5D1B3961AF0061E88B /* MorphologicalEdgeCornerDetection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MorphologicalEdgeCornerDetection.m; sourceTree = "<group>"; wrapsLines = 0; };
+		DCD0CA611B3961AF0061E88B /* Open.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Open.h; sourceTree = "<group>"; };
+		DCD0CA621B3961AF0061E88B /* Open.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Open.m; sourceTree = "<group>"; };
+		DCD0CA641B3961AF0061E88B /* OverlayHistogram.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OverlayHistogram.h; sourceTree = "<group>"; };
+		DCD0CA651B3961AF0061E88B /* OverlayHistogram.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OverlayHistogram.m; sourceTree = "<group>"; wrapsLines = 0; };
+		DCD0CA661B3961AF0061E88B /* OverlayHistogramKernel.cikernel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OverlayHistogramKernel.cikernel; sourceTree = "<group>"; };
+		DCD0CA681B3961AF0061E88B /* PixelDifference.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PixelDifference.h; sourceTree = "<group>"; };
+		DCD0CA691B3961AF0061E88B /* PixelDifference.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PixelDifference.m; sourceTree = "<group>"; };
+		DCD0CA6C1B3961AF0061E88B /* PrewittConvolution.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrewittConvolution.h; sourceTree = "<group>"; };
+		DCD0CA6D1B3961AF0061E88B /* PrewittConvolution.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrewittConvolution.m; sourceTree = "<group>"; };
+		DCD0CA6F1B3961AF0061E88B /* PrewittKernel.cikernel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PrewittKernel.cikernel; sourceTree = "<group>"; };
+		DCD0CA701B3961AF0061E88B /* PrewittKernel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrewittKernel.h; sourceTree = "<group>"; };
+		DCD0CA711B3961AF0061E88B /* PrewittKernel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrewittKernel.m; sourceTree = "<group>"; };
+		DCD0CA731B3961AF0061E88B /* RMS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMS.h; sourceTree = "<group>"; };
+		DCD0CA741B3961AF0061E88B /* RMS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMS.m; sourceTree = "<group>"; };
+		DCD0CA751B3961AF0061E88B /* RMSKernel.cikernel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = RMSKernel.cikernel; sourceTree = "<group>"; };
+		DCD0CA781B3961AF0061E88B /* RobertsConvolution.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RobertsConvolution.h; sourceTree = "<group>"; };
+		DCD0CA791B3961AF0061E88B /* RobertsConvolution.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RobertsConvolution.m; sourceTree = "<group>"; };
+		DCD0CA7B1B3961AF0061E88B /* RobertsKernel.cikernel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = RobertsKernel.cikernel; sourceTree = "<group>"; };
+		DCD0CA7C1B3961AF0061E88B /* RobertsKernel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RobertsKernel.h; sourceTree = "<group>"; };
+		DCD0CA7D1B3961AF0061E88B /* RobertsKernel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RobertsKernel.m; sourceTree = "<group>"; };
+		DCD0CA7F1B3961AF0061E88B /* RootMeanSquareError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootMeanSquareError.h; sourceTree = "<group>"; };
+		DCD0CA801B3961AF0061E88B /* RootMeanSquareError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootMeanSquareError.m; sourceTree = "<group>"; };
+		DCD0CA821B3961AF0061E88B /* Scharr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Scharr.h; sourceTree = "<group>"; };
+		DCD0CA831B3961AF0061E88B /* Scharr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Scharr.m; sourceTree = "<group>"; };
+		DCD0CA891B3961AF0061E88B /* SobelConvolution.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SobelConvolution.h; sourceTree = "<group>"; };
+		DCD0CA8A1B3961AF0061E88B /* SobelConvolution.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SobelConvolution.m; sourceTree = "<group>"; };
+		DCD0CA8B1B3961AF0061E88B /* SobelConvolutionHorizontal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SobelConvolutionHorizontal.h; sourceTree = "<group>"; };
+		DCD0CA8C1B3961AF0061E88B /* SobelConvolutionHorizontal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SobelConvolutionHorizontal.m; sourceTree = "<group>"; };
+		DCD0CA8D1B3961AF0061E88B /* SobelConvolutionKernel.cikernel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SobelConvolutionKernel.cikernel; sourceTree = "<group>"; };
+		DCD0CA8E1B3961AF0061E88B /* SobelConvolutionVertical.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SobelConvolutionVertical.h; sourceTree = "<group>"; };
+		DCD0CA8F1B3961AF0061E88B /* SobelConvolutionVertical.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SobelConvolutionVertical.m; sourceTree = "<group>"; };
+		DCD0CA911B3961AF0061E88B /* SobelYKernel.cikernel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SobelYKernel.cikernel; sourceTree = "<group>"; };
+		DCD0CA921B3961AF0061E88B /* SobelYKernel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SobelYKernel.h; sourceTree = "<group>"; };
+		DCD0CA931B3961AF0061E88B /* SobelYKernel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SobelYKernel.m; sourceTree = "<group>"; };
+		DCD0CA941B3961AF0061E88B /* SobelXKernel.cikernel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SobelXKernel.cikernel; sourceTree = "<group>"; };
+		DCD0CA951B3961AF0061E88B /* SobelXKernel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SobelXKernel.h; sourceTree = "<group>"; };
+		DCD0CA961B3961AF0061E88B /* SobelXKernel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SobelXKernel.m; sourceTree = "<group>"; };
+		DCD0CA981B3961AF0061E88B /* LocalStandardDeviation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalStandardDeviation.h; sourceTree = "<group>"; };
+		DCD0CA991B3961AF0061E88B /* LocalStandardDeviation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalStandardDeviation.m; sourceTree = "<group>"; };
+		DCD0CA9A1B3961AF0061E88B /* LocalStandardDeviationKernel.cikernel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LocalStandardDeviationKernel.cikernel; sourceTree = "<group>"; };
+		DCD0CA9C1B3961AF0061E88B /* WhiteTophat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WhiteTophat.h; sourceTree = "<group>"; };
+		DCD0CA9D1B3961AF0061E88B /* WhiteTophat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WhiteTophat.m; sourceTree = "<group>"; };
+		DCD0CA9F1B3961AF0061E88B /* Variance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Variance.h; sourceTree = "<group>"; };
+		DCD0CAA01B3961AF0061E88B /* Variance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Variance.m; sourceTree = "<group>"; };
+		DCD0CAA11B3961AF0061E88B /* VarianceKernel.cikernel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = VarianceKernel.cikernel; sourceTree = "<group>"; };
+		DCD0CAF01B3962CF0061E88B /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		DCD0CAF11B3962CF0061E88B /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		DCD0CAF21B3962CF0061E88B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		DCD206041B3B939A00F8EC9A /* dragonfly.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dragonfly.png; sourceTree = "<group>"; };
+		DCEF65EE1B3D875C00CED593 /* DilateCrossKernel.cikernel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = DilateCrossKernel.cikernel; path = "Dilate (Cross)/DilateCrossKernel.cikernel"; sourceTree = "<group>"; };
+		DCEF65F01B3D877A00CED593 /* DilateCross.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DilateCross.h; path = "Dilate (Cross)/DilateCross.h"; sourceTree = "<group>"; };
+		DCEF65F11B3D877A00CED593 /* DilateCross.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DilateCross.m; path = "Dilate (Cross)/DilateCross.m"; sourceTree = "<group>"; };
+		DCEF65F41B3D8AC200CED593 /* DilateX.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DilateX.h; path = "Dilate (X)/DilateX.h"; sourceTree = "<group>"; };
+		DCEF65F51B3D8AC200CED593 /* DilateX.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DilateX.m; path = "Dilate (X)/DilateX.m"; sourceTree = "<group>"; };
+		DCEF65F71B3D8AD800CED593 /* DilateXKernel.cikernel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = DilateXKernel.cikernel; sourceTree = "<group>"; };
+		DCEF65FA1B3D96B900CED593 /* DilateDiamondKernel.cikernel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = DilateDiamondKernel.cikernel; path = "DIlate (Diamond)/DilateDiamondKernel.cikernel"; sourceTree = "<group>"; };
+		DCEF65FC1B3D96F600CED593 /* DilateDiamond.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DilateDiamond.h; path = "DIlate (Diamond)/DilateDiamond.h"; sourceTree = "<group>"; };
+		DCEF65FD1B3D96F600CED593 /* DilateDiamond.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DilateDiamond.m; path = "DIlate (Diamond)/DilateDiamond.m"; sourceTree = "<group>"; };
+		DCEF66021B3D98C900CED593 /* ErodeDiamond.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ErodeDiamond.h; path = "Erode (Diamond)/ErodeDiamond.h"; sourceTree = "<group>"; };
+		DCEF66031B3D98C900CED593 /* ErodeDiamond.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ErodeDiamond.m; path = "Erode (Diamond)/ErodeDiamond.m"; sourceTree = "<group>"; };
+		DCEF66051B3D98DA00CED593 /* ErodeDiamondKernel.cikernel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ErodeDiamondKernel.cikernel; path = "Erode (Diamond)/ErodeDiamondKernel.cikernel"; sourceTree = "<group>"; };
+		DCEF66081B3D9A6F00CED593 /* ErodeX.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ErodeX.h; path = "Erode (X)/ErodeX.h"; sourceTree = "<group>"; };
+		DCEF66091B3D9A6F00CED593 /* ErodeX.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ErodeX.m; path = "Erode (X)/ErodeX.m"; sourceTree = "<group>"; };
+		DCEF660B1B3D9AF200CED593 /* ErodeXKernel.cikernel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ErodeXKernel.cikernel; path = "Erode (X)/ErodeXKernel.cikernel"; sourceTree = "<group>"; };
+		DCEF660E1B3D9C9F00CED593 /* ErodeCross.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ErodeCross.h; path = "Erode (Cross)/ErodeCross.h"; sourceTree = "<group>"; };
+		DCEF660F1B3D9C9F00CED593 /* ErodeCross.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ErodeCross.m; path = "Erode (Cross)/ErodeCross.m"; sourceTree = "<group>"; };
+		DCEF66111B3D9CB900CED593 /* ErodeCrossKernel.cikernel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ErodeCrossKernel.cikernel; path = "Erode (Cross)/ErodeCrossKernel.cikernel"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +443,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCD0CAF31B3962CF0061E88B /* Accelerate.framework in Frameworks */,
+				DCD0CAF41B3962CF0061E88B /* CoreImage.framework in Frameworks */,
+				DCD0CAF51B3962CF0061E88B /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -57,14 +456,313 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DCD0C8AA1B3959BE0061E88B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DCD0C8B01B3959BE0061E88B /* PhotosUI.framework in Frameworks */,
+				DCD0C8B21B3959BE0061E88B /* Photos.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DC1585251B46E1FD00C504A5 /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				DC1585261B46E22400C504A5 /* CustomConvolution.h */,
+				DC1585271B46E22400C504A5 /* CustomConvolution.m */,
+				DC05BB881B47C39A00378912 /* CustomConvolutionKernel.cikernel */,
+			);
+			name = Custom;
+			sourceTree = "<group>";
+		};
+		DC597C531B5325C2005A3B6E /* Gaussian Kernel */ = {
+			isa = PBXGroup;
+			children = (
+				DC597C541B5325F9005A3B6E /* GaussianKernel.h */,
+				DC597C551B5325F9005A3B6E /* GaussianKernel.m */,
+			);
+			name = "Gaussian Kernel";
+			sourceTree = "<group>";
+		};
+		DC7ADEFF1B4A17CD00985955 /* Local Adaptive Threshold */ = {
+			isa = PBXGroup;
+			children = (
+				DC7ADF001B4A17E800985955 /* LocalAdaptiveThreshold.h */,
+				DC7ADF011B4A17E800985955 /* LocalAdaptiveThreshold.m */,
+				DC7ADEFD1B4A07E900985955 /* LocalAdaptiveThresholdingKernel.cikernel */,
+			);
+			name = "Local Adaptive Threshold";
+			sourceTree = "<group>";
+		};
+		DC7B410B1B40EEE60061DD63 /* Directional Mean */ = {
+			isa = PBXGroup;
+			children = (
+				DC7B410E1B40EF3C0061DD63 /* DirectionalMean.h */,
+				DC7B410F1B40EF3C0061DD63 /* DirectionalMean.m */,
+				DC7B410C1B40EEFE0061DD63 /* DirectionalMeanKernel.cikernel */,
+			);
+			name = "Directional Mean";
+			sourceTree = "<group>";
+		};
+		DC8BC3671B4DE9D200440921 /* Chroma Unsharp */ = {
+			isa = PBXGroup;
+			children = (
+				DC8BC3681B4DE9ED00440921 /* ChromaUnsharp.h */,
+				DC8BC3691B4DE9ED00440921 /* ChromaUnsharp.m */,
+				DC8BC36B1B4DEA0700440921 /* ChromaUnsharpKernel.cikernel */,
+			);
+			name = "Chroma Unsharp";
+			sourceTree = "<group>";
+		};
+		DC8DE6261B4938B1003887FF /* Four-Directional MinMax */ = {
+			isa = PBXGroup;
+			children = (
+				DC8DE6271B49390D003887FF /* FourDirectionalMinMax.h */,
+				DC8DE6281B49390D003887FF /* FourDirectionalMinMax.m */,
+				DC8DE62A1B49392E003887FF /* FourDirectionalMinMaxKernel.cikernel */,
+			);
+			name = "Four-Directional MinMax";
+			sourceTree = "<group>";
+		};
+		DC939F271B3E08F700240EF1 /* Generalized Polarization Analysis */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Generalized Polarization Analysis";
+			sourceTree = "<group>";
+		};
+		DC9B8BE91B4AFDE400571863 /* Mean */ = {
+			isa = PBXGroup;
+			children = (
+				DC9B8BF01B4AFEB800571863 /* Mean.h */,
+				DC9B8BF11B4AFEB800571863 /* Mean.m */,
+				DC9B8BF31B4B0F6600571863 /* MeanKernel.cikernel */,
+			);
+			name = Mean;
+			sourceTree = "<group>";
+		};
+		DC9B8BEA1B4AFE0100571863 /* MaxMin */ = {
+			isa = PBXGroup;
+			children = (
+				DC9B8BF51B4B0FC900571863 /* MaxMin.h */,
+				DC9B8BF61B4B0FC900571863 /* MaxMin.m */,
+				DC9B8BF81B4B0FF400571863 /* MaxMinKernel.cikernel */,
+				DC8BC3651B4DDD3B00440921 /* FractalKernel.cikernel */,
+			);
+			name = MaxMin;
+			sourceTree = "<group>";
+		};
+		DC9B8BEB1B4AFE1700571863 /* Median */ = {
+			isa = PBXGroup;
+			children = (
+				DC9B8BFA1B4B105A00571863 /* Median.h */,
+				DC9B8BFB1B4B105A00571863 /* Median.m */,
+				DC9B8BFD1B4B107600571863 /* MedianKernel.cikernel */,
+			);
+			name = Median;
+			sourceTree = "<group>";
+		};
+		DC9B8BEC1B4AFE2D00571863 /* Mode */ = {
+			isa = PBXGroup;
+			children = (
+				DC9B8BFF1B4B10BD00571863 /* Mode.h */,
+				DC9B8C001B4B10BD00571863 /* Mode.m */,
+				DC9B8C021B4B10D900571863 /* ModeKernel.cikernel */,
+			);
+			name = Mode;
+			sourceTree = "<group>";
+		};
+		DC9B8BEE1B4AFE6700571863 /* Hybrid Median */ = {
+			isa = PBXGroup;
+			children = (
+				DC9B8C041B4B113700571863 /* HybridMedian.h */,
+				DC9B8C051B4B113700571863 /* HybridMedian.m */,
+				DC9B8C071B4B115700571863 /* HybridMedianKernel.cikernel */,
+			);
+			name = "Hybrid Median";
+			sourceTree = "<group>";
+		};
+		DC9B8BEF1B4AFE8100571863 /* Median Absolute Deviation */ = {
+			isa = PBXGroup;
+			children = (
+				DC9B8C091B4B149E00571863 /* MedianAbsoluteDeviation.h */,
+				DC9B8C0A1B4B149E00571863 /* MedianAbsoluteDeviation.m */,
+				DC9B8C0C1B4B14BB00571863 /* MedianAbsoluteDeviationKernel.cikernel */,
+			);
+			name = "Median Absolute Deviation";
+			sourceTree = "<group>";
+		};
+		DC9B8C0E1B4C862300571863 /* Shifted Data Variance */ = {
+			isa = PBXGroup;
+			children = (
+				DC9B8C0F1B4C864200571863 /* ShiftedDataVariance.h */,
+				DC9B8C101B4C864200571863 /* ShiftedDataVariance.m */,
+				DC9B8C121B4C865F00571863 /* ShiftedDataVarianceKernel.cikernel */,
+			);
+			name = "Shifted Data Variance";
+			sourceTree = "<group>";
+		};
+		DCA105B81B3A03E4007940C7 /* Edge */ = {
+			isa = PBXGroup;
+			children = (
+				DCD0CA541B3961AF0061E88B /* Edge.h */,
+				DCD0CA551B3961AF0061E88B /* Edge.m */,
+			);
+			name = Edge;
+			sourceTree = "<group>";
+		};
+		DCA105B91B3A538B007940C7 /* Sobel X Kernel */ = {
+			isa = PBXGroup;
+			children = (
+				DCD0CA951B3961AF0061E88B /* SobelXKernel.h */,
+				DCD0CA961B3961AF0061E88B /* SobelXKernel.m */,
+				DCD0CA941B3961AF0061E88B /* SobelXKernel.cikernel */,
+			);
+			name = "Sobel X Kernel";
+			sourceTree = "<group>";
+		};
+		DCA105BA1B3A60C1007940C7 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				DCD206041B3B939A00F8EC9A /* dragonfly.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		DCA93A091B55CD500094600E /* Overlay Curves */ = {
+			isa = PBXGroup;
+			children = (
+				DCA93A0A1B55CD710094600E /* OverlayCurves.h */,
+				DCA93A0B1B55CD710094600E /* OverlayCurves.m */,
+				DCA93A0F1B55CD9C0094600E /* OverlayCurvesKernel.cikernel */,
+			);
+			name = "Overlay Curves";
+			path = "H(S-V)";
+			sourceTree = "<group>";
+		};
+		DCAC1C0C1B75D741000BABAE /* Edge Detection */ = {
+			isa = PBXGroup;
+			children = (
+				DCAC1C1B1B75F0A8000BABAE /* Magnitude */,
+				DCAC1C1A1B75F093000BABAE /* Gradient */,
+				DCAC1C121B75DF22000BABAE /* dy */,
+				DCAC1C111B75DF0C000BABAE /* dx */,
+			);
+			name = "Edge Detection";
+			sourceTree = "<group>";
+		};
+		DCAC1C111B75DF0C000BABAE /* dx */ = {
+			isa = PBXGroup;
+			children = (
+				DCAC1C0D1B75D76C000BABAE /* dx.h */,
+				DCAC1C0E1B75D76C000BABAE /* dx.m */,
+				DCAC1C181B75E19E000BABAE /* dxKernel.cikernel */,
+			);
+			name = dx;
+			sourceTree = "<group>";
+		};
+		DCAC1C121B75DF22000BABAE /* dy */ = {
+			isa = PBXGroup;
+			children = (
+				DCAC1C131B75DF7B000BABAE /* dy.h */,
+				DCAC1C141B75DF9E000BABAE /* dy.m */,
+				DCAC1C161B75E0D8000BABAE /* dyKernel.cikernel */,
+			);
+			name = dy;
+			sourceTree = "<group>";
+		};
+		DCAC1C1A1B75F093000BABAE /* Gradient */ = {
+			isa = PBXGroup;
+			children = (
+				DCAC1C211B75F1C3000BABAE /* EdgeGradient.h */,
+				DCAC1C221B75F1C3000BABAE /* EdgeGradient.m */,
+				DCB77E951B76056400F027C0 /* EdgeGradientKernel.cikernel */,
+			);
+			name = Gradient;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		DCAC1C1B1B75F0A8000BABAE /* Magnitude */ = {
+			isa = PBXGroup;
+			children = (
+				DCAC1C1C1B75F0E6000BABAE /* Magnitude.h */,
+				DCAC1C1D1B75F0E6000BABAE /* Magnitude.m */,
+				DCAC1C1F1B75F129000BABAE /* MagnitudeKernel.cikernel */,
+			);
+			name = Magnitude;
+			sourceTree = "<group>";
+		};
+		DCCC8CC41B59B89200FAFFB6 /* Contrast Stretch (Average) */ = {
+			isa = PBXGroup;
+			children = (
+				DCCC8CC51B59B8E700FAFFB6 /* StretchContrastAverage.h */,
+				DCCC8CC61B59B8E700FAFFB6 /* StretchContrastAverage.m */,
+				DCCC8CC81B59B9AE00FAFFB6 /* StretchContrastAverageKernel.cikernel */,
+			);
+			name = "Contrast Stretch (Average)";
+			sourceTree = "<group>";
+		};
+		DCCF26ED1B41C7F800F58286 /* Levels */ = {
+			isa = PBXGroup;
+			children = (
+				DCCF26EE1B41C80C00F58286 /* Levels (Input) */,
+				DCCF26EF1B41C81900F58286 /* Levels (Output) */,
+			);
+			name = Levels;
+			sourceTree = "<group>";
+		};
+		DCCF26EE1B41C80C00F58286 /* Levels (Input) */ = {
+			isa = PBXGroup;
+			children = (
+				DCCF26F21B41C8A000F58286 /* LevelsInput.h */,
+				DCCF26F31B41C8A000F58286 /* LevelsInput.m */,
+				DCCF26F01B41C88500F58286 /* InputLevelsKernel.cikernel */,
+			);
+			name = "Levels (Input)";
+			sourceTree = "<group>";
+		};
+		DCCF26EF1B41C81900F58286 /* Levels (Output) */ = {
+			isa = PBXGroup;
+			children = (
+				DCCF26F51B41DAA900F58286 /* LevelsOutput.h */,
+				DCCF26F61B41DAA900F58286 /* LevelsOutput.m */,
+				DCCF26F81B41DAC600F58286 /* OutputLevelsKernel.cikernel */,
+			);
+			name = "Levels (Output)";
+			sourceTree = "<group>";
+		};
+		DCCF26FA1B4222AA00F58286 /* vImage Operations */ = {
+			isa = PBXGroup;
+			children = (
+				DCCF28691B4267D600F58286 /* UIImage-Utils.h */,
+				DCCF28661B4267D600F58286 /* UIImage-Utils.m */,
+				DCCF28681B4267D600F58286 /* UIImage-vImage.h */,
+				DCCF28671B4267D600F58286 /* UIImage-vImage.m */,
+			);
+			name = "vImage Operations";
+			path = ..;
+			sourceTree = "<group>";
+		};
+		DCCF27051B42634F00F58286 /* Median Unsharp */ = {
+			isa = PBXGroup;
+			children = (
+				DCCF27061B42636F00F58286 /* MedianUnsharp.h */,
+				DCCF27071B42636F00F58286 /* MedianUnsharp.m */,
+				DCCF27091B42637700F58286 /* MedianUnsharpKernel.cikernel */,
+			);
+			name = "Median Unsharp";
+			sourceTree = "<group>";
+		};
 		DCD0C8771B39599C0061E88B = {
 			isa = PBXGroup;
 			children = (
 				DCD0C8821B39599C0061E88B /* Chroma */,
+				DCD0C8B31B3959BE0061E88B /* Chroma Photo Editing Extension */,
 				DCD0C89C1B39599C0061E88B /* ChromaTests */,
+				DCD0C8AE1B3959BE0061E88B /* Frameworks */,
 				DCD0C8811B39599C0061E88B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -74,6 +772,7 @@
 			children = (
 				DCD0C8801B39599C0061E88B /* Chroma.app */,
 				DCD0C8991B39599C0061E88B /* ChromaTests.xctest */,
+				DCD0C8AD1B3959BE0061E88B /* Chroma Photo Editing Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -96,6 +795,7 @@
 		DCD0C8831B39599C0061E88B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				DCA105B61B3A01CB007940C7 /* IMG_0751.PNG */,
 				DCD0C8841B39599C0061E88B /* Info.plist */,
 				DCD0C8851B39599C0061E88B /* main.m */,
 			);
@@ -119,6 +819,667 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		DCD0C8AE1B3959BE0061E88B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DC939F2A1B3E3CD800240EF1 /* UIKit.framework */,
+				DC939F281B3E3C0000240EF1 /* AVFoundation.framework */,
+				DCD0CAF01B3962CF0061E88B /* Accelerate.framework */,
+				DCD0CAF11B3962CF0061E88B /* CoreImage.framework */,
+				DCD0CAF21B3962CF0061E88B /* Foundation.framework */,
+				DCD0C8AF1B3959BE0061E88B /* PhotosUI.framework */,
+				DCD0C8B11B3959BE0061E88B /* Photos.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DCD0C8B31B3959BE0061E88B /* Chroma Photo Editing Extension */ = {
+			isa = PBXGroup;
+			children = (
+				DC9C60081B48E2C40077B60D /* AppSingleton.h */,
+				DC9C60091B48E2C40077B60D /* AppSingleton.m */,
+				DCD0C8B61B3959BE0061E88B /* PhotoEditingViewController.h */,
+				DCD0C8B71B3959BE0061E88B /* PhotoEditingViewController.m */,
+				DCB9822C1B5AA3F400154014 /* View.xib */,
+				DCB9822E1B5AA66400154014 /* View.h */,
+				DCB9822F1B5AA66400154014 /* View.m */,
+				DCD0C9F31B395C510061E88B /* MainInterface.storyboard */,
+				DCD0C9F71B3961AF0061E88B /* Custom Core Image Filters */,
+				DCD0C9F01B395B9D0061E88B /* AAPLAVReaderWriter.h */,
+				DCD0C9F11B395B9D0061E88B /* AAPLAVReaderWriter.m */,
+				DCD0C8B41B3959BE0061E88B /* Supporting Files */,
+				DC90E49B1B535B8D007BCD99 /* GlobalCIImage.h */,
+				DC90E49C1B535B8D007BCD99 /* GlobalCIImage.m */,
+				DCAE7EB61B48B34E003CB94A /* GlobalContext.h */,
+				DCAE7EB71B48B34E003CB94A /* GlobalContext.m */,
+			);
+			path = "Chroma Photo Editing Extension";
+			sourceTree = "<group>";
+		};
+		DCD0C8B41B3959BE0061E88B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DCA105BA1B3A60C1007940C7 /* Images */,
+				DCD0CA331B3961AF0061E88B /* Filters.plist */,
+				DCD0C8B51B3959BE0061E88B /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DCD0C9F71B3961AF0061E88B /* Custom Core Image Filters */ = {
+			isa = PBXGroup;
+			children = (
+				DCAC1C0C1B75D741000BABAE /* Edge Detection */,
+				DCCF26FA1B4222AA00F58286 /* vImage Operations */,
+				DCEF65EA1B3D30EB00CED593 /* Convolutions */,
+				DCEF65E91B3D30D300CED593 /* Statistical */,
+				DCEF65E81B3D306C00CED593 /* Morphological Operators */,
+				DCEF65EB1B3D311000CED593 /* Color */,
+				DCEF65EC1B3D311B00CED593 /* Band-pass */,
+			);
+			path = "Custom Core Image Filters";
+			sourceTree = "<group>";
+		};
+		DCD0C9F81B3961AF0061E88B /* Absolute Deviation */ = {
+			isa = PBXGroup;
+			children = (
+				DCD0C9F91B3961AF0061E88B /* AbsoluteDeviation.h */,
+				DCD0C9FA1B3961AF0061E88B /* AbsoluteDeviation.m */,
+				DCD0C9FB1B3961AF0061E88B /* AbsoluteDeviationKernel.cikernel */,
+			);
+			path = "Absolute Deviation";
+			sourceTree = "<group>";
+		};
+		DCD0C9FC1B3961AF0061E88B /* AMBE */ = {
+			isa = PBXGroup;
+			children = (
+				DCD0C9FD1B3961AF0061E88B /* AMBE.h */,
+				DCD0C9FE1B3961AF0061E88B /* AMBE.m */,
+			);
+			path = AMBE;
+			sourceTree = "<group>";
+		};
+		DCD0C9FF1B3961AF0061E88B /* Equalize */ = {
+			isa = PBXGroup;
+			children = (
+				DCD0CA001B3961AF0061E88B /* Equalize.h */,
+				DCD0CA011B3961AF0061E88B /* Equalize.m */,
+				DC66E98F1B40FF67009225AE /* EqualizeHelper.h */,
+				DC66E9901B40FF67009225AE /* EqualizeHelper.m */,
+				DCD0CA021B3961AF0061E88B /* EqualizeKernel.cikernel */,
+			);
+			name = Equalize;
+			path = Bilateral;
+			sourceTree = "<group>";
+		};
+		DCD0CA031B3961AF0061E88B /* Black Tophat */ = {
+			isa = PBXGroup;
+			children = (
+				DCD0CA041B3961AF0061E88B /* BlackTophat.h */,
+				DCD0CA051B3961AF0061E88B /* BlackTophat.m */,
+			);
+			path = "Black Tophat";
+			sourceTree = "<group>";
+		};
+		DCD0CA091B3961AF0061E88B /* Central Difference */ = {
+			isa = PBXGroup;
+			children = (
+				DCD0CA0A1B3961AF0061E88B /* CentralDifference.h */,
+				DCD0CA0B1B3961AF0061E88B /* CentralDifference.m */,
+				DCD0CA0C1B3961AF0061E88B /* CentralDifferenceKernel.cikernel */,
+			);
+			path = "Central Difference";
+			sourceTree = "<group>";
+		};
+		DCD0CA0D1B3961AF0061E88B /* Chroma */ = {
+			isa = PBXGroup;
+			children = (
+				DCD0CA0E1B3961AF0061E88B /* Chroma.h */,
+				DCD0CA0F1B3961AF0061E88B /* Chroma.m */,
+				DCD0CA101B3961AF0061E88B /* ChromaKernel.cikernel */,
+			);
+			path = Chroma;
+			sourceTree = "<group>";
+		};
+		DCD0CA141B3961AF0061E88B /* Contrast Stretch (Min/Max) */ = {
+			isa = PBXGroup;
+			children = (
+				DCD0CA151B3961AF0061E88B /* ContrastStretch.h */,
+				DCD0CA161B3961AF0061E88B /* ContrastStretch.m */,
+				DCD0CA171B3961AF0061E88B /* ContrastStretchKernel.cikernel */,
+			);
+			name = "Contrast Stretch (Min/Max)";
+			path = "Contrast Stretch";
+			sourceTree = "<group>";
+		};
+		DCD0CA181B3961AF0061E88B /* CV */ = {
+			isa = PBXGroup;
+			children = (
+				DCD0CA191B3961AF0061E88B /* CV.h */,
+				DCD0CA1A1B3961AF0061E88B /* CV.m */,
+				DCD0CA1B1B3961AF0061E88B /* CVKernel.cikernel */,
+			);
+			path = CV;
+			sourceTree = "<group>";
+		};
+		DCD0CA1C1B3961AF0061E88B /* Dilate */ = {
+			isa = PBXGroup;
+			children = (
+				DCD0CA1D1B3961AF0061E88B /* Dilate.h */,
+				DCD0CA1E1B3961AF0061E88B /* Dilate.m */,
+				DCD0CA1F1B3961AF0061E88B /* DilateKernel.cikernel */,
+			);
+			path = Dilate;
+			sourceTree = "<group>";
+		};
+		DCD0CA201B3961AF0061E88B /* Dissimilarity */ = {
+			isa = PBXGroup;
+			children = (
+				DCD0CA211B3961AF0061E88B /* Dissimilarity.h */,
+				DCD0CA221B3961AF0061E88B /* Dissimilarity.m */,
+				DCD0CA231B3961AF0061E88B /* DissimilarityKernel.cikernel */,
+			);
+			path = Dissimilarity;
+			sourceTree = "<group>";
+		};
+		DCD0CA241B3961AF0061E88B /* Erode */ = {
+			isa = PBXGroup;
+			children = (
+				DCD0CA251B3961AF0061E88B /* Erode.h */,
+				DCD0CA261B3961AF0061E88B /* Erode.m */,
+				DCD0CA271B3961AF0061E88B /* ErodeKernel.cikernel */,
+			);
+			path = Erode;
+			sourceTree = "<group>";
+		};
+		DCD0CA281B3961AF0061E88B /* Erosion & Dilation (Offset) */ = {
+			isa = PBXGroup;
+			children = (
+				DCD0CA291B3961AF0061E88B /* OffsetDilationKernel.cikernel */,
+				DCD0CA2A1B3961AF0061E88B /* OffsetErosionKernel.cikernel */,
+			);
+			name = "Erosion & Dilation (Offset)";
+			path = "Erosion (Offset)";
+			sourceTree = "<group>";
+		};
+		DCD0CA2B1B3961AF0061E88B /* Exposure Gamma */ = {
+			isa = PBXGroup;
+			children = (
+				DCD0CA2C1B3961AF0061E88B /* ExposureGamma.h */,
+				DCD0CA2D1B3961AF0061E88B /* ExposureGamma.m */,
+				DCD0CA2E1B3961AF0061E88B /* ExposureGammaKernel.cikernel */,
+			);
+			path = "Exposure Gamma";
+			sourceTree = "<group>";
+		};
+		DCD0CA2F1B3961AF0061E88B /* FAST Corner Detection */ = {
+			isa = PBXGroup;
+			children = (
+				DCD0CA301B3961AF0061E88B /* FASTCornerDetection.h */,
+				DCD0CA311B3961AF0061E88B /* FASTCornerDetection.m */,
+				DCD0CA321B3961AF0061E88B /* FASTCornerDetectionKernel.cikernel */,
+			);
+			path = "FAST Corner Detection";
+			sourceTree = "<group>";
+		};
+		DCD0CA341B3961AF0061E88B /* Global Standard Deviation */ = {
+			isa = PBXGroup;
+			children = (
+				DCD0CA351B3961AF0061E88B /* GlobalStandardDeviation.h */,
+				DCD0CA361B3961AF0061E88B /* GlobalStandardDeviation.m */,
+				DCD0CA371B3961AF0061E88B /* GlobalStandardDeviationKernel.cikernel */,
+			);
+			path = "Global Standard Deviation";
+			sourceTree = "<group>";
+		};
+		DCD0CA381B3961AF0061E88B /* Gradient */ = {
+			isa = PBXGroup;
+			children = (
+				DCD0CA391B3961AF0061E88B /* Gradient.h */,
+				DCD0CA3A1B3961AF0061E88B /* Gradient.m */,
+			);
+			path = Gradient;
+			sourceTree = "<group>";
+		};
+		DCD0CA3B1B3961AF0061E88B /* Bush Curve */ = {
+			isa = PBXGroup;
+			children = (
+				DCD0CA3C1B3961AF0061E88B /* BushCurve.h */,
+				DCD0CA3D1B3961AF0061E88B /* BushCurve.m */,
+				DCD0CA3E1B3961AF0061E88B /* BushCurveKernel.cikernel */,
+			);
+			name = "Bush Curve";
+			path = "H(S-V)";
+			sourceTree = "<group>";
+		};
+		DCD0CA3F1B3961AF0061E88B /* Laplacian Convolution */ = {
+			isa = PBXGroup;
+			children = (
+				DCD0CA401B3961AF0061E88B /* LaplacianConvolution.h */,
+				DCD0CA411B3961AF0061E88B /* LaplacianConvolution.m */,
+			);
+			name = "Laplacian Convolution";
+			path = LaplacianConvolution;
+			sourceTree = "<group>";
+		};
+		DCD0CA421B3961AF0061E88B /* Local Contrast Stretch */ = {
+			isa = PBXGroup;
+			children = (
+				DCD0CA431B3961AF0061E88B /* LocalContrastStretch.h */,
+				DCD0CA441B3961AF0061E88B /* LocalContrastStretch.m */,
+				DCD0CA451B3961AF0061E88B /* LocalContrastStretchKernel.cikernel */,
+			);
+			path = "Local Contrast Stretch";
+			sourceTree = "<group>";
+		};
+		DCD0CA461B3961AF0061E88B /* Maximum */ = {
+			isa = PBXGroup;
+			children = (
+				DCD0CA471B3961AF0061E88B /* Maximum.h */,
+				DCD0CA481B3961AF0061E88B /* Maximum.m */,
+			);
+			path = Maximum;
+			sourceTree = "<group>";
+		};
+		DCD0CA491B3961AF0061E88B /* MeanMinMax */ = {
+			isa = PBXGroup;
+			children = (
+				DCD0CA4A1B3961AF0061E88B /* MeanMinMax.h */,
+				DCD0CA4B1B3961AF0061E88B /* MeanMinMax.m */,
+				DCD0CA4C1B3961AF0061E88B /* MeanMinMaxKernel.cikernel */,
+			);
+			path = MeanMinMax;
+			sourceTree = "<group>";
+		};
+		DCD0CA4D1B3961AF0061E88B /* Minimum */ = {
+			isa = PBXGroup;
+			children = (
+				DCD0CA4E1B3961AF0061E88B /* MInimum.h */,
+				DCD0CA4F1B3961AF0061E88B /* MInimum.m */,
+			);
+			path = Minimum;
+			sourceTree = "<group>";
+		};
+		DCD0CA501B3961AF0061E88B /* Morphological Edge-Corner Detection */ = {
+			isa = PBXGroup;
+			children = (
+				DCD0CA5C1B3961AF0061E88B /* MorphologicalEdgeCornerDetection.h */,
+				DCD0CA5D1B3961AF0061E88B /* MorphologicalEdgeCornerDetection.m */,
+				DCD0CA511B3961AF0061E88B /* absoluteDifferenceKernel.cikernel */,
+			);
+			path = "Morphological Edge-Corner Detection";
+			sourceTree = "<group>";
+		};
+		DCD0CA561B3961AF0061E88B /* EdgeIn */ = {
+			isa = PBXGroup;
+			children = (
+				DCD0CA571B3961AF0061E88B /* EdgeIn.h */,
+				DCD0CA581B3961AF0061E88B /* EdgeIn.m */,
+			);
+			name = EdgeIn;
+			path = "Morphological Edge-Corner Detection/EdgeIn";
+			sourceTree = "<group>";
+		};
+		DCD0CA591B3961AF0061E88B /* EdgeOut */ = {
+			isa = PBXGroup;
+			children = (
+				DCD0CA5A1B3961AF0061E88B /* EdgeOut.h */,
+				DCD0CA5B1B3961AF0061E88B /* EdgeOut.m */,
+			);
+			name = EdgeOut;
+			path = "Morphological Edge-Corner Detection/EdgeOut";
+			sourceTree = "<group>";
+		};
+		DCD0CA601B3961AF0061E88B /* Open */ = {
+			isa = PBXGroup;
+			children = (
+				DCD0CA611B3961AF0061E88B /* Open.h */,
+				DCD0CA621B3961AF0061E88B /* Open.m */,
+			);
+			path = Open;
+			sourceTree = "<group>";
+		};
+		DCD0CA631B3961AF0061E88B /* Overlay Histogram */ = {
+			isa = PBXGroup;
+			children = (
+				DCD0CA641B3961AF0061E88B /* OverlayHistogram.h */,
+				DCD0CA651B3961AF0061E88B /* OverlayHistogram.m */,
+				DCD0CA661B3961AF0061E88B /* OverlayHistogramKernel.cikernel */,
+			);
+			path = "Overlay Histogram";
+			sourceTree = "<group>";
+		};
+		DCD0CA671B3961AF0061E88B /* Pixel Difference */ = {
+			isa = PBXGroup;
+			children = (
+				DCD0CA681B3961AF0061E88B /* PixelDifference.h */,
+				DCD0CA691B3961AF0061E88B /* PixelDifference.m */,
+			);
+			path = "Pixel Difference";
+			sourceTree = "<group>";
+		};
+		DCD0CA6A1B3961AF0061E88B /* Prewitt Operator */ = {
+			isa = PBXGroup;
+			children = (
+				DCD0CA6B1B3961AF0061E88B /* Prewitt Convolution */,
+				DCD0CA6E1B3961AF0061E88B /* Prewitt Kernel */,
+			);
+			path = "Prewitt Operator";
+			sourceTree = "<group>";
+		};
+		DCD0CA6B1B3961AF0061E88B /* Prewitt Convolution */ = {
+			isa = PBXGroup;
+			children = (
+				DCD0CA6C1B3961AF0061E88B /* PrewittConvolution.h */,
+				DCD0CA6D1B3961AF0061E88B /* PrewittConvolution.m */,
+			);
+			path = "Prewitt Convolution";
+			sourceTree = "<group>";
+		};
+		DCD0CA6E1B3961AF0061E88B /* Prewitt Kernel */ = {
+			isa = PBXGroup;
+			children = (
+				DCD0CA6F1B3961AF0061E88B /* PrewittKernel.cikernel */,
+				DCD0CA701B3961AF0061E88B /* PrewittKernel.h */,
+				DCD0CA711B3961AF0061E88B /* PrewittKernel.m */,
+			);
+			path = "Prewitt Kernel";
+			sourceTree = "<group>";
+		};
+		DCD0CA721B3961AF0061E88B /* RMS */ = {
+			isa = PBXGroup;
+			children = (
+				DCD0CA731B3961AF0061E88B /* RMS.h */,
+				DCD0CA741B3961AF0061E88B /* RMS.m */,
+				DCD0CA751B3961AF0061E88B /* RMSKernel.cikernel */,
+			);
+			path = RMS;
+			sourceTree = "<group>";
+		};
+		DCD0CA761B3961AF0061E88B /* Roberts Operator */ = {
+			isa = PBXGroup;
+			children = (
+				DCD0CA771B3961AF0061E88B /* Roberts Convolution */,
+				DCD0CA7A1B3961AF0061E88B /* Roberts Kernel */,
+			);
+			path = "Roberts Operator";
+			sourceTree = "<group>";
+		};
+		DCD0CA771B3961AF0061E88B /* Roberts Convolution */ = {
+			isa = PBXGroup;
+			children = (
+				DCD0CA781B3961AF0061E88B /* RobertsConvolution.h */,
+				DCD0CA791B3961AF0061E88B /* RobertsConvolution.m */,
+			);
+			path = "Roberts Convolution";
+			sourceTree = "<group>";
+		};
+		DCD0CA7A1B3961AF0061E88B /* Roberts Kernel */ = {
+			isa = PBXGroup;
+			children = (
+				DCD0CA7C1B3961AF0061E88B /* RobertsKernel.h */,
+				DCD0CA7D1B3961AF0061E88B /* RobertsKernel.m */,
+				DCD0CA7B1B3961AF0061E88B /* RobertsKernel.cikernel */,
+			);
+			path = "Roberts Kernel";
+			sourceTree = "<group>";
+		};
+		DCD0CA7E1B3961AF0061E88B /* Root Mean Square Error */ = {
+			isa = PBXGroup;
+			children = (
+				DCD0CA7F1B3961AF0061E88B /* RootMeanSquareError.h */,
+				DCD0CA801B3961AF0061E88B /* RootMeanSquareError.m */,
+			);
+			path = "Root Mean Square Error";
+			sourceTree = "<group>";
+		};
+		DCD0CA811B3961AF0061E88B /* Scharr Operator */ = {
+			isa = PBXGroup;
+			children = (
+				DCD0CA821B3961AF0061E88B /* Scharr.h */,
+				DCD0CA831B3961AF0061E88B /* Scharr.m */,
+			);
+			path = "Scharr Operator";
+			sourceTree = "<group>";
+		};
+		DCD0CA871B3961AF0061E88B /* Sobel Operator */ = {
+			isa = PBXGroup;
+			children = (
+				DCD0CA881B3961AF0061E88B /* Sobel Convolution */,
+				DCD0CA901B3961AF0061E88B /* Sobel Y Kernel */,
+				DCA105B91B3A538B007940C7 /* Sobel X Kernel */,
+			);
+			path = "Sobel Operator";
+			sourceTree = "<group>";
+		};
+		DCD0CA881B3961AF0061E88B /* Sobel Convolution */ = {
+			isa = PBXGroup;
+			children = (
+				DCD0CA891B3961AF0061E88B /* SobelConvolution.h */,
+				DCD0CA8A1B3961AF0061E88B /* SobelConvolution.m */,
+				DCD0CA8B1B3961AF0061E88B /* SobelConvolutionHorizontal.h */,
+				DCD0CA8C1B3961AF0061E88B /* SobelConvolutionHorizontal.m */,
+				DCD0CA8D1B3961AF0061E88B /* SobelConvolutionKernel.cikernel */,
+				DCD0CA8E1B3961AF0061E88B /* SobelConvolutionVertical.h */,
+				DCD0CA8F1B3961AF0061E88B /* SobelConvolutionVertical.m */,
+			);
+			path = "Sobel Convolution";
+			sourceTree = "<group>";
+		};
+		DCD0CA901B3961AF0061E88B /* Sobel Y Kernel */ = {
+			isa = PBXGroup;
+			children = (
+				DCD0CA921B3961AF0061E88B /* SobelYKernel.h */,
+				DCD0CA931B3961AF0061E88B /* SobelYKernel.m */,
+				DCD0CA911B3961AF0061E88B /* SobelYKernel.cikernel */,
+			);
+			name = "Sobel Y Kernel";
+			path = "Sobel Kernel";
+			sourceTree = "<group>";
+		};
+		DCD0CA971B3961AF0061E88B /* Standard Deviation */ = {
+			isa = PBXGroup;
+			children = (
+				DCD0CA981B3961AF0061E88B /* LocalStandardDeviation.h */,
+				DCD0CA991B3961AF0061E88B /* LocalStandardDeviation.m */,
+				DCD0CA9A1B3961AF0061E88B /* LocalStandardDeviationKernel.cikernel */,
+			);
+			path = "Standard Deviation";
+			sourceTree = "<group>";
+		};
+		DCD0CA9B1B3961AF0061E88B /* White Tophat */ = {
+			isa = PBXGroup;
+			children = (
+				DCD0CA9C1B3961AF0061E88B /* WhiteTophat.h */,
+				DCD0CA9D1B3961AF0061E88B /* WhiteTophat.m */,
+			);
+			name = "White Tophat";
+			path = Tophat;
+			sourceTree = "<group>";
+		};
+		DCD0CA9E1B3961AF0061E88B /* Variance */ = {
+			isa = PBXGroup;
+			children = (
+				DCD0CA9F1B3961AF0061E88B /* Variance.h */,
+				DCD0CAA01B3961AF0061E88B /* Variance.m */,
+				DCD0CAA11B3961AF0061E88B /* VarianceKernel.cikernel */,
+			);
+			path = Variance;
+			sourceTree = "<group>";
+		};
+		DCEF65E81B3D306C00CED593 /* Morphological Operators */ = {
+			isa = PBXGroup;
+			children = (
+				DCEF65FF1B3D986D00CED593 /* Dilation */,
+				DCEF66001B3D988F00CED593 /* Erosion */,
+				DCA105B81B3A03E4007940C7 /* Edge */,
+				DCD0CA561B3961AF0061E88B /* EdgeIn */,
+				DCD0CA591B3961AF0061E88B /* EdgeOut */,
+				DCD0CA031B3961AF0061E88B /* Black Tophat */,
+				DCD0CA281B3961AF0061E88B /* Erosion & Dilation (Offset) */,
+				DCD0CA381B3961AF0061E88B /* Gradient */,
+				DCD0CA501B3961AF0061E88B /* Morphological Edge-Corner Detection */,
+				DCD0CA601B3961AF0061E88B /* Open */,
+				DCD0CA9B1B3961AF0061E88B /* White Tophat */,
+			);
+			name = "Morphological Operators";
+			sourceTree = "<group>";
+		};
+		DCEF65E91B3D30D300CED593 /* Statistical */ = {
+			isa = PBXGroup;
+			children = (
+				DC8BC3671B4DE9D200440921 /* Chroma Unsharp */,
+				DC9B8C0E1B4C862300571863 /* Shifted Data Variance */,
+				DC9B8BEF1B4AFE8100571863 /* Median Absolute Deviation */,
+				DC9B8BEE1B4AFE6700571863 /* Hybrid Median */,
+				DC9B8BEC1B4AFE2D00571863 /* Mode */,
+				DC9B8BEB1B4AFE1700571863 /* Median */,
+				DC9B8BEA1B4AFE0100571863 /* MaxMin */,
+				DC9B8BE91B4AFDE400571863 /* Mean */,
+				DC8DE6261B4938B1003887FF /* Four-Directional MinMax */,
+				DCCF27051B42634F00F58286 /* Median Unsharp */,
+				DC7B410B1B40EEE60061DD63 /* Directional Mean */,
+				DCD0C9F81B3961AF0061E88B /* Absolute Deviation */,
+				DCD0C9FC1B3961AF0061E88B /* AMBE */,
+				DCD0CA091B3961AF0061E88B /* Central Difference */,
+				DCD0CA181B3961AF0061E88B /* CV */,
+				DCD0CA201B3961AF0061E88B /* Dissimilarity */,
+				DCD0CA341B3961AF0061E88B /* Global Standard Deviation */,
+				DCD0CA491B3961AF0061E88B /* MeanMinMax */,
+				DCD0CA721B3961AF0061E88B /* RMS */,
+				DCD0CA7E1B3961AF0061E88B /* Root Mean Square Error */,
+				DCD0CA971B3961AF0061E88B /* Standard Deviation */,
+				DCD0CA9E1B3961AF0061E88B /* Variance */,
+			);
+			name = Statistical;
+			sourceTree = "<group>";
+		};
+		DCEF65EA1B3D30EB00CED593 /* Convolutions */ = {
+			isa = PBXGroup;
+			children = (
+				DC1585251B46E1FD00C504A5 /* Custom */,
+				DCD0CA2F1B3961AF0061E88B /* FAST Corner Detection */,
+				DCD0CA3F1B3961AF0061E88B /* Laplacian Convolution */,
+				DCD0CA671B3961AF0061E88B /* Pixel Difference */,
+				DCD0CA6A1B3961AF0061E88B /* Prewitt Operator */,
+				DCD0CA761B3961AF0061E88B /* Roberts Operator */,
+				DCD0CA811B3961AF0061E88B /* Scharr Operator */,
+				DCD0CA871B3961AF0061E88B /* Sobel Operator */,
+			);
+			name = Convolutions;
+			sourceTree = "<group>";
+		};
+		DCEF65EB1B3D311000CED593 /* Color */ = {
+			isa = PBXGroup;
+			children = (
+				DC7ADEFF1B4A17CD00985955 /* Local Adaptive Threshold */,
+				DCCF26ED1B41C7F800F58286 /* Levels */,
+				DC939F271B3E08F700240EF1 /* Generalized Polarization Analysis */,
+				DCD0CA141B3961AF0061E88B /* Contrast Stretch (Min/Max) */,
+				DCA93A091B55CD500094600E /* Overlay Curves */,
+				DCD0CA3B1B3961AF0061E88B /* Bush Curve */,
+				DCD0C9FF1B3961AF0061E88B /* Equalize */,
+				DCD0CA2B1B3961AF0061E88B /* Exposure Gamma */,
+				DCD0CA421B3961AF0061E88B /* Local Contrast Stretch */,
+				DCD0CA461B3961AF0061E88B /* Maximum */,
+				DCD0CA4D1B3961AF0061E88B /* Minimum */,
+				DCCC8CC41B59B89200FAFFB6 /* Contrast Stretch (Average) */,
+				DCD0CA631B3961AF0061E88B /* Overlay Histogram */,
+			);
+			name = Color;
+			sourceTree = "<group>";
+		};
+		DCEF65EC1B3D311B00CED593 /* Band-pass */ = {
+			isa = PBXGroup;
+			children = (
+				DC597C531B5325C2005A3B6E /* Gaussian Kernel */,
+				DCD0CA0D1B3961AF0061E88B /* Chroma */,
+			);
+			name = "Band-pass";
+			sourceTree = "<group>";
+		};
+		DCEF65ED1B3D870200CED593 /* Dilate (Cross) */ = {
+			isa = PBXGroup;
+			children = (
+				DCEF65F01B3D877A00CED593 /* DilateCross.h */,
+				DCEF65F11B3D877A00CED593 /* DilateCross.m */,
+				DCEF65EE1B3D875C00CED593 /* DilateCrossKernel.cikernel */,
+			);
+			name = "Dilate (Cross)";
+			sourceTree = "<group>";
+		};
+		DCEF65F31B3D8AB200CED593 /* Dilate (X) */ = {
+			isa = PBXGroup;
+			children = (
+				DCEF65F41B3D8AC200CED593 /* DilateX.h */,
+				DCEF65F51B3D8AC200CED593 /* DilateX.m */,
+				DCEF65F71B3D8AD800CED593 /* DilateXKernel.cikernel */,
+			);
+			name = "Dilate (X)";
+			sourceTree = "<group>";
+		};
+		DCEF65F91B3D969D00CED593 /* Dilate (Diamond) */ = {
+			isa = PBXGroup;
+			children = (
+				DCEF65FC1B3D96F600CED593 /* DilateDiamond.h */,
+				DCEF65FD1B3D96F600CED593 /* DilateDiamond.m */,
+				DCEF65FA1B3D96B900CED593 /* DilateDiamondKernel.cikernel */,
+			);
+			name = "Dilate (Diamond)";
+			sourceTree = "<group>";
+		};
+		DCEF65FF1B3D986D00CED593 /* Dilation */ = {
+			isa = PBXGroup;
+			children = (
+				DCEF65F91B3D969D00CED593 /* Dilate (Diamond) */,
+				DCEF65F31B3D8AB200CED593 /* Dilate (X) */,
+				DCEF65ED1B3D870200CED593 /* Dilate (Cross) */,
+				DCD0CA1C1B3961AF0061E88B /* Dilate */,
+			);
+			name = Dilation;
+			sourceTree = "<group>";
+		};
+		DCEF66001B3D988F00CED593 /* Erosion */ = {
+			isa = PBXGroup;
+			children = (
+				DCEF660D1B3D9C7C00CED593 /* Erode (Cross) */,
+				DCEF66071B3D9A5300CED593 /* Erode (X) */,
+				DCEF66011B3D989A00CED593 /* Erode (Diamond) */,
+				DCD0CA241B3961AF0061E88B /* Erode */,
+			);
+			name = Erosion;
+			sourceTree = "<group>";
+		};
+		DCEF66011B3D989A00CED593 /* Erode (Diamond) */ = {
+			isa = PBXGroup;
+			children = (
+				DCEF66021B3D98C900CED593 /* ErodeDiamond.h */,
+				DCEF66031B3D98C900CED593 /* ErodeDiamond.m */,
+				DCEF66051B3D98DA00CED593 /* ErodeDiamondKernel.cikernel */,
+			);
+			name = "Erode (Diamond)";
+			sourceTree = "<group>";
+		};
+		DCEF66071B3D9A5300CED593 /* Erode (X) */ = {
+			isa = PBXGroup;
+			children = (
+				DCEF66081B3D9A6F00CED593 /* ErodeX.h */,
+				DCEF66091B3D9A6F00CED593 /* ErodeX.m */,
+				DCEF660B1B3D9AF200CED593 /* ErodeXKernel.cikernel */,
+			);
+			name = "Erode (X)";
+			sourceTree = "<group>";
+		};
+		DCEF660D1B3D9C7C00CED593 /* Erode (Cross) */ = {
+			isa = PBXGroup;
+			children = (
+				DCEF660E1B3D9C9F00CED593 /* ErodeCross.h */,
+				DCEF660F1B3D9C9F00CED593 /* ErodeCross.m */,
+				DCEF66111B3D9CB900CED593 /* ErodeCrossKernel.cikernel */,
+			);
+			name = "Erode (Cross)";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -129,10 +1490,12 @@
 				DCD0C87C1B39599C0061E88B /* Sources */,
 				DCD0C87D1B39599C0061E88B /* Frameworks */,
 				DCD0C87E1B39599C0061E88B /* Resources */,
+				DCD0C8C11B3959BE0061E88B /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				DCD0C8BC1B3959BE0061E88B /* PBXTargetDependency */,
 			);
 			name = Chroma;
 			productName = Chroma;
@@ -157,21 +1520,43 @@
 			productReference = DCD0C8991B39599C0061E88B /* ChromaTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		DCD0C8AC1B3959BE0061E88B /* Chroma Photo Editing Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DCD0C8BE1B3959BE0061E88B /* Build configuration list for PBXNativeTarget "Chroma Photo Editing Extension" */;
+			buildPhases = (
+				DCD0C8A91B3959BE0061E88B /* Sources */,
+				DCD0C8AA1B3959BE0061E88B /* Frameworks */,
+				DCD0C8AB1B3959BE0061E88B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Chroma Photo Editing Extension";
+			productName = "Chroma Photo Editing Extension";
+			productReference = DCD0C8AD1B3959BE0061E88B /* Chroma Photo Editing Extension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		DCD0C8781B39599C0061E88B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0630;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "James Alan Bush";
 				TargetAttributes = {
 					DCD0C87F1B39599C0061E88B = {
 						CreatedOnToolsVersion = 6.3.2;
+						DevelopmentTeam = L653T3ZB64;
 					};
 					DCD0C8981B39599C0061E88B = {
 						CreatedOnToolsVersion = 6.3.2;
 						TestTargetID = DCD0C87F1B39599C0061E88B;
+					};
+					DCD0C8AC1B3959BE0061E88B = {
+						CreatedOnToolsVersion = 6.3.2;
+						DevelopmentTeam = L653T3ZB64;
 					};
 				};
 			};
@@ -190,6 +1575,7 @@
 			targets = (
 				DCD0C87F1B39599C0061E88B /* Chroma */,
 				DCD0C8981B39599C0061E88B /* ChromaTests */,
+				DCD0C8AC1B3959BE0061E88B /* Chroma Photo Editing Extension */,
 			);
 		};
 /* End PBXProject section */
@@ -199,6 +1585,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCA105B71B3A01CB007940C7 /* IMG_0751.PNG in Resources */,
 				DCD0C88F1B39599C0061E88B /* Main.storyboard in Resources */,
 				DCD0C8941B39599C0061E88B /* LaunchScreen.xib in Resources */,
 				DCD0C8911B39599C0061E88B /* Images.xcassets in Resources */,
@@ -209,6 +1596,72 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DCD0C8AB1B3959BE0061E88B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DCB77E961B76056400F027C0 /* EdgeGradientKernel.cikernel in Resources */,
+				DCCF26F91B41DAC600F58286 /* OutputLevelsKernel.cikernel in Resources */,
+				DCEF66121B3D9CB900CED593 /* ErodeCrossKernel.cikernel in Resources */,
+				DCAC1C171B75E0D8000BABAE /* dyKernel.cikernel in Resources */,
+				DCD0CABE1B3961AF0061E88B /* Filters.plist in Resources */,
+				DCD0CAB81B3961AF0061E88B /* OffsetDilationKernel.cikernel in Resources */,
+				DCCF270A1B42637700F58286 /* MedianUnsharpKernel.cikernel in Resources */,
+				DC9B8C0D1B4B14BB00571863 /* MedianAbsoluteDeviationKernel.cikernel in Resources */,
+				DCEF65FB1B3D96B900CED593 /* DilateDiamondKernel.cikernel in Resources */,
+				DC05BB891B47C39A00378912 /* CustomConvolutionKernel.cikernel in Resources */,
+				DC9B8C081B4B115700571863 /* HybridMedianKernel.cikernel in Resources */,
+				DC9B8BFE1B4B107600571863 /* MedianKernel.cikernel in Resources */,
+				DCD0CAB31B3961AF0061E88B /* DilateKernel.cikernel in Resources */,
+				DCCC8CC91B59B9AE00FAFFB6 /* StretchContrastAverageKernel.cikernel in Resources */,
+				DCEF65F81B3D8AD800CED593 /* DilateXKernel.cikernel in Resources */,
+				DCD0CAA61B3961AF0061E88B /* EqualizeKernel.cikernel in Resources */,
+				DC8BC3661B4DDD3B00440921 /* FractalKernel.cikernel in Resources */,
+				DCA93A101B55CD9C0094600E /* OverlayCurvesKernel.cikernel in Resources */,
+				DCD0CAE71B3961AF0061E88B /* SobelYKernel.cikernel in Resources */,
+				DCD0CACB1B3961AF0061E88B /* absoluteDifferenceKernel.cikernel in Resources */,
+				DCAC1C191B75E19E000BABAE /* dxKernel.cikernel in Resources */,
+				DC9B8BF91B4B0FF400571863 /* MaxMinKernel.cikernel in Resources */,
+				DCD0CAC91B3961AF0061E88B /* MeanMinMaxKernel.cikernel in Resources */,
+				DCD0CAD61B3961AF0061E88B /* OverlayHistogramKernel.cikernel in Resources */,
+				DCD0CADC1B3961AF0061E88B /* RMSKernel.cikernel in Resources */,
+				DCD0CAD91B3961AF0061E88B /* PrewittKernel.cikernel in Resources */,
+				DCD0CAB71B3961AF0061E88B /* ErodeKernel.cikernel in Resources */,
+				DCD0CAAF1B3961AF0061E88B /* ContrastStretchKernel.cikernel in Resources */,
+				DCD0CABD1B3961AF0061E88B /* FASTCornerDetectionKernel.cikernel in Resources */,
+				DCD0C9F41B395C510061E88B /* MainInterface.storyboard in Resources */,
+				DCD0CAAA1B3961AF0061E88B /* CentralDifferenceKernel.cikernel in Resources */,
+				DCB9822D1B5AA3F400154014 /* View.xib in Resources */,
+				DCD0CAA31B3961AF0061E88B /* AbsoluteDeviationKernel.cikernel in Resources */,
+				DCD0CADE1B3961AF0061E88B /* RobertsKernel.cikernel in Resources */,
+				DCD0CAC31B3961AF0061E88B /* BushCurveKernel.cikernel in Resources */,
+				DCD0CAB11B3961AF0061E88B /* CVKernel.cikernel in Resources */,
+				DCEF660C1B3D9AF200CED593 /* ErodeXKernel.cikernel in Resources */,
+				DCD0CAC01B3961AF0061E88B /* GlobalStandardDeviationKernel.cikernel in Resources */,
+				DCD0CAAC1B3961AF0061E88B /* ChromaKernel.cikernel in Resources */,
+				DC9B8BF41B4B0F6600571863 /* MeanKernel.cikernel in Resources */,
+				DCEF66061B3D98DA00CED593 /* ErodeDiamondKernel.cikernel in Resources */,
+				DC8BC36C1B4DEA0700440921 /* ChromaUnsharpKernel.cikernel in Resources */,
+				DCD0CAEF1B3961AF0061E88B /* VarianceKernel.cikernel in Resources */,
+				DCD0CAB91B3961AF0061E88B /* OffsetErosionKernel.cikernel in Resources */,
+				DC7B410D1B40EEFE0061DD63 /* DirectionalMeanKernel.cikernel in Resources */,
+				DC9B8C031B4B10D900571863 /* ModeKernel.cikernel in Resources */,
+				DC9B8C131B4C865F00571863 /* ShiftedDataVarianceKernel.cikernel in Resources */,
+				DCAC1C201B75F129000BABAE /* MagnitudeKernel.cikernel in Resources */,
+				DCEF65EF1B3D875C00CED593 /* DilateCrossKernel.cikernel in Resources */,
+				DCD0CAC61B3961AF0061E88B /* LocalContrastStretchKernel.cikernel in Resources */,
+				DCCF26F11B41C88500F58286 /* InputLevelsKernel.cikernel in Resources */,
+				DC8DE62B1B49392E003887FF /* FourDirectionalMinMaxKernel.cikernel in Resources */,
+				DCD206051B3B939A00F8EC9A /* dragonfly.png in Resources */,
+				DCD0CAE51B3961AF0061E88B /* SobelConvolutionKernel.cikernel in Resources */,
+				DCD0CABB1B3961AF0061E88B /* ExposureGammaKernel.cikernel in Resources */,
+				DCD0CAE91B3961AF0061E88B /* SobelXKernel.cikernel in Resources */,
+				DC7ADEFE1B4A07E900985955 /* LocalAdaptiveThresholdingKernel.cikernel in Resources */,
+				DCD0CAB51B3961AF0061E88B /* DissimilarityKernel.cikernel in Resources */,
+				DCD0CAEC1B3961AF0061E88B /* LocalStandardDeviationKernel.cikernel in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -233,6 +1686,93 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DCD0C8A91B3959BE0061E88B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DCAC1C151B75DF9E000BABAE /* dy.m in Sources */,
+				DCD0CACE1B3961AF0061E88B /* Edge.m in Sources */,
+				DC9B8BF71B4B0FC900571863 /* MaxMin.m in Sources */,
+				DCD0CAB61B3961AF0061E88B /* Erode.m in Sources */,
+				DC66E9911B40FF67009225AE /* EqualizeHelper.m in Sources */,
+				DCD0CAC51B3961AF0061E88B /* LocalContrastStretch.m in Sources */,
+				DCCF27081B42636F00F58286 /* MedianUnsharp.m in Sources */,
+				DCD0CAC21B3961AF0061E88B /* BushCurve.m in Sources */,
+				DCD0CAB21B3961AF0061E88B /* Dilate.m in Sources */,
+				DCEF65F21B3D877A00CED593 /* DilateCross.m in Sources */,
+				DCD0CADF1B3961AF0061E88B /* RobertsKernel.m in Sources */,
+				DCD0CAB41B3961AF0061E88B /* Dissimilarity.m in Sources */,
+				DCD0CACA1B3961AF0061E88B /* MInimum.m in Sources */,
+				DCD0CAE11B3961AF0061E88B /* Scharr.m in Sources */,
+				DC9B8BFC1B4B105A00571863 /* Median.m in Sources */,
+				DCD0CACF1B3961AF0061E88B /* EdgeIn.m in Sources */,
+				DCD0CAED1B3961AF0061E88B /* WhiteTophat.m in Sources */,
+				DCEF66101B3D9C9F00CED593 /* ErodeCross.m in Sources */,
+				DCD0CABC1B3961AF0061E88B /* FASTCornerDetection.m in Sources */,
+				DCAC1C231B75F1C3000BABAE /* EdgeGradient.m in Sources */,
+				DCD0CAE41B3961AF0061E88B /* SobelConvolutionHorizontal.m in Sources */,
+				DC7B41101B40EF3C0061DD63 /* DirectionalMean.m in Sources */,
+				DCD0C9F21B395B9D0061E88B /* AAPLAVReaderWriter.m in Sources */,
+				DCB982301B5AA66400154014 /* View.m in Sources */,
+				DCD0CAA21B3961AF0061E88B /* AbsoluteDeviation.m in Sources */,
+				DCAE7EB81B48B34E003CB94A /* GlobalContext.m in Sources */,
+				DC8DE6291B49390D003887FF /* FourDirectionalMinMax.m in Sources */,
+				DCD0CADA1B3961AF0061E88B /* PrewittKernel.m in Sources */,
+				DC1585281B46E22400C504A5 /* CustomConvolution.m in Sources */,
+				DCCF26F71B41DAA900F58286 /* LevelsOutput.m in Sources */,
+				DC7ADF021B4A17E800985955 /* LocalAdaptiveThreshold.m in Sources */,
+				DCD0CAAE1B3961AF0061E88B /* ContrastStretch.m in Sources */,
+				DCEF66041B3D98C900CED593 /* ErodeDiamond.m in Sources */,
+				DCD0CAD01B3961AF0061E88B /* EdgeOut.m in Sources */,
+				DCD0CAAB1B3961AF0061E88B /* Chroma.m in Sources */,
+				DC9B8C111B4C864200571863 /* ShiftedDataVariance.m in Sources */,
+				DCD0CAEA1B3961AF0061E88B /* SobelXKernel.m in Sources */,
+				DCCF26F41B41C8A000F58286 /* LevelsInput.m in Sources */,
+				DCD0CAEB1B3961AF0061E88B /* LocalStandardDeviation.m in Sources */,
+				DC90E49D1B535B8D007BCD99 /* GlobalCIImage.m in Sources */,
+				DCD0CAD41B3961AF0061E88B /* Open.m in Sources */,
+				DC9B8BF21B4AFEB800571863 /* Mean.m in Sources */,
+				DCD0CAE81B3961AF0061E88B /* SobelYKernel.m in Sources */,
+				DCEF660A1B3D9A6F00CED593 /* ErodeX.m in Sources */,
+				DCD0CABA1B3961AF0061E88B /* ExposureGamma.m in Sources */,
+				DCD0CAE61B3961AF0061E88B /* SobelConvolutionVertical.m in Sources */,
+				DC8BC36A1B4DE9ED00440921 /* ChromaUnsharp.m in Sources */,
+				DCA93A0C1B55CD710094600E /* OverlayCurves.m in Sources */,
+				DC9B8C061B4B113700571863 /* HybridMedian.m in Sources */,
+				DCD0CAC71B3961AF0061E88B /* Maximum.m in Sources */,
+				DCD0CAD11B3961AF0061E88B /* MorphologicalEdgeCornerDetection.m in Sources */,
+				DCD0CAA91B3961AF0061E88B /* CentralDifference.m in Sources */,
+				DCD0CAA41B3961AF0061E88B /* AMBE.m in Sources */,
+				DCEF65FE1B3D96F600CED593 /* DilateDiamond.m in Sources */,
+				DCD0CAEE1B3961AF0061E88B /* Variance.m in Sources */,
+				DCEF65F61B3D8AC200CED593 /* DilateX.m in Sources */,
+				DCCF286A1B4267D600F58286 /* UIImage-Utils.m in Sources */,
+				DCD0CAC41B3961AF0061E88B /* LaplacianConvolution.m in Sources */,
+				DC9B8C0B1B4B149E00571863 /* MedianAbsoluteDeviation.m in Sources */,
+				DCD0CAC11B3961AF0061E88B /* Gradient.m in Sources */,
+				DC597C561B5325F9005A3B6E /* GaussianKernel.m in Sources */,
+				DCD0CADD1B3961AF0061E88B /* RobertsConvolution.m in Sources */,
+				DCD0CAC81B3961AF0061E88B /* MeanMinMax.m in Sources */,
+				DCCC8CC71B59B8E700FAFFB6 /* StretchContrastAverage.m in Sources */,
+				DC9B8C011B4B10BD00571863 /* Mode.m in Sources */,
+				DCD0CAD81B3961AF0061E88B /* PrewittConvolution.m in Sources */,
+				DCD0CAD71B3961AF0061E88B /* PixelDifference.m in Sources */,
+				DCD0CAE01B3961AF0061E88B /* RootMeanSquareError.m in Sources */,
+				DCD0CAE31B3961AF0061E88B /* SobelConvolution.m in Sources */,
+				DCAC1C1E1B75F0E6000BABAE /* Magnitude.m in Sources */,
+				DCD0CAB01B3961AF0061E88B /* CV.m in Sources */,
+				DCD0CAD51B3961AF0061E88B /* OverlayHistogram.m in Sources */,
+				DCD0C8B81B3959BE0061E88B /* PhotoEditingViewController.m in Sources */,
+				DCD0CAA51B3961AF0061E88B /* Equalize.m in Sources */,
+				DCD0CAA71B3961AF0061E88B /* BlackTophat.m in Sources */,
+				DCD0CADB1B3961AF0061E88B /* RMS.m in Sources */,
+				DCC26A3F1B499D89002A192C /* AppSingleton.m in Sources */,
+				DCCF286B1B4267D600F58286 /* UIImage-vImage.m in Sources */,
+				DCAC1C0F1B75D76C000BABAE /* dx.m in Sources */,
+				DCD0CABF1B3961AF0061E88B /* GlobalStandardDeviation.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -240,6 +1780,11 @@
 			isa = PBXTargetDependency;
 			target = DCD0C87F1B39599C0061E88B /* Chroma */;
 			targetProxy = DCD0C89A1B39599C0061E88B /* PBXContainerItemProxy */;
+		};
+		DCD0C8BC1B3959BE0061E88B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DCD0C8AC1B3959BE0061E88B /* Chroma Photo Editing Extension */;
+			targetProxy = DCD0C8BB1B3959BE0061E88B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -284,10 +1829,11 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_OPTIMIZATION_LEVEL = fast;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -299,7 +1845,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -337,7 +1883,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -349,9 +1895,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Chroma/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jamesalanbush.chroma.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -359,9 +1909,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Chroma/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jamesalanbush.chroma.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -379,6 +1933,7 @@
 				);
 				INFOPLIST_FILE = ChromaTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jamesalanbush.chroma.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Chroma.app/Chroma";
 			};
@@ -394,8 +1949,39 @@
 				);
 				INFOPLIST_FILE = ChromaTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jamesalanbush.chroma.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Chroma.app/Chroma";
+			};
+			name = Release;
+		};
+		DCD0C8BF1B3959BE0061E88B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Chroma Photo Editing Extension/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jamesalanbush.chroma.Chroma.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		DCD0C8C01B3959BE0061E88B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = "Chroma Photo Editing Extension/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jamesalanbush.chroma.Chroma.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 			};
 			name = Release;
 		};
@@ -418,6 +2004,7 @@
 				DCD0C8A51B39599C0061E88B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DCD0C8A61B39599C0061E88B /* Build configuration list for PBXNativeTarget "ChromaTests" */ = {
 			isa = XCConfigurationList;
@@ -426,6 +2013,16 @@
 				DCD0C8A81B39599C0061E88B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DCD0C8BE1B3959BE0061E88B /* Build configuration list for PBXNativeTarget "Chroma Photo Editing Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DCD0C8BF1B3959BE0061E88B /* Debug */,
+				DCD0C8C01B3959BE0061E88B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

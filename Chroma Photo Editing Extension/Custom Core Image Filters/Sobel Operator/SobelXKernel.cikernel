@@ -1,0 +1,30 @@
+/*
+A Core Image kernel routine that applies edge detection per the Prewitt Kernel.
+The code finds the difference between the pixel values on either side (x-axis)
+of the source pixel and then divides it by two.
+*/
+
+kernel vec4 sobelXKernel(sampler image)
+{
+vec2 xy = destCoord();
+
+/* x gradient */
+vec4 gx = sample(image, samplerTransform(image, vec2(xy + vec2(-1, -1)))) +
+sample(image, samplerTransform(image, vec2(xy + vec2(+0, -1)))) * 2.0 +
+sample(image, samplerTransform(image, vec2(xy + vec2(+1, -1)))) -
+sample(image, samplerTransform(image, vec2(xy + vec2(-1, +1)))) -
+sample(image, samplerTransform(image, vec2(xy + vec2(+0, +1)))) * 2.0 -
+sample(image, samplerTransform(image, vec2(xy + vec2(+1, +1))));
+
+/* y gradient */
+vec4 gy = sample(image, samplerTransform(image, vec2(xy + vec2(-1, -1)))) +
+sample(image, samplerTransform(image, vec2(xy + vec2(-1, +1)))) * 2.0 +
+sample(image, samplerTransform(image, vec2(xy + vec2(-1, +1)))) -
+sample(image, samplerTransform(image, vec2(xy + vec2(+1, -1)))) -
+sample(image, samplerTransform(image, vec2(xy + vec2(+1, +0)))) * 2.0 -
+sample(image, samplerTransform(image, vec2(xy + vec2(+1, +1))));
+
+vec4 sum = vec4(abs(gx) + abs(gy));  /* vec4(sqrt(vec4(pow(gx, vec4(2.0))) + vec4(pow(gy, vec4(2.0))))); */ /* vec4(abs(gx) + abs(gy)); */
+
+return premultiply(vec4(vec3(gx.rgb), 1.0));
+}

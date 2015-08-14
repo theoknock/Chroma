@@ -1,0 +1,70 @@
+/*
+The Core Image Filter version will have the following sliders:
+Divisor [-1 to 1, default 0]: Subtract or add to the mean divisor for enhanced detail
+Mix [0 to 1, default 0]: Mix between standard deviation with original pixel values
+
+The filter will come in different sizes: 3 x 3, 5 x 5, 7 x 7, and 9 x 9
+*/
+
+kernel vec4 erodeKernel(sampler u, float inputRadius)
+{
+vec4 pixel = unpremultiply(sample(u, samplerCoord(u)));
+vec2 xy = destCoord();
+vec4 square;
+vec4 mixel;
+
+
+float minr = 1.0;
+float ming = 1.0;
+float minb = 1.0;
+
+int radius = int(inputRadius);
+radius = radius + 1;
+for (int i = (0 - (radius / 2)); i < (radius / 2); i++)
+{
+for (int j = (0 - (radius / 2)); j < (radius / 2); j++)
+{
+mixel = sample(u, samplerTransform(u, vec2(xy+vec2(i, j))));
+if (i != 0) {
+if (j != 0) {
+minr = min(minr, mixel.r);
+ming = min(ming, mixel.g);
+minb = min(minb, mixel.b);
+}
+}
+
+square.rgb = vec3(minr, ming, minb);
+}
+}
+return premultiply(vec4(vec3(square.rgb), pixel.a));
+
+/*
+vec4 pixel = unpremultiply(sample(u, samplerCoord(u)));
+vec2 xy = destCoord();
+vec4 meanmin;
+vec4 mixel;
+
+// Per-channel min values
+float minr = 1.0;
+float ming = 1.0;
+float minb = 1.0;
+
+for (int i = -1; i <= 1; i++)
+{
+for (int j = -1; j <= 1; j++ )
+{
+mixel = sample(u, samplerTransform(u, xy+vec2(i, j)));
+
+// Process min for each channel
+minr = min(minr, mixel.r);
+ming = min(ming, mixel.g);
+minb = min(minb, mixel.b);
+if (i != 0)
+    if (j != 0)
+        meanmin.rgb = vec3(minr, ming, minb);
+}
+}
+
+return premultiply(vec4(vec3(clamp(abs(meanmin.rgb), 0.0, 1.0)), pixel.a));
+*/
+}

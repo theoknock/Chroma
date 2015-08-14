@@ -1,0 +1,37 @@
+kernel vec4 xErodeKernel(sampler u, float inputRadius)
+{
+vec4 pixel = unpremultiply(sample(u, samplerCoord(u)));
+vec2 xy = destCoord();
+vec4 x;
+vec4 mixel;
+
+float minr = 1.0;
+float ming = 1.0;
+float minb = 1.0;
+
+int radius = int(inputRadius);
+radius = radius - 1;
+for (int i = (0 - (radius / 2)); i < (radius / 2); i++)
+{
+mixel = sample(u, samplerTransform(u, vec2(xy+vec2(i, i))));
+if (i != 0) {
+minr = min(minr, mixel.r);
+ming = min(ming, mixel.g);
+minb = min(minb, mixel.b);
+}
+x.rgb = vec3(minr, ming, minb);
+}
+
+for (int j = (0 - (radius / 2)); j < (radius / 2); j++)
+{
+mixel = sample(u, samplerTransform(u, vec2(xy+vec2(j, j))));
+if (j != 0) {
+minr = min(minr, mixel.r);
+ming = min(ming, mixel.g);
+minb = min(minb, mixel.b);
+}
+x.rgb = vec3(minr, ming, minb);
+}
+
+return premultiply(vec4(vec3(x.rgb), pixel.a));
+}

@@ -1,0 +1,17 @@
+/*
+A Core Image kernel routine that stretches the contrast.
+The code looks up the source pixel in the sampler and then calculates a new value based on the image's minimum and maximum pixel values passed to the routine.
+*/
+
+kernel vec4 dissimilarityKernel(sampler image, float inputAvgRed, float inputAvgGreen, float inputAvgBlue, float inputMinRed, float inputMinGreen, float inputMinBlue, float inputMaxRed, float inputMaxGreen, float inputMaxBlue)
+{
+    vec4 pixel = unpremultiply(sample(image, samplerCoord(image)));
+
+    vec4 max_pixel = vec4(inputMaxRed, inputMaxGreen, inputMaxBlue, 1.0);
+    vec4 min_pixel = vec4(inputMinRed, inputMinGreen, inputMinBlue, 1.0);
+    
+    //      (((x     - oldMin)    / (oldMax    - oldMin))    * (newMax    - newMin))     + newMin
+    pixel = (((pixel - min_pixel) / (max_pixel - min_pixel)) * (vec4(1.0) - vec4(1e-6))) + vec4(1e-6);
+    
+    return premultiply(vec4(vec3(pixel.rgb), 1.0));
+}

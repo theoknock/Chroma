@@ -1,0 +1,70 @@
+kernel vec4 diamondDilateKernel(sampler u, float inputRadius)
+{
+vec4 pixel = unpremultiply(sample(u, samplerCoord(u)));
+vec2 xy = destCoord();
+vec4 x;
+vec4 mixel;
+
+float maxr = 0.0;
+float maxg = 0.0;
+float maxb = 0.0;
+int radius = int(inputRadius);
+radius = radius - 1;
+/* x = -2 to 0 */
+for (int i = (0 - (radius / 2)); i < 0; i++)
+{
+/* y = 0 to 2 */
+for (int j = 0; j < (radius / 2); j++)
+{
+mixel = sample(u, samplerTransform(u, vec2(xy+vec2(i, j))));
+maxr = max(maxr, mixel.r);
+maxg = max(maxg, mixel.g);
+maxb = max(maxb, mixel.b);
+}
+x.rgb = vec3(maxr, maxg, maxb);
+}
+
+/* x = 0 to -2 */
+for (int i = 0; i < (0 - (radius / 2)); i++)
+{
+/* y = -2 to 0 */
+for (int j = (0 - (radius / 2)); j < 0; j++)
+{
+mixel = sample(u, samplerTransform(u, vec2(xy+vec2(i, j))));
+maxr = max(maxr, mixel.r);
+maxg = max(maxg, mixel.g);
+maxb = max(maxb, mixel.b);
+}
+x.rgb = vec3(maxr, maxg, maxb);
+}
+
+/* x = 0 to 2 */
+for (int i = 0; i < (radius / 2); i++)
+{
+/* y = 2 to 0 */
+for (int j = (radius / 2); j > 0; j--)
+{
+mixel = sample(u, samplerTransform(u, vec2(xy+vec2(i, j))));
+maxr = max(maxr, mixel.r);
+maxg = max(maxg, mixel.g);
+maxb = max(maxb, mixel.b);
+}
+x.rgb = vec3(maxr, maxg, maxb);
+}
+
+/* x = 2 to 0 */
+for (int i = (radius / 2); i > 0; i--)
+{
+/* y = 0 to -2 */
+for (int j = 0; j > (0 - (radius / 2)); j--)
+{
+mixel = sample(u, samplerTransform(u, vec2(xy+vec2(i, j))));
+maxr = max(maxr, mixel.r);
+maxg = max(maxg, mixel.g);
+maxb = max(maxb, mixel.b);
+}
+x.rgb = vec3(maxr, maxg, maxb);
+}
+
+return premultiply(vec4(vec3(x.rgb), pixel.a));
+}

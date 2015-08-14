@@ -1,0 +1,34 @@
+/*
+A Core Image kernel routine that computes a multiply effect.
+The code looks up the source pixel in the sampler and then multiplies it by the value passed to the routine.
+*/
+
+kernel vec4 overlayHistogramKernel(sampler src, float height)
+{
+
+vec4 pixel = unpremultiply(sample(src, samplerCoord(src)));
+vec4 m = unpremultiply(sample(src, vec2(0.5, 0.5)));
+float mf = max(m.r, max(m.g, m.b));
+
+float scale = (height / 4.0) / mf;
+vec2 L = destCoord();
+vec4 p = unpremultiply(sample(src, vec2(samplerCoord(src).x, 0.5)));
+vec4 r; r.a = 1.0;
+
+r.r = floor(L.y) <= (p.r * scale) ? pixel.r : 0.0;
+r.g = floor(L.y) <= (p.g * scale) ? pixel.g : 0.0;
+r.b = floor(L.y) <= (p.b * scale) ? pixel.b : 0.0;
+
+vec4 t = floor(p.r * scale) == floor(L.y) - 1.0 ? vec4(1.0, 0.0, 0.0, 1.0) : r;
+t      = floor(p.g * scale) == floor(L.y) - 1.0 ? vec4(0.0, 1.0, 0.0, 1.0) : r;
+t      = floor(p.b * scale) == floor(L.y) - 1.0 ? vec4(0.0, 0.0, 1.0, 1.0) : r;
+
+r = vec4(t + r * (1.0 - t.a));
+
+/* r.rgb = r.r + r.g + r.b > 0.0 ? r.rgb : pixel.rgb; */
+
+r.rgb = r.r + r.g + r.b > 0.0 ? r.rgb : vec3(0.0);
+
+return premultiply(r);
+
+}

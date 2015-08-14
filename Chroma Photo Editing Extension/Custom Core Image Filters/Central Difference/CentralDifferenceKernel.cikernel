@@ -1,0 +1,18 @@
+kernel vec4 centralDifferenceKernel(sampler image)
+{
+vec2 xy    = destCoord();
+vec4 a     = vec4(sample(image, samplerTransform(image, xy + vec2(-1, 0)))
+- (2.0 * sample(image, samplerTransform(image, xy + vec2(0, 0))))
++ sample(image, samplerTransform(image, xy + vec2(+1, 0))))
+
++ vec4((sample(image, samplerTransform(image, xy + vec2(-1, -1)))
+- sample(image, samplerTransform(image, xy + vec2(-1, +1)))
+- sample(image, samplerTransform(image, xy + vec2(+1, -1)))
++ sample(image, samplerTransform(image, xy + vec2(+1, +1)))) / vec4(4.0))
+
++ vec4(sample(image, samplerTransform(image, xy + vec2(0, -1)))
+- (2.0 * sample(image, samplerTransform(image, xy + vec2(0, 0))))
++ sample(image, samplerTransform(image, xy + vec2(0, +1))));
+
+return premultiply(vec4(a.rgb, 1.0));
+}

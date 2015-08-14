@@ -1,0 +1,27 @@
+/*
+Signal-to-noise ratio (SNR) is equal to the mean divided by the standard deviation. The coefficient of variation (CV) is the standard deviation divided by the mean, multiplied by 100 percent.
+*/
+
+kernel vec4 globalStandardDeviationKernel(sampler u, float inputHeight, float inputRed, float inputGreen, float inputBlue, float inputAlpha)
+{
+    vec4 pixel = unpremultiply(sample(u, samplerCoord(u)));
+    vec4 mean = vec4(inputRed, inputGreen, inputBlue, inputAlpha);
+
+
+    vec3 sd = vec3(pow(vec3(abs(pixel.rgb - mean.rgb)), vec3(2.0)));
+
+    /*sd = vec3(sd / vec3(inputHeight));*/
+
+    sd = vec3(sqrt(sd));
+
+    return premultiply(vec4(vec3(sd), pixel.a));
+
+/*
+        vec4 lixel 	= unpremultiply(sample(u, samplerCoord(u)));
+        lixel.r = distance(log(0.5), lixel.r);
+        lixel.g = distance(log(0.5), lixel.g);
+        lixel.b = distance(log(0.5), lixel.b);
+
+    return premultiply(lixel);
+*/
+}

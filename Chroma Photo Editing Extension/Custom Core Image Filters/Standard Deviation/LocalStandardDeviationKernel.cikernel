@@ -1,0 +1,62 @@
+kernel vec4 localStandardDeviationKernel(sampler u)
+{
+    vec4 pixel = unpremultiply(sample(u, samplerCoord(u)));
+    vec2 xy = destCoord();
+    vec4 mean = vec4(0.0);
+    for (int i = -1; i <= 1; i++)
+    {
+        for (int j = -1; j <= 1; j++ )
+        {
+            mean += sample(u, samplerTransform(u, xy+vec2(i, j)));
+        }
+    }
+    float size = 9.0;
+    mean /= size;
+    
+    vec4 variance   = sqrt(pow(pixel - mean, vec4(2.0))); // variance
+    //vec3 sd       = variance * (1.0 − amount) + (variance / pixel.rgb) * amount; /* vec3(mix(variance.rgb, variance.rgb / pixel.rgb, amount)); */
+    //return premultiply(vec4(1.0 - sd, pixel.a)); // standard deviation
+    return premultiply(vec4(vec3(sqrt(variance.rgb)), 1.0));
+}
+/*
+kernel vec4 localStandardDeviationKernel(sampler u)
+{
+    vec4 pixel = unpremultiply(sample(u, samplerCoord(u)));
+    vec2 xy = destCoord();
+
+    vec4 sum  = vec4(0.0);
+
+    for (int i = -1; i <= 1; i++)
+    {
+        for (int j = -1; j <= 1; j++ )
+        {
+            if (i != 0)
+                if (j != 0)
+                    sum += sample(u, samplerTransform(u, vec2(xy + vec2(i, j))));
+        }
+    }
+    vec4 size = vec4(9.0 + (1.0 - max(pixel.r, max(pixel.g, pixel.b))));
+    vec4 mean = vec4(sum / size);
+
+    vec4 diff  = vec4(0.0);
+    for (int i = -1; i <= 1; i++)
+    {
+        for (int j = -1; j <= 1; j++ )
+        {
+            if (i != 0)
+                if (j != 0)
+                    diff += vec4(pow(vec4(sample(u, samplerTransform(u, vec2(xy + vec2(i, j)))) - mean), vec4(2.0)));
+        }
+    }
+
+    vec4 size2 = vec4(8.0 - max(pixel.r, max(pixel.g, pixel.b)));
+    
+    vec4 variance = vec4(diff / vec4(size2));
+    vec4 sd	    = vec4(sqrt(variance));
+    vec4 cv     = vec4(sd / diff);
+
+    pixel.rgb = vec3(abs(sd.rgb - pixel.rgb));
+
+    return premultiply(pixel);
+}
+*/

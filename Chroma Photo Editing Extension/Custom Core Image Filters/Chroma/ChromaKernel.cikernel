@@ -1,0 +1,31 @@
+/*
+ The Core Image Filter version will have the following sliders:
+ Divisor [-1 to 1, default 0]: Subtract or add to the mean divisor for enhanced detail
+ Mix [0 to 1, default 0]: Mix between standard deviation with original pixel values
+ 
+ The filter will come in different sizes: 3 x 3, 5 x 5, 7 x 7, and 9 x 9
+ */
+
+kernel vec4 chromaKernel(sampler u)
+{
+    vec4 pixel = unpremultiply(sample(u, samplerCoord(u)));
+    vec2 xy = destCoord();
+    vec4 mean = vec4(0.0);
+    for (int i = -1; i <= 1; i++)
+    {
+        for (int j = -1; j <= 1; j++ )
+        {
+            if (i != 0)
+                if (j != 0)
+                    mean += sample(u, samplerTransform(u, xy+vec2(i, j)));
+        }
+    }
+    float size = 8.0;
+    mean /= size;
+    
+    vec4 variance   = pow(abs(pixel - mean), vec4(2.0)); // variance
+    vec4 sd         = sqrt(variance);
+    //vec3 sd       = variance * (1.0 − amount) + (variance / pixel.rgb) * amount; /* vec3(mix(variance.rgb, variance.rgb / pixel.rgb, amount)); */
+    //return premultiply(vec4(1.0 - sd, pixel.a)); // standard deviation
+    return premultiply(vec4(vec3(pixel.rgb / sd.rgb), 1.0));
+}

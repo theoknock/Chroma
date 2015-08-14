@@ -1,0 +1,25 @@
+kernel vec4 fastCornerDetectionKernel(sampler image)
+{
+vec4 centerIntensity = unpremultiply(sample(image, samplerCoord(image)));
+vec2 xy = destCoord();
+
+vec4 bottomLeftIntensity = unpremultiply(sample(image, samplerTransform(image, xy+vec2(-1, -1))));
+vec4 topRightIntensity = unpremultiply(sample(image, samplerTransform(image, xy+vec2(1, 1))));
+vec4 topLeftIntensity = unpremultiply(sample(image, samplerTransform(image, xy+vec2(1, -1))));
+vec4 bottomRightIntensity = unpremultiply(sample(image, samplerTransform(image, xy+vec2(-1, 1))));
+vec4 leftIntensity = unpremultiply(sample(image, samplerTransform(image, xy+vec2(-1, 0))));
+vec4 rightIntensity = unpremultiply(sample(image, samplerTransform(image, xy+vec2(1, 0))));
+vec4 bottomIntensity = unpremultiply(sample(image, samplerTransform(image, xy+vec2(0, -1))));
+vec4 topIntensity = unpremultiply(sample(image, samplerTransform(image, xy+vec2(0, 1))));
+
+vec4 byteTally = vec4(1.0 / 255.0) * step(centerIntensity, topRightIntensity);
+byteTally += vec4(2.0 / 255.0) * step(centerIntensity, topIntensity);
+byteTally += vec4(4.0 / 255.0) * step(centerIntensity, topLeftIntensity);
+byteTally += vec4(8.0 / 255.0) * step(centerIntensity, leftIntensity);
+byteTally += vec4(16.0 / 255.0) * step(centerIntensity, bottomLeftIntensity);
+byteTally += vec4(32.0 / 255.0) * step(centerIntensity, bottomIntensity);
+byteTally += vec4(64.0 / 255.0) * step(centerIntensity, bottomRightIntensity);
+byteTally += vec4(128.0 / 255.0) * step(centerIntensity, rightIntensity);
+
+return premultiply(vec4(vec3(byteTally.rgb), 1.0));
+}

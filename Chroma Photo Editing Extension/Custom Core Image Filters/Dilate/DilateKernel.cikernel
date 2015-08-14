@@ -1,0 +1,76 @@
+/*
+The Core Image Filter version will have the following sliders:
+Divisor [-1 to 1, default 0]: Subtract or add to the mean divisor for enhanced detail
+Mix [0 to 1, default 0]: Mix between standard deviation with original pixel values
+
+The filter will come in different sizes: 3 x 3, 5 x 5, 7 x 7, and 9 x 9
+*/
+
+kernel vec4 dilateKernel(sampler u, float inputRadius)
+{
+vec4 pixel = unpremultiply(sample(u, samplerCoord(u)));
+
+vec2 xy = destCoord();
+vec4 square;
+vec4 mixel;
+
+float maxr = 0.0;
+float maxg = 0.0;
+float maxb = 0.0;
+
+int radius = int(inputRadius);
+radius = radius - 1;
+for (int i = (0 - (radius / 2)); i < (radius / 2); i++)
+{
+for (int j = (0 - (radius / 2)); j < (radius / 2); j++)
+{
+
+/*
+for (int i = -2; i <= 2; i++)
+{
+for (int j = -2; j <= 2; j++ )
+{
+*/
+mixel = sample(u, samplerTransform(u, vec2(xy+vec2(i, j))));
+if (i != 0) {
+if (j != 0) {
+maxr = max(maxr, mixel.r);
+maxg = max(maxg, mixel.g);
+maxb = max(maxb, mixel.b);
+}
+}
+square.rgb = vec3(maxr, maxg, maxb);
+}
+}
+return premultiply(vec4(vec3(square.rgb), pixel.a));
+
+/*
+vec4 pixel = unpremultiply(sample(u, samplerCoord(u)));
+vec2 xy = destCoord();
+vec4 meanmax;
+vec4 mixel;
+
+// Per-channel max values
+float maxr = 0.0;
+float maxg = 0.0;
+float maxb = 0.0;
+
+for (int i = -2; i <= 2; i++)
+{
+for (int j = -2; j <= 2; j++ )
+{
+mixel = sample(u, samplerTransform(u, xy+vec2(i, j)));
+// Process max for each channel
+maxr = max(maxr, mixel.r);
+maxg = max(maxg, mixel.g);
+maxb = max(maxb, mixel.b);
+if (i != 0)
+if (j != 0)
+meanmax.rgb = vec3(maxr, maxg, maxb);
+
+}
+}
+
+return premultiply(vec4(vec3(meanmax.rgb), pixel.a));
+*/
+}

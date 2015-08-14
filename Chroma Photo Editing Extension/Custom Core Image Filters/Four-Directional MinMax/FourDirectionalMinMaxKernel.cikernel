@@ -1,0 +1,88 @@
+kernel vec4 directionalMeanKernel(sampler u)
+{
+vec4 pixel = unpremultiply(sample(u, samplerCoord(u)));
+vec2 xy = destCoord();
+
+vec4 meanmax;
+vec4 meanmin;
+vec4 mixel;
+
+// Per-channel max values
+float maxr = 0.0;
+float maxg = 0.0;
+float maxb = 0.0;
+
+// Per-channel min values
+float minr = 1.0;
+float ming = 1.0;
+float minb = 1.0;
+
+for (int i = -2; i <= 2; i++)
+{
+for (int j = -2; j <= 2; j++)
+{
+if (i != 0) {
+if (j != 0) {
+mixel = premultiply(sample(u, samplerTransform(u, xy+vec2(i, j))));
+// Process max for each channel
+maxr = max(maxr, mixel.r);
+maxg = max(maxg, mixel.g);
+maxb = max(maxb, mixel.b);
+meanmax.rgb = vec3(maxr, maxg, maxb);
+
+// Process min for each channel
+minr = min(minr, mixel.r);
+ming = min(ming, mixel.g);
+minb = min(minb, mixel.b);
+meanmin.rgb = vec3(minr, ming, minb);
+}
+}
+}
+}
+
+// Four Directional Weighted Value
+// Direction 1
+vec4 S1 = premultiply(sample(u, samplerTransform(u, xy+vec2(-1, -2))));
+S1 += premultiply(sample(u, samplerTransform(u, xy+vec2(-2, -2))));
+S1 += premultiply(sample(u, samplerTransform(u, xy+vec2(-1, -1))));
+S1 += premultiply(sample(u, samplerTransform(u, xy+vec2(0, 0))));
+S1 += premultiply(sample(u, samplerTransform(u, xy+vec2(1, 1))));
+S1 += premultiply(sample(u, samplerTransform(u, xy+vec2(2, 2))));
+S1 += premultiply(sample(u, samplerTransform(u, xy+vec2(1, 2))));
+S1 /= vec4(7.0);
+
+// Direction 2
+vec4 S2 = premultiply(sample(u, samplerTransform(u, xy+vec2(1, -2))));
+S2 += premultiply(sample(u, samplerTransform(u, xy+vec2(0, -2))));
+S2 += premultiply(sample(u, samplerTransform(u, xy+vec2(0, -1))));
+S2 += premultiply(sample(u, samplerTransform(u, xy+vec2(0, 0))));
+S2 += premultiply(sample(u, samplerTransform(u, xy+vec2(0, 1))));
+S2 += premultiply(sample(u, samplerTransform(u, xy+vec2(0, 2))));
+S2 += premultiply(sample(u, samplerTransform(u, xy+vec2(-1, 2))));
+S2 /= vec4(7.0);
+
+// Direction 3
+vec4 S3 = premultiply(sample(u, samplerTransform(u, xy+vec2(2, -1))));
+S3 += premultiply(sample(u, samplerTransform(u, xy+vec2(2, -2))));
+S3 += premultiply(sample(u, samplerTransform(u, xy+vec2(1, -1))));
+S3 += premultiply(sample(u, samplerTransform(u, xy+vec2(0, 0))));
+S3 += premultiply(sample(u, samplerTransform(u, xy+vec2(-1, 1))));
+S3 += premultiply(sample(u, samplerTransform(u, xy+vec2(-2, 2))));
+S3 += premultiply(sample(u, samplerTransform(u, xy+vec2(-2, 1))));
+S3 /= vec4(7.0);
+
+// Direction 4
+vec4 S4 = premultiply(sample(u, samplerTransform(u, xy+vec2(-2, -2))));
+S4 += premultiply(sample(u, samplerTransform(u, xy+vec2(-2, 0))));
+S4 += premultiply(sample(u, samplerTransform(u, xy+vec2(-1, 0))));
+S4 += premultiply(sample(u, samplerTransform(u, xy+vec2(0, 0))));
+S4 += premultiply(sample(u, samplerTransform(u, xy+vec2(1, 0))));
+S4 += premultiply(sample(u, samplerTransform(u, xy+vec2(2, 0))));
+S4 += premultiply(sample(u, samplerTransform(u, xy+vec2(2, 1))));
+S4 /= vec4(7.0);
+
+//vec4 mean = (S1 + S2 + S3 + S4) / vec4(4.0);
+//pixel.rgb = (float(pixel.rgb) < float(meanmax.rgb)) ? ( (float(pixel.rgb) > float(meanmin.rgb)) ? abs(((meanmax.rgb + pixel.rgb) / vec3(2.0)) - meanmin.rgb) : abs(((meanmin.rgb + pixel.rgb) / vec3(2.0)) - meanmax.rgb) ) : abs(((pixel.rgb + meanmin.rgb) / vec3(2.0)) - pixel.rgb);
+vec4 mean = (abs(pixel - S1) + abs(pixel - S2) + abs(pixel - S3) + abs(pixel - S4)) / vec4(4.0);
+return premultiply(vec4(vec3(clamp(mean.rgb, 0.0, 1.0)), 1.0));
+}

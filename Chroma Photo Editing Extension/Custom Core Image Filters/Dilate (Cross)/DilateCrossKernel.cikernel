@@ -1,0 +1,37 @@
+kernel vec4 crossDilateKernel(sampler u, float inputRadius)
+{
+vec4 pixel = unpremultiply(sample(u, samplerCoord(u)));
+vec2 xy = destCoord();
+vec4 crux;
+vec4 mixel;
+
+float maxr = 0.0;
+float maxg = 0.0;
+float maxb = 0.0;
+
+int radius = int(inputRadius);
+radius = radius - 1;
+for (int i = (0 - (radius / 2)); i < (radius / 2); i++)
+{
+mixel = sample(u, samplerTransform(u, vec2(xy+vec2(i, 0))));
+if (i != 0)
+{
+maxr = max(maxr, mixel.r);
+maxg = max(maxg, mixel.g);
+maxb = max(maxb, mixel.b);
+}
+crux.rgb = vec3(maxr, maxg, maxb);
+
+mixel = sample(u, samplerTransform(u, vec2(xy+vec2(0, i))));
+if (i != 0)
+{
+maxr = max(maxr, mixel.r);
+maxg = max(maxg, mixel.g);
+maxb = max(maxb, mixel.b);
+}
+crux.rgb = vec3(maxr, maxg, maxb);
+}
+
+return premultiply(vec4(vec3(crux.rgb), pixel.a));
+}
+

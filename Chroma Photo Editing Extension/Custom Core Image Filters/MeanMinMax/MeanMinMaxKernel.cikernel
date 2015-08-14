@@ -1,0 +1,47 @@
+/*
+The Core Image Filter version will have the following sliders:
+Divisor [-1 to 1, default 0]: Subtract or add to the mean divisor for enhanced detail
+Mix [0 to 1, default 0]: Mix between standard deviation with original pixel values
+
+The filter will come in different sizes: 3 x 3, 5 x 5, 7 x 7, and 9 x 9
+*/
+
+kernel vec4 meanMinMaxKernel(sampler u)
+{
+vec4 pixel = unpremultiply(sample(u, samplerCoord(u)));
+vec2 xy = destCoord();
+vec4 meanmax;
+vec4 meanmin;
+vec4 mixel;
+
+// Per-channel max values
+float maxr = 0.0;
+float maxg = 0.0;
+float maxb = 0.0;
+
+// Per-channel min values
+float minr = 1.0;
+float ming = 1.0;
+float minb = 1.0;
+
+for (int i = -1; i <= 1; i++)
+{
+for (int j = -1; j <= 1; j++ )
+{
+mixel = sample(u, samplerTransform(u, xy+vec2(i, j)));
+// Process max for each channel
+maxr = max(maxr, mixel.r);
+maxg = max(maxg, mixel.g);
+maxb = max(maxb, mixel.b);
+meanmax.rgb = vec3(maxr, maxg, maxb);
+
+// Process min for each channel
+minr = min(minr, mixel.r);
+ming = min(ming, mixel.g);
+minb = min(minb, mixel.b);
+meanmin.rgb = vec3(minr, ming, minb);
+}
+}
+
+return premultiply(vec4(vec3(clamp(abs(meanmax.rgb - meanmin.rgb), 0.0, 1.0)), pixel.a));
+}

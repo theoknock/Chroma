@@ -1,0 +1,19 @@
+kernel vec4 prewittKernel(sampler image)
+{
+    vec2 xy = destCoord();
+    vec4 bottomLeftIntensity = sample(image, samplerTransform(image, xy + vec2(-1, -1)));
+    vec4 topRightIntensity = sample(image, samplerTransform(image, xy + vec2(+1, +1)));
+    vec4 topLeftIntensity = sample(image, samplerTransform(image, xy + vec2(+1, -1)));
+    vec4 bottomRightIntensity = sample(image, samplerTransform(image, xy + vec2(-1, +1)));
+    vec4 leftIntensity = sample(image, samplerTransform(image, xy + vec2(-1, 0)));
+    vec4 rightIntensity = sample(image, samplerTransform(image, xy + vec2(+1, 0)));
+    vec4 bottomIntensity = sample(image, samplerTransform(image, xy + vec2(0, -1)));
+    vec4 topIntensity = sample(image, samplerTransform(image, xy + vec2(0, +1)));
+    vec4 h = vec4(-topLeftIntensity - topIntensity - topRightIntensity + bottomLeftIntensity + bottomIntensity + bottomRightIntensity);
+    vec4 v = vec4(-bottomLeftIntensity - leftIntensity - topLeftIntensity + bottomRightIntensity + rightIntensity + topRightIntensity);
+    float h_max = max(h.r, max(h.g, h.b));
+    float v_max = max(v.r, max(v.g, v.b));
+    float mag = length(vec2(h_max, v_max)) * 1.0;
+    
+    return vec4(vec3(mag), 1.0);
+}

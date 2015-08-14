@@ -1,0 +1,39 @@
+kernel vec4 cvKernel(sampler u)
+{
+    vec4 pixel = unpremultiply(sample(u, samplerCoord(u)));
+    vec2 xy = destCoord();
+    
+    vec4 sum  = vec4(0.0);
+    for (int i = -1; i <= 1; i++)
+    {
+        for (int j = -1; j <= 1; j++ )
+        {
+            sum += sample(u, samplerTransform(u, vec2(xy + vec2(i, j))));
+        }
+    }
+    vec4 size = vec4(9.0 + (1.0 - max(pixel.r, max(pixel.g, pixel.b))));
+    vec4 mean = vec4(sum / size);
+    
+    
+    vec4 diff  = vec4(0.0);
+    for (int i = -1; i <= 1; i++)
+    {
+        for (int j = -1; j <= 1; j++ )
+        {
+            diff += vec4(pow(vec4(sample(u, samplerTransform(u, vec2(xy + vec2(i, j)))) - mean), vec4(2.0)));
+        }
+    }
+    
+    vec4 size2 = vec4(9.0 - max(pixel.r, max(pixel.g, pixel.b)));
+    vec4 variance = vec4(diff / vec4(size2));
+    vec4 sd	    = vec4(sqrt(variance));
+    vec4 cv     = vec4(sd / diff);
+    
+    return premultiply(vec4(pixel.rgb / cv.rgb, 1.0 ));
+    
+    /*
+     return premultiply(vec4(sd.rgb / pixel.rgb, pixel.a));
+     return premultiply(vec4(vec3(pixel.rgb - mean.rgb), 1.0));
+     return premultiply(vec4(vec3(sd.rgb), pixel.a));
+     */
+}

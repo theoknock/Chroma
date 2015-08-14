@@ -1,0 +1,34 @@
+/*
+A Core Image kernel routine that computes the mean absolute deviation around a central point (3 x 3 neighborhood of the source pixel).
+The code computes the mean of the 3 x 3 neighborhood of the source pixel; then, it sums the absolute differences of the
+neighborhood mean and each neighboring pixel, and finds their mean.
+*/
+
+kernel vec4 absoluteDeviationKernel(sampler image)
+{
+vec4 pixel = unpremultiply(sample(image, samplerCoord(image)));
+
+vec2 xy = destCoord();
+vec4 sum = vec4(0.0);
+for (int i = -1; i <= 1; i++)
+{
+for (int j = -1; j <= 1; j++ )
+{
+sum += sample(image, samplerTransform(image, xy + vec2(i, j)));
+}
+}
+vec4 size = vec4(9.0);
+vec4 mean = vec4(sum / size);
+
+vec4 sod = vec4(0.0);
+for (int i = -1; i <= 1; i++)
+{
+for (int j = -1; j <= 1; j++ )
+{
+sod += vec4(abs(sample(image, samplerTransform(image, xy + vec2(i, j))) - mean));
+}
+}
+vec4 mad = vec4(sod / size);
+
+return premultiply(vec4(mad.rgb, pixel.a));
+}

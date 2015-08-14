@@ -1,0 +1,48 @@
+/*
+The Core Image Filter version will have the following sliders:
+Divisor [-1 to 1, default 0]: Subtract or add to the mean divisor for enhanced detail
+Mix [0 to 1, default 0]: Mix between standard deviation with original pixel values
+
+The filter will come in different sizes: 3 x 3, 5 x 5, 7 x 7, and 9 x 9
+
+vec4 pixel = unpremultiply(sample(u, samplerCoord(u)));
+vec2 xy = destCoord();
+vec4 mean2 = vec4(0.0);
+
+for (int i = -2; i <= 2; i++)
+{
+for (int j = -2; j <= 2; j++ )
+{
+mean2 += vec4(pow(sample(u, samplerTransform(u, xy+vec2(i, j))), vec4(2.0)));
+}
+}
+
+vec4 size = vec4(25.0);
+mean2 = vec4(sqrt(vec4(mean2 / size)));
+
+pixel.rgb = vec3(clamp(abs(pixel.rgb - mean2.rgb), 0.0, 1.0));
+
+return premultiply(vec4(pixel.rgb, pixel.a));
+}
+
+*/
+
+kernel vec4 rmsKernel(sampler u)
+{
+vec4 pixel = unpremultiply(sample(u, samplerCoord(u)));
+vec2 xy = destCoord();
+vec4 mean2 = vec4(0.0);
+
+for (int i = -4; i <= 4; i++)
+{
+for (int j = -4; j <= 4; j++ )
+{
+mean2 += sample(u, samplerTransform(u, xy+vec2(i, j))) * sample(u, samplerTransform(u, xy+vec2(i, j)));
+}
+}
+
+float size = 81.0;
+mean2 /= size;
+
+return premultiply(vec4(vec3(pixel.rgb - sqrt(mean2.rgb)), pixel.a));
+}

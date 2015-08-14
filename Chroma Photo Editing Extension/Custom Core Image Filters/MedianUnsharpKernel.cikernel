@@ -1,0 +1,31 @@
+kernel vec4 medianUnsharpKernel(sampler u)
+{
+    vec4 pixel = unpremultiply(sample(u, samplerCoord(u)));
+    vec2 xy = destCoord();
+    int radius = 3;
+    int bounds = (radius - 1) / 2;
+    vec4 sum  = vec4(0.0);
+    for (int i = (0 - bounds); i <= bounds; i++)
+    {
+        for (int j = (0 - bounds); j <= bounds; j++ )
+        {
+            sum += unpremultiply(sample(u, samplerTransform(u, vec2(xy + vec2(i, j)))));
+        }
+    }
+    vec4 mean = vec4(sum / vec4(pow(float(radius), 2.0)));
+    float mean_avg = float(mean);
+    float comp_avg = 0.0;
+    vec4 comp  = vec4(0.0);
+    vec4 median  = mean;
+    for (int i = (0 - bounds); i <= bounds; i++)
+    {
+        for (int j = (0 - bounds); j <= bounds; j++ )
+        {
+            comp = unpremultiply(sample(u, samplerTransform(u, vec2(xy + vec2(i, j)))));
+            comp_avg = float(comp);
+            median = (comp_avg < mean_avg) ? max(median, comp) : median;
+        }
+    }
+    
+    return premultiply(vec4(vec3(abs(pixel.rgb - median.rgb)), 1.0));
+}

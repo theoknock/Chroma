@@ -1,0 +1,21 @@
+/*
+A Core Image kernel routine that computes a multiply effect.
+The code looks up the source pixel in the sampler and then multiplies it by the value passed to the routine.
+*/
+
+kernel vec4 MagnitudeKernel(sampler image)
+{
+vec2 dc     = destCoord();
+vec4 center = sample(image, samplerCoord(image));
+vec4 north  = sample(image, samplerTransform(image, dc + vec2(0, -1)));
+vec4 south  = sample(image, samplerTransform(image, dc + vec2(0, +1)));
+vec4 dx     = vec4(distance(south, north));
+vec4 fx     = vec4(distance(center, north));
+vec4 east   = sample(image, samplerTransform(image, dc + vec2(+1, 0)));
+vec4 west   = sample(image, samplerTransform(image, dc + vec2(-1, 0)));
+vec4 dy     = vec4(distance(east, west));
+vec4 fy     = vec4(distance(center, east));
+vec4 grad   = vec4(sqrt(vec4(pow(fy / dy, vec4(2.0)) + pow(fx / dx, vec4(2.0)))));
+
+return vec4(vec3(atan((center.rgb / dy.rgb) / (center.rgb / dx.rgb))), 1.0);
+}

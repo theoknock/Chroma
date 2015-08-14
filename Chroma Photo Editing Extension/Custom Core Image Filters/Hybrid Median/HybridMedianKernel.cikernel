@@ -1,0 +1,75 @@
+kernel vec4 hybridMedianKernel(sampler u, float inputUnits, float inputNorth, float inputSouth, float inputEast, float inputWest)
+{
+    vec4 pixel = unpremultiply(sample(u, samplerCoord(u)));
+    vec2 xy = destCoord();
+
+    /* First median */
+    vec4 sum  = vec4(0.0);
+    for (int i = 0 - int(inputNorth); i <= int(inputSouth); i++)
+    {
+        sum += unpremultiply(sample(u, samplerTransform(u, vec2(xy + vec2(i, 0)))));
+    }
+
+    for (int j = 0 - int(inputEast); j <= int(inputWest); j++ )
+    {
+        sum += unpremultiply(sample(u, samplerTransform(u, vec2(xy + vec2(0, j)))));
+    }
+
+    float divisor = ((inputNorth + inputSouth) + 1.0) * ((inputEast + inputWest) + 1.0);
+    vec4 mean = vec4(sum / vec4(divisor));
+    float mean_avg = float(mean);
+    float comp_avg = 0.0;
+    vec4 comp = vec4(0.0);
+    vec4 median_1 = mean;
+
+    for (int i = 0 - int(inputNorth); i <= int(inputSouth); i++)
+    {
+        comp = unpremultiply(sample(u, samplerTransform(u, vec2(xy + vec2(i, 0)))));
+        comp_avg = float(comp);
+        median_1 = (comp_avg < mean_avg) ? max(median_1, comp) : median_1 ;
+    }
+
+    for (int j = 0 - int(inputEast); j <= int(inputWest); j++ )
+    {
+        comp = unpremultiply(sample(u, samplerTransform(u, vec2(xy + vec2(0, j)))));
+        comp_avg = float(comp);
+        median_1 = (comp_avg < mean_avg) ? max(median_1, comp) : median_1 ;
+    }
+
+    /* Second median */
+    vec4 sum_2  = vec4(0.0);
+
+    for (int i = 0 - int(inputNorth); i <= int(inputSouth); i++)
+    {
+        sum_2 += unpremultiply(sample(u, samplerTransform(u, vec2(xy + vec2(i, i)))));
+    }
+
+    for (int j = 0 - int(inputEast); j <= int(inputWest); j++ )
+    {
+        sum_2 += unpremultiply(sample(u, samplerTransform(u, vec2(xy + vec2(j, j)))));
+    }
+vec4 mean_2 = vec4(sum_2 / vec4(divisor));
+vec4 median_2  = mean_2;
+float mean_avg_2 = float(mean_2);
+float comp_avg_2 = 0.0;
+vec4 comp_2  = vec4(0.0);
+
+    for (int i = 0 - int(inputNorth); i <= int(inputSouth); i++)
+    {
+        comp_2 = unpremultiply(sample(u, samplerTransform(u, vec2(xy + vec2(i, i)))));
+        comp_avg_2 = float(comp_2);
+        median_2 = (comp_avg_2 < mean_avg_2) ? max(median_2, comp_2) : median_2 ;
+    }
+
+    for (int j = 0 - int(inputEast); j <= int(inputWest); j++ )
+    {
+        comp_2 = unpremultiply(sample(u, samplerTransform(u, vec2(xy + vec2(j, j)))));
+        comp_avg_2 = float(comp_2);
+        median_2 = (comp_avg_2 < mean_avg_2) ? max(median_2, comp_2) : median_2 ;
+    }
+
+vec4 [GlobalCIImage sharedSingleton].ciImage = max(pixel, max(median_1, median_2));
+
+return premultiply(vec4(vec3(abs(pixel.rgb - [GlobalCIImage sharedSingleton].ciImage.rgb)), 1.0));
+
+}

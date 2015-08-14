@@ -1,0 +1,10 @@
+kernel vec4 robertsKernel(sampler image)
+{
+    vec2 xy    = destCoord();
+    vec4 y     = vec4(sqrt(sample(image, samplerCoord(image))));
+    vec4 zi    = vec4(pow(vec4(sqrt(sample(image, samplerTransform(image, xy + vec2(-1, -1)))) - sqrt(sample(image, samplerTransform(image, xy + vec2(+1, +1))))), vec4(2.0)));
+    vec4 zj    = vec4(pow(vec4(sqrt(sample(image, samplerTransform(image, xy + vec2(+1, -1)))) - sqrt(sample(image, samplerTransform(image, xy + vec2(-1, +1))))), vec4(2.0)));
+    vec4 g    = vec4(sqrt(zi + zj));
+
+    return vec4(g.rgb, 1.0);
+}

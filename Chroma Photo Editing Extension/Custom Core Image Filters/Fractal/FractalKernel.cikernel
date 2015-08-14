@@ -1,0 +1,43 @@
+kernel vec4 fractalKernel(sampler u, float inputUnits, float inputNorth, float inputSouth, float inputEast, float inputWest)
+{
+vec4 pixel = unpremultiply(sample(u, samplerCoord(u)));
+vec2 xy = destCoord();
+vec4 sum  = vec4(0.0);
+vec4 meanmax;
+vec4 meanmin;
+vec4 mixel;
+
+float maxr = 0.0;
+float maxg = 0.0;
+float maxb = 0.0;
+
+float minr = 1.0;
+float ming = 1.0;
+float minb = 1.0;
+
+for (int i = 0 - int(inputNorth); i <= int(inputSouth); i++)
+{
+for (int j = 0 - int(inputEast); j <= int(inputWest); j++ )
+{
+mixel = sample(u, samplerTransform(u, xy+vec2(i, j)));
+maxr = max(maxr, mixel.r);
+maxg = max(maxg, mixel.g);
+maxb = max(maxb, mixel.b);
+meanmax.rgb = vec3(maxr, maxg, maxb);
+
+minr = min(minr, mixel.r);
+ming = min(ming, mixel.g);
+minb = min(minb, mixel.b);
+meanmin.rgb = vec3(minr, ming, minb);
+}
+}
+
+const int
+
+for (int k = 0; k <= 16; k++)
+{
+
+}
+
+return premultiply(vec4(vec3(pixel.rgb), pixel.a));
+}

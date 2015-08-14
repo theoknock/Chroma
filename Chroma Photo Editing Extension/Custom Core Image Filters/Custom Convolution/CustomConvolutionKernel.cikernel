@@ -1,0 +1,433 @@
+kernel vec4 customConvolutionKernel(sampler image, float inputCompassGradient, float inputH1, float inputH2, float inputH3, float inputH4, float inputH5, float inputH6, float inputH7, float inputH8, float inputH9, float inputV1, float inputV2, float inputV3, float inputV4, float inputV5, float inputV6, float inputV7,
+float inputV8, float inputV9)
+{
+vec2 xy = destCoord();
+vec4 accumulator_h = vec4(0.0);
+vec4 accumulator_v = vec4(0.0);
+vec4 max_accumulator_h = vec4(0.0);
+vec4 max_accumulator_v = vec4(0.0);
+
+if (inputCompassGradient == 3.0)
+{
+/* Horizontal convolution */
+accumulator_h = vec4(0.0);
+vec4 accumulator_h1 = vec4(0.0);
+vec4 accumulator_h2 = vec4(0.0);
+vec4 accumulator_h3 = vec4(0.0);
+vec4 accumulator_h4 = vec4(0.0);
+vec4 accumulator_h5 = vec4(0.0);
+vec4 accumulator_h6 = vec4(0.0);
+vec4 accumulator_h7 = vec4(0.0);
+vec4 accumulator_h8 = vec4(0.0);
+
+// 1 of 8 Directions
+/* Top row */
+accumulator_h1 +=	inputH1 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(-2, +0)))); // leftUpIntensity
+accumulator_h1 +=	inputH2 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(-1, +0)))); // centerUpIntensity
+accumulator_h1 +=	inputH3 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(+0, +0)))); // rightUpIntensity
+
+/* Middle row */
+accumulator_h1 +=	inputH4 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(-2, -1)))); // leftCenterIntensity
+accumulator_h1 +=	inputH5 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(-1, -1)))); // centerIntensity
+accumulator_h1 +=	inputH6 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(+0, -1)))); // rightCenterIntensity
+
+/* Bottom row */
+accumulator_h1 +=	inputH7 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(-2, -2)))); // leftDownIntensity
+accumulator_h1 +=	inputH8 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(-1, -2)))); // centerDownIntensity
+accumulator_h1 +=	inputH9 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(+0, -2)))); // rightDownIntensity
+
+accumulator_h1 /= vec4(9.0);
+
+// 2 of 8 Directions
+/* Top row */
+accumulator_h2 +=	inputH1 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(-1, +0)))); // leftUpIntensity
+accumulator_h2 +=	inputH2 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(+0, +0)))); // centerUpIntensity
+accumulator_h2 +=	inputH3 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(+1, +0)))); // rightUpIntensity
+
+/* Middle row */
+accumulator_h2 +=	inputH4 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(-1, -1)))); // leftCenterIntensity
+accumulator_h2 +=	inputH5 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(+0, -1)))); // centerIntensity
+accumulator_h2 +=	inputH6 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(+1, -1)))); // rightCenterIntensity
+
+/* Bottom row */
+accumulator_h2 +=	inputH7 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(-1, -2)))); // leftDownIntensity
+accumulator_h2 +=	inputH8 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(+0, -2)))); // centerDownIntensity
+accumulator_h2 +=	inputH9 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(+1, -2)))); // rightDownIntensity
+
+accumulator_h2 /= vec4(9.0);
+
+// 3 of 8 Directions
+/* Top row */
+accumulator_h3 +=	inputH1 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(+0, +0)))); // leftUpIntensity
+accumulator_h3 +=	inputH2 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(+1, +0)))); // centerUpIntensity
+accumulator_h3 +=	inputH3 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(+2, +0)))); // rightUpIntensity
+
+/* Middle row */
+accumulator_h3 +=	inputH4 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(+0, -1)))); // leftCenterIntensity
+accumulator_h3 +=	inputH5 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(+1, -1)))); // centerIntensity
+accumulator_h3 +=	inputH6 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(+2, -1)))); // rightCenterIntensity
+
+/* Bottom row */
+accumulator_h3 +=	inputH7 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(+0, -2)))); // leftDownIntensity
+accumulator_h3 +=	inputH8 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(+1, -2)))); // centerDownIntensity
+accumulator_h3 +=	inputH9 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(+2, -2)))); // rightDownIntensity
+
+accumulator_h3 /= vec4(9.0);
+
+// 4 of 8 Directions
+/* Top row */
+accumulator_h4 +=	inputH1 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(+0, +1)))); // leftUpIntensity
+accumulator_h4 +=	inputH2 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(+1, +1)))); // centerUpIntensity
+accumulator_h4 +=	inputH3 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(+2, +1)))); // rightUpIntensity
+
+/* Middle row */
+accumulator_h4 +=	inputH4 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(+0, +0)))); // leftCenterIntensity
+accumulator_h4 +=	inputH5 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(+1, +0)))); // centerIntensity
+accumulator_h4 +=	inputH6 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(+2, +0)))); // rightCenterIntensity
+
+/* Bottom row */
+accumulator_h4 +=	inputH7 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(+0, -1)))); // leftDownIntensity
+accumulator_h4 +=	inputH8 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(+1, -1)))); // centerDownIntensity
+accumulator_h4 +=	inputH9 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(+2, -1)))); // rightDownIntensity
+
+accumulator_h4 /= vec4(9.0);
+
+// 5 of 8 Directions
+/* Top row */
+accumulator_h5 +=	inputH1 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(+0, +2)))); // leftUpIntensity
+accumulator_h5 +=	inputH2 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(+1, +2)))); // centerUpIntensity
+accumulator_h5 +=	inputH3 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(+2, +2)))); // rightUpIntensity
+
+/* Middle row */
+accumulator_h5 +=	inputH4 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(+0, +1)))); // leftCenterIntensity
+accumulator_h5 +=	inputH5 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(+1, +1)))); // centerIntensity
+accumulator_h5 +=	inputH6 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(+2, +1)))); // rightCenterIntensity
+
+/* Bottom row */
+accumulator_h5 +=	inputH7 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(+0, +0)))); // leftDownIntensity
+accumulator_h5 +=	inputH8 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(+1, +0)))); // centerDownIntensity
+accumulator_h5 +=	inputH9 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(+2, +0)))); // rightDownIntensity
+
+accumulator_h5 /= vec4(9.0);
+
+// 6 of 8 Directions
+/* Top row */
+accumulator_h6 +=	inputH1 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(-1, +2)))); // leftUpIntensity
+accumulator_h6 +=	inputH2 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(+0, +2)))); // centerUpIntensity
+accumulator_h6 +=	inputH3 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(+1, +2)))); // rightUpIntensity
+
+/* Middle row */
+accumulator_h6 +=	inputH4 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(-1, +1)))); // leftCenterIntensity
+accumulator_h6 +=	inputH5 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(+0, +1)))); // centerIntensity
+accumulator_h6 +=	inputH6 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(+1, +1)))); // rightCenterIntensity
+
+/* Bottom row */
+accumulator_h6 +=	inputH7 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(-1, +0)))); // leftDownIntensity
+accumulator_h6 +=	inputH8 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(+0, +0)))); // centerDownIntensity
+accumulator_h6 +=	inputH9 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(+1, +0)))); // rightDownIntensity
+
+accumulator_h6 /= vec4(9.0);
+
+// 7 of 8 Directions
+/* Top row */
+accumulator_h7 +=	inputH1 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(-2, +2)))); // leftUpIntensity
+accumulator_h7 +=	inputH2 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(-1, +2)))); // centerUpIntensity
+accumulator_h7 +=	inputH3 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(+0, +2)))); // rightUpIntensity
+
+/* Middle row */
+accumulator_h7 +=	inputH4 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(-2, +1)))); // leftCenterIntensity
+accumulator_h7 +=	inputH5 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(-1, +1)))); // centerIntensity
+accumulator_h7 +=	inputH6 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(+0, +1)))); // rightCenterIntensity
+
+/* Bottom row */
+accumulator_h7 +=	inputH7 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(-2, +0)))); // leftDownIntensity
+accumulator_h7 +=	inputH8 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(-1, +0)))); // centerDownIntensity
+accumulator_h7 +=	inputH9 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(+0, +0)))); // rightDownIntensity
+
+accumulator_h7 /= vec4(9.0);
+
+// 8 of 8 Directions
+/* Top row */
+accumulator_h8 +=	inputH1 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(-2, +1)))); // leftUpIntensity
+accumulator_h8 +=	inputH2 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(-1, +1)))); // centerUpIntensity
+accumulator_h8 +=	inputH3 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(+0, +1)))); // rightUpIntensity
+
+/* Middle row */
+accumulator_h8 +=	inputH4 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(-2, +0)))); // leftCenterIntensity
+accumulator_h8 +=	inputH5 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(-1, +0)))); // centerIntensity
+accumulator_h8 +=	inputH6 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(+0, +0)))); // rightCenterIntensity
+
+/* Bottom row */
+accumulator_h8 +=	inputH7 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(-2, -1)))); // leftDownIntensity
+accumulator_h8 +=	inputH8 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(-1, -1)))); // centerDownIntensity
+accumulator_h8 +=	inputH9 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(+0, -1)))); // rightDownIntensity
+
+accumulator_h8 /= vec4(9.0);
+
+// Original
+/* Top row */
+accumulator_h +=	inputH1 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(-1, +1)))); // leftUpIntensity
+accumulator_h +=	inputH2 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(+0, +1)))); // centerUpIntensity
+accumulator_h +=	inputH3 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(+1, +1)))); // rightUpIntensity
+
+/* Middle row */
+accumulator_h +=	inputH4 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(-1, +0)))); // leftCenterIntensity
+accumulator_h +=	inputH5 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(+0, +0)))); // centerIntensity
+accumulator_h +=	inputH6 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(+1, +0)))); // rightCenterIntensity
+
+/* Bottom row */
+accumulator_h +=	inputH7 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(-1, -1)))); // leftDownIntensity
+accumulator_h +=	inputH8 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(+0, -1)))); // centerDownIntensity
+accumulator_h +=	inputH9 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(+1, -1)))); // rightDownIntensity
+
+/* Divisor */
+accumulator_h /= vec4(9.0);
+
+max_accumulator_h = (float(max_accumulator_h) > float(accumulator_h1)) ? max_accumulator_h : accumulator_h1;
+max_accumulator_h = (float(max_accumulator_h) > float(accumulator_h2)) ? max_accumulator_h : accumulator_h2;
+max_accumulator_h = (float(max_accumulator_h) > float(accumulator_h3)) ? max_accumulator_h : accumulator_h3;
+max_accumulator_h = (float(max_accumulator_h) > float(accumulator_h4)) ? max_accumulator_h : accumulator_h4;
+max_accumulator_h = (float(max_accumulator_h) > float(accumulator_h5)) ? max_accumulator_h : accumulator_h5;
+max_accumulator_h = (float(max_accumulator_h) > float(accumulator_h6)) ? max_accumulator_h : accumulator_h6;
+max_accumulator_h = (float(max_accumulator_h) > float(accumulator_h7)) ? max_accumulator_h : accumulator_h7;
+max_accumulator_h = (float(max_accumulator_h) > float(accumulator_h8)) ? max_accumulator_h : accumulator_h8;
+max_accumulator_h = (float(max_accumulator_h) > float(accumulator_h)) ? max_accumulator_h : accumulator_h;
+
+/* Vertical convolution */
+accumulator_v = vec4(0.0);
+vec4 accumulator_v1 = vec4(0.0);
+vec4 accumulator_v2 = vec4(0.0);
+vec4 accumulator_v3 = vec4(0.0);
+vec4 accumulator_v4 = vec4(0.0);
+vec4 accumulator_v5 = vec4(0.0);
+vec4 accumulator_v6 = vec4(0.0);
+vec4 accumulator_v7 = vec4(0.0);
+vec4 accumulator_v8 = vec4(0.0);
+
+// 1 of 8 Directions
+/* Top row */
+accumulator_v1 +=	inputV1 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(-2, +0)))); // leftUpIntensity
+accumulator_v1 +=	inputV2 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(-1, +0)))); // centerUpIntensity
+accumulator_v1 +=	inputV3 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(+0, +0)))); // rightUpIntensity
+
+/* Middle row */
+accumulator_v1 +=	inputV4 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(-2, -1)))); // leftCenterIntensity
+accumulator_v1 +=	inputV5 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(-1, -1)))); // centerIntensity
+accumulator_v1 +=	inputV6 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(+0, -1)))); // rightCenterIntensity
+
+/* Bottom row */
+accumulator_v1 +=	inputV7 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(-2, -2)))); // leftDownIntensity
+accumulator_v1 +=	inputV8 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(-1, -2)))); // centerDownIntensity
+accumulator_v1 +=	inputV9 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(+0, -2)))); // rightDownIntensity
+
+accumulator_v1 /= vec4(9.0);
+
+// 2 of 8 Directions
+/* Top row */
+accumulator_v2 +=	inputV1 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(-1, +0)))); // leftUpIntensity
+accumulator_v2 +=	inputV2 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(+0, +0)))); // centerUpIntensity
+accumulator_v2 +=	inputV3 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(+1, +0)))); // rightUpIntensity
+
+/* Middle row */
+accumulator_v2 +=	inputV4 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(-1, -1)))); // leftCenterIntensity
+accumulator_v2 +=	inputV5 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(+0, -1)))); // centerIntensity
+accumulator_v2 +=	inputV6 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(+1, -1)))); // rightCenterIntensity
+
+/* Bottom row */
+accumulator_v2 +=	inputV7 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(-1, -2)))); // leftDownIntensity
+accumulator_v2 +=	inputV8 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(+0, -2)))); // centerDownIntensity
+accumulator_v2 +=	inputV9 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(+1, -2)))); // rightDownIntensity
+
+accumulator_v2 /= vec4(9.0);
+
+// 3 of 8 Directions
+/* Top row */
+accumulator_v3 +=	inputV1 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(+0, +0)))); // leftUpIntensity
+accumulator_v3 +=	inputV2 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(+1, +0)))); // centerUpIntensity
+accumulator_v3 +=	inputV3 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(+2, +0)))); // rightUpIntensity
+
+/* Middle row */
+accumulator_v3 +=	inputV4 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(+0, -1)))); // leftCenterIntensity
+accumulator_v3 +=	inputV5 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(+1, -1)))); // centerIntensity
+accumulator_v3 +=	inputV6 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(+2, -1)))); // rightCenterIntensity
+
+/* Bottom row */
+accumulator_v3 +=	inputV7 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(+0, -2)))); // leftDownIntensity
+accumulator_v3 +=	inputV8 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(+1, -2)))); // centerDownIntensity
+accumulator_v3 +=	inputV9 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(+2, -2)))); // rightDownIntensity
+
+accumulator_v3 /= vec4(9.0);
+
+// 4 of 8 Directions
+/* Top row */
+accumulator_v4 +=	inputV1 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(+0, +1)))); // leftUpIntensity
+accumulator_v4 +=	inputV2 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(+1, +1)))); // centerUpIntensity
+accumulator_v4 +=	inputV3 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(+2, +1)))); // rightUpIntensity
+
+/* Middle row */
+accumulator_v4 +=	inputV4 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(+0, +0)))); // leftCenterIntensity
+accumulator_v4 +=	inputV5 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(+1, +0)))); // centerIntensity
+accumulator_v4 +=	inputV6 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(+2, +0)))); // rightCenterIntensity
+
+/* Bottom row */
+accumulator_v4 +=	inputV7 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(+0, -1)))); // leftDownIntensity
+accumulator_v4 +=	inputV8 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(+1, -1)))); // centerDownIntensity
+accumulator_v4 +=	inputV9 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(+2, -1)))); // rightDownIntensity
+
+accumulator_v4 /= vec4(9.0);
+
+// 5 of 8 Directions
+/* Top row */
+accumulator_v5 +=	inputV1 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(+0, +2)))); // leftUpIntensity
+accumulator_v5 +=	inputV2 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(+1, +2)))); // centerUpIntensity
+accumulator_v5 +=	inputV3 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(+2, +2)))); // rightUpIntensity
+
+/* Middle row */
+accumulator_v5 +=	inputV4 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(+0, +1)))); // leftCenterIntensity
+accumulator_v5 +=	inputV5 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(+1, +1)))); // centerIntensity
+accumulator_v5 +=	inputV6 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(+2, +1)))); // rightCenterIntensity
+
+/* Bottom row */
+accumulator_v5 +=	inputV7 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(+0, +0)))); // leftDownIntensity
+accumulator_v5 +=	inputV8 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(+1, +0)))); // centerDownIntensity
+accumulator_v5 +=	inputV9 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(+2, +0)))); // rightDownIntensity
+
+accumulator_v5 /= vec4(9.0);
+
+// 6 of 8 Directions
+/* Top row */
+accumulator_v6 +=	inputV1 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(-1, +2)))); // leftUpIntensity
+accumulator_v6 +=	inputV2 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(+0, +2)))); // centerUpIntensity
+accumulator_v6 +=	inputV3 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(+1, +2)))); // rightUpIntensity
+
+/* Middle row */
+accumulator_v6 +=	inputV4 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(-1, +1)))); // leftCenterIntensity
+accumulator_v6 +=	inputV5 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(+0, +1)))); // centerIntensity
+accumulator_v6 +=	inputV6 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(+1, +1)))); // rightCenterIntensity
+
+/* Bottom row */
+accumulator_v6 +=	inputV7 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(-1, +0)))); // leftDownIntensity
+accumulator_v6 +=	inputV8 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(+0, +0)))); // centerDownIntensity
+accumulator_v6 +=	inputV9 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(+1, +0)))); // rightDownIntensity
+
+accumulator_v6 /= vec4(9.0);
+
+// 7 of 8 Directions
+/* Top row */
+accumulator_v7 +=	inputV1 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(-2, +2)))); // leftUpIntensity
+accumulator_v7 +=	inputV2 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(-1, +2)))); // centerUpIntensity
+accumulator_v7 +=	inputV3 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(+0, +2)))); // rightUpIntensity
+
+/* Middle row */
+accumulator_v7 +=	inputV4 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(-2, +1)))); // leftCenterIntensity
+accumulator_v7 +=	inputV5 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(-1, +1)))); // centerIntensity
+accumulator_v7 +=	inputV6 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(+0, +1)))); // rightCenterIntensity
+
+/* Bottom row */
+accumulator_v7 +=	inputV7 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(-2, +0)))); // leftDownIntensity
+accumulator_v7 +=	inputV8 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(-1, +0)))); // centerDownIntensity
+accumulator_v7 +=	inputV9 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(+0, +0)))); // rightDownIntensity
+
+accumulator_v7 /= vec4(9.0);
+
+// 8 of 8 Directions
+/* Top row */
+accumulator_v8 +=	inputV1 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(-2, +1)))); // leftUpIntensity
+accumulator_v8 +=	inputV2 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(-1, +1)))); // centerUpIntensity
+accumulator_v8 +=	inputV3 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(+0, +1)))); // rightUpIntensity
+
+/* Middle row */
+accumulator_v8 +=	inputV4 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(-2, +0)))); // leftCenterIntensity
+accumulator_v8 +=	inputV5 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(-1, +0)))); // centerIntensity
+accumulator_v8 +=	inputV6 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(+0, +0)))); // rightCenterIntensity
+
+/* Bottom row */
+accumulator_v8 +=	inputV7 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(-2, -1)))); // leftDownIntensity
+accumulator_v8 +=	inputV8 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(-1, -1)))); // centerDownIntensity
+accumulator_v8 +=	inputV9 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(+0, -1)))); // rightDownIntensity
+
+accumulator_v8 /= vec4(9.0);
+
+/* Left column */
+accumulator_v +=	inputV1 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(-1, +1)))); // leftUpIntensity
+accumulator_v +=	inputV2 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(-1, +0)))); // leftCenterIntensity
+accumulator_v +=	inputV3 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(-1, -1)))); // leftDownIntensity
+
+/* Middle column */
+accumulator_v +=	inputV4 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(+0, +1)))); // centerUpIntensity
+accumulator_v +=	inputV5 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(+0, +0)))); // centerIntensity
+accumulator_v +=	inputV6 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(+0, -1)))); // centerDownIntensity
+
+/* Right column */
+accumulator_v +=	inputV7 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(+1, +1)))); // rightUpIntensity
+accumulator_v +=	inputV8 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(+1, 0)))); // rightCenterIntensity
+accumulator_v +=	inputV9 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(+1, -1)))); // rightDownIntensity
+
+/* Divisor */
+accumulator_v /= vec4(9.0);
+
+max_accumulator_v = (float(max_accumulator_v) > float(accumulator_v1)) ? max_accumulator_v : accumulator_v1;
+max_accumulator_v = (float(max_accumulator_v) > float(accumulator_v2)) ? max_accumulator_v : accumulator_v2;
+max_accumulator_v = (float(max_accumulator_v) > float(accumulator_v3)) ? max_accumulator_v : accumulator_v3;
+max_accumulator_v = (float(max_accumulator_v) > float(accumulator_v4)) ? max_accumulator_v : accumulator_v4;
+max_accumulator_v = (float(max_accumulator_v) > float(accumulator_v5)) ? max_accumulator_v : accumulator_v5;
+max_accumulator_v = (float(max_accumulator_v) > float(accumulator_v6)) ? max_accumulator_v : accumulator_v6;
+max_accumulator_v = (float(max_accumulator_v) > float(accumulator_v7)) ? max_accumulator_v : accumulator_v7;
+max_accumulator_v = (float(max_accumulator_v) > float(accumulator_v8)) ? max_accumulator_v : accumulator_v8;
+max_accumulator_v = (float(max_accumulator_v) > float(accumulator_v)) ? max_accumulator_v : accumulator_v;
+
+return premultiply(vec4(vec3(sqrt(vec3(max_accumulator_h * max_accumulator_h) + vec3(max_accumulator_v * max_accumulator_v))), 1.0));
+} else {
+/* Horizontal convolution */
+accumulator_h = vec4(0.0);
+
+/* Top row */
+accumulator_h +=	inputH1 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(-1, +1)))); // leftUpIntensity
+accumulator_h +=	inputH2 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(+0, +1)))); // centerUpIntensity
+accumulator_h +=	inputH3 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(+1, +1)))); // rightUpIntensity
+
+/* Middle row */
+accumulator_h +=	inputH4 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(-1, +0)))); // leftCenterIntensity
+accumulator_h +=	inputH5 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(+0, +0)))); // centerIntensity
+accumulator_h +=	inputH6 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(+1, +0)))); // rightCenterIntensity
+
+/* Bottom row */
+accumulator_h +=	inputH7 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(-1, -1)))); // leftDownIntensity
+accumulator_h +=	inputH8 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(+0, -1)))); // centerDownIntensity
+accumulator_h +=	inputH9 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(+1, -1)))); // rightDownIntensity
+
+/* Divisor */
+accumulator_h /= vec4(9.0);
+
+/* Vertical convolution */
+accumulator_v = vec4(0.0);
+
+/* Left column */
+accumulator_v +=	inputV1 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(-1, +1)))); // leftUpIntensity
+accumulator_v +=	inputV2 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(-1, +0)))); // leftCenterIntensity
+accumulator_v +=	inputV3 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(-1, -1)))); // leftDownIntensity
+
+/* Middle column */
+accumulator_v +=	inputV4 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(+0, +1)))); // centerUpIntensity
+accumulator_v +=	inputV5 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(+0, +0)))); // centerIntensity
+accumulator_v +=	inputV6 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(+0, -1)))); // centerDownIntensity
+
+/* Right column */
+accumulator_v +=	inputV7 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(+1, +1)))); // rightUpIntensity
+accumulator_v +=	inputV8 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(+1, 0)))); // rightCenterIntensity
+accumulator_v +=	inputV9 * unpremultiply(sample(image, samplerTransform(image, xy + vec2(+1, -1)))); // rightDownIntensity
+
+/* Divisor */
+accumulator_v /= vec4(9.0);
+
+}
+
+if (inputCompassGradient == 0.0) {
+return premultiply(vec4(vec3(sqrt(vec3(accumulator_h * accumulator_h) + vec3(accumulator_v * accumulator_v))), 1.0));
+} else if (inputCompassGradient == 1.0) {
+return premultiply(vec4(vec3(accumulator_h.rgb + accumulator_v.rgb), 1.0));
+} else if (inputCompassGradient == 2.0) {
+return premultiply(vec4(vec3(sqrt(vec3(accumulator_h * accumulator_h) + vec3(accumulator_v * accumulator_v))) + vec3(accumulator_h.rgb + accumulator_v.rgb), 1.0));
+}
+
+}
